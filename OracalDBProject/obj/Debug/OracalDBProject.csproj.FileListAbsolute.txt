@@ -78,14 +78,12 @@ C:\Users\Liran\Desktop\OracalDBProject\OracalDBProject\bin\Debug\Logger.pdb
 C:\Users\Liran\Desktop\OracalDBProject\OracalDBProject\bin\Debug\log4net.xml
 C:\Users\Liran\Desktop\OracalDBProject\OracalDBProject\obj\Debug\OracalDBProject.csprojResolveAssemblyReference.cache
 C:\Users\Liran\Desktop\OracalDBProject\OracalDBProject\obj\Debug\Admin\AdminPanelWindow.g.cs
-C:\Users\Liran\Desktop\OracalDBProject\OracalDBProject\obj\Debug\Cashier\CashierPanelWindow.g.cs
 C:\Users\Liran\Desktop\OracalDBProject\OracalDBProject\obj\Debug\Club Member\ClubMemberPanelWindow.g.cs
 C:\Users\Liran\Desktop\OracalDBProject\OracalDBProject\obj\Debug\MainWindow.g.cs
 C:\Users\Liran\Desktop\OracalDBProject\OracalDBProject\obj\Debug\App.g.cs
 C:\Users\Liran\Desktop\OracalDBProject\OracalDBProject\obj\Debug\OracalDBProject_MarkupCompile.cache
 C:\Users\Liran\Desktop\OracalDBProject\OracalDBProject\obj\Debug\OracalDBProject_MarkupCompile.lref
 C:\Users\Liran\Desktop\OracalDBProject\OracalDBProject\obj\Debug\Admin\AdminPanelWindow.baml
-C:\Users\Liran\Desktop\OracalDBProject\OracalDBProject\obj\Debug\Cashier\CashierPanelWindow.baml
 C:\Users\Liran\Desktop\OracalDBProject\OracalDBProject\obj\Debug\Club Member\ClubMemberPanelWindow.baml
 C:\Users\Liran\Desktop\OracalDBProject\OracalDBProject\obj\Debug\MainWindow.baml
 C:\Users\Liran\Desktop\OracalDBProject\OracalDBProject\obj\Debug\OracalDBProject.g.resources

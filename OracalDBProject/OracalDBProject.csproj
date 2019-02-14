@@ -125,6 +125,7 @@
     <Compile Include="Admin\DeleteProductWindow.xaml.cs">
       <DependentUpon>DeleteProductWindow.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Admin\IAdmin.cs" />
     <Compile Include="Admin\IProduct.cs" />
     <Compile Include="Admin\IUser.cs" />
     <Compile Include="Admin\Product.cs" />

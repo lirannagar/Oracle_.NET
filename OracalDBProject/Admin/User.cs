@@ -22,7 +22,6 @@ namespace OracalDBProject.Admin
         private string _email;
         private string _address;
         private string _password;
-        private string bogibogi;
         #endregion Members
 
         #region Constructor
@@ -84,7 +83,6 @@ namespace OracalDBProject.Admin
             {
                 try
                 {
-
                     OracleSingletonComment.Instance.CommandType = CommandType.Text;
                     OracleSingletonComment.Instance.CommandText = "SELECT user_seq.nextval from dual";
                     this._userId = Convert.ToInt32(OracleSingletonComment.Instance.ExecuteScalar()).ToString();

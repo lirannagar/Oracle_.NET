@@ -78,12 +78,31 @@ namespace OracalDBProject
         #endregion Constructor
 
         #region Private Methods
+        private void CreateAdminUserSequence()
+        {
+            try
+            {
+                string adminUserSequenceString = "CREATE SEQUENCE admin_seq"
+                                + " START WITH     10000"
+                                + " INCREMENT BY   1"
+                                + " NOCACHE"
+                                + " NOCYCLE";
+                OracleSingletonComment.Instance.CommandText = adminUserSequenceString;
+                dr = OracleSingletonComment.Instance.ExecuteReader();
+                Logger.Instance.Info("Admin Sequence Created");
+            }
+            catch (OracleException ex)
+            {
+                Logger.Instance.Error("Exception while trying to Create Admin Sequence\nDetails: " + ex);
+            }
+        }
         private void CreateSequences()
         {
             try
             {
                 //CreateProductSequence();
                 CreateUserSequence();
+                CreateAdminUserSequence();
                 Logger.Instance.Info("All Sequences Created");
             }
             catch (OracleException ex)
