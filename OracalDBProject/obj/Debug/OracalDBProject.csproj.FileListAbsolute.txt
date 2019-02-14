@@ -65,15 +65,9 @@ C:\Users\Liran\Desktop\OracalDBProject\OracalDBProject\obj\Debug\OracalDBProject
 C:\Users\Liran\Desktop\OracalDBProject\OracalDBProject\obj\Debug\OracalDBProject.pdb
 C:\Users\Liran\Desktop\OracalDBProject\OracalDBProject\bin\Debug\OracalDBProject.exe
 C:\Users\Liran\Desktop\OracalDBProject\OracalDBProject\bin\Debug\OracalDBProject.pdb
-C:\Users\Liran\Desktop\OracalDBProject\OracalDBProject\bin\Debug\HRbusoness.dll
-C:\Users\Liran\Desktop\OracalDBProject\OracalDBProject\bin\Debug\HRdataAccess.dll
-C:\Users\Liran\Desktop\OracalDBProject\OracalDBProject\bin\Debug\HRentities.dll
 C:\Users\Liran\Desktop\OracalDBProject\OracalDBProject\bin\Debug\log4net.dll
 C:\Users\Liran\Desktop\OracalDBProject\OracalDBProject\bin\Debug\Logger.dll
 C:\Users\Liran\Desktop\OracalDBProject\OracalDBProject\bin\Debug\Oracle.ManagedDataAccess.dll
-C:\Users\Liran\Desktop\OracalDBProject\OracalDBProject\bin\Debug\HRbusoness.pdb
-C:\Users\Liran\Desktop\OracalDBProject\OracalDBProject\bin\Debug\HRdataAccess.pdb
-C:\Users\Liran\Desktop\OracalDBProject\OracalDBProject\bin\Debug\HRentities.pdb
 C:\Users\Liran\Desktop\OracalDBProject\OracalDBProject\bin\Debug\Logger.pdb
 C:\Users\Liran\Desktop\OracalDBProject\OracalDBProject\bin\Debug\log4net.xml
 C:\Users\Liran\Desktop\OracalDBProject\OracalDBProject\obj\Debug\OracalDBProject.csprojResolveAssemblyReference.cache

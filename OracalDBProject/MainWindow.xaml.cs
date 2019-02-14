@@ -47,16 +47,13 @@ namespace OracalDBProject
         {
             Logger.Instance.Info("-------------------------PROGRAM STARTED-------------------");
             OpenConnection();
-           // CreateAdminUsers();
-            SwitchAdminUser();
-         
+            //CreateAdminUsers();
+            SwitchAdminUser();       
             //CreateTables();
-            CreateSequences();
-            CreatePackages();
+            //CreateSequences();
+            //CreatePackages();
             //DropTables();
             //CreateClubMemberUsers();
-
-
             try
             {          
                 InitializeComponent();
@@ -100,7 +97,7 @@ namespace OracalDBProject
         {
             try
             {
-                //CreateProductSequence();
+                CreateProductSequence();
                 CreateUserSequence();
                 CreateAdminUserSequence();
                 Logger.Instance.Info("All Sequences Created");
