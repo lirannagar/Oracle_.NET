@@ -25,7 +25,7 @@ namespace OracalDBProject.Admin
         {
             InsertUserID(userId);
             InsertSalary(salaryNIS);
-            ins
+            InsertAdminID(adminId);
         }
         #endregion Constructor
 
