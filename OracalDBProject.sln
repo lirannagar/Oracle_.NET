@@ -1,0 +1,46 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.25420.1
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OracalDBProject", "OracalDBProject\OracalDBProject.csproj", "{A1EC8439-6666-4F76-8865-EEFEEFFF7F4F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HRentities", "HRentities\HRentities.csproj", "{A4C1F407-CE20-4306-9DB2-056DAF698090}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HRbusoness", "HRbusoness\HRbusoness.csproj", "{2EFA4065-839C-4E86-934B-4EF262F3D303}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HRdataAccess", "HRdataAccess\HRdataAccess.csproj", "{50B4D8A7-49B5-455D-A632-5E4CF4DD3319}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Logger", "Logger\Logger.csproj", "{D80F8212-3391-4672-A2D5-CBB731BD482F}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{A1EC8439-6666-4F76-8865-EEFEEFFF7F4F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A1EC8439-6666-4F76-8865-EEFEEFFF7F4F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A1EC8439-6666-4F76-8865-EEFEEFFF7F4F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A1EC8439-6666-4F76-8865-EEFEEFFF7F4F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A4C1F407-CE20-4306-9DB2-056DAF698090}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A4C1F407-CE20-4306-9DB2-056DAF698090}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A4C1F407-CE20-4306-9DB2-056DAF698090}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A4C1F407-CE20-4306-9DB2-056DAF698090}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2EFA4065-839C-4E86-934B-4EF262F3D303}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2EFA4065-839C-4E86-934B-4EF262F3D303}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2EFA4065-839C-4E86-934B-4EF262F3D303}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2EFA4065-839C-4E86-934B-4EF262F3D303}.Release|Any CPU.Build.0 = Release|Any CPU
+		{50B4D8A7-49B5-455D-A632-5E4CF4DD3319}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{50B4D8A7-49B5-455D-A632-5E4CF4DD3319}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{50B4D8A7-49B5-455D-A632-5E4CF4DD3319}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{50B4D8A7-49B5-455D-A632-5E4CF4DD3319}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D80F8212-3391-4672-A2D5-CBB731BD482F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D80F8212-3391-4672-A2D5-CBB731BD482F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D80F8212-3391-4672-A2D5-CBB731BD482F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D80F8212-3391-4672-A2D5-CBB731BD482F}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

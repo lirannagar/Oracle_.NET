@@ -1,0 +1,29 @@
+﻿<Window x:Class="OracalDBProject.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:OracalDBProject"
+        mc:Ignorable="d"
+        WindowStartupLocation="CenterScreen"
+        Title="Log in Super Market" Height="350" Width="400">
+    <Grid x:Name="startProgram" AutomationProperties.AutomationId="formLogIn" Margin="0,0,2,0">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="44*"/>
+            <ColumnDefinition Width="224*"/>
+            <ColumnDefinition Width="32*"/>
+            <ColumnDefinition Width="155*"/>
+            <ColumnDefinition Width="62*"/>
+        </Grid.ColumnDefinitions>
+        <Label x:Name="UserNameLabel" Content="User name:" HorizontalAlignment="Left" Margin="48,110,0,0" VerticalAlignment="Top" Width="119" FontSize="18" Grid.Column="1"/>
+        <TextBox x:Name="TextUserName" Grid.ColumnSpan="2" HorizontalAlignment="Left" Height="23" Margin="3,121,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="120" Grid.Column="3"/>
+        <TextBox x:Name="passwordBox" HorizontalAlignment="Left" Margin="3,157,0,0" VerticalAlignment="Top" Width="120" Grid.ColumnSpan="2" Height="25" Grid.Column="3"/>
+        <Label x:Name="PasswordLabel" Content="Password:" HorizontalAlignment="Left" Margin="48,149,0,0" VerticalAlignment="Top" Width="120" FontSize="18" Grid.Column="1"/>
+        <ComboBox x:Name="comboBox" HorizontalAlignment="Left" Margin="3,201,0,0" VerticalAlignment="Top" Width="120" Grid.ColumnSpan="2" Grid.Column="3"/>
+        <Button x:Name="LogInButton" Content="Log In" HorizontalAlignment="Left" Margin="114,258,0,0" VerticalAlignment="Top" Width="119" RenderTransformOrigin="0.173,-0.4" Grid.ColumnSpan="3" Height="27" Click="LogInButton_Click" Grid.Column="1"/>
+        <Label x:Name="RoleLabel" Content="Role: " HorizontalAlignment="Left" Margin="47,190,0,0" VerticalAlignment="Top" Width="120" FontSize="18" Grid.Column="1"/>
+        <Label x:Name="TitleMsgLabel" Content="WELCOME TO &quot;SHAUL MARKET&quot;" HorizontalAlignment="Left" Margin="31,19,0,0" VerticalAlignment="Top" Width="285" FontSize="18" Grid.Column="1" Grid.ColumnSpan="4"/>
+        <Label x:Name="LogInMsgLabel" Content="Please login" HorizontalAlignment="Left" Margin="114,53,0,0" VerticalAlignment="Top" Width="119" FontSize="18" Grid.Column="1" Grid.ColumnSpan="3"/>
+
+    </Grid>
+</Window>

@@ -1,0 +1,20 @@
+C:\Users\liran\Desktop\Projects\OracalDBProject\HRbusoness\bin\Debug\HRbusoness.dll
+C:\Users\liran\Desktop\Projects\OracalDBProject\HRbusoness\bin\Debug\HRbusoness.pdb
+C:\Users\liran\Desktop\Projects\OracalDBProject\HRbusoness\bin\Debug\log4net.dll
+C:\Users\liran\Desktop\Projects\OracalDBProject\HRbusoness\bin\Debug\log4net.xml
+C:\Users\liran\Desktop\Projects\OracalDBProject\HRbusoness\obj\Debug\HRbusoness.csprojResolveAssemblyReference.cache
+C:\Users\liran\Desktop\Projects\OracalDBProject\HRbusoness\obj\Debug\HRbusoness.dll
+C:\Users\liran\Desktop\Projects\OracalDBProject\HRbusoness\obj\Debug\HRbusoness.pdb
+C:\Users\chen miriam\Desktop\OracalDBProject\HRbusoness\bin\Debug\HRbusoness.dll
+C:\Users\chen miriam\Desktop\OracalDBProject\HRbusoness\bin\Debug\HRbusoness.pdb
+C:\Users\chen miriam\Desktop\OracalDBProject\HRbusoness\bin\Debug\log4net.dll
+C:\Users\chen miriam\Desktop\OracalDBProject\HRbusoness\bin\Debug\log4net.xml
+C:\Users\chen miriam\Desktop\OracalDBProject\HRbusoness\obj\Debug\HRbusoness.csprojResolveAssemblyReference.cache
+C:\Users\chen miriam\Desktop\OracalDBProject\HRbusoness\obj\Debug\HRbusoness.dll
+C:\Users\chen miriam\Desktop\OracalDBProject\HRbusoness\obj\Debug\HRbusoness.pdb
+C:\Users\Liran\Desktop\OracalDBProject\HRbusoness\bin\Debug\HRbusoness.dll
+C:\Users\Liran\Desktop\OracalDBProject\HRbusoness\bin\Debug\HRbusoness.pdb
+C:\Users\Liran\Desktop\OracalDBProject\HRbusoness\bin\Debug\log4net.dll
+C:\Users\Liran\Desktop\OracalDBProject\HRbusoness\bin\Debug\log4net.xml
+C:\Users\Liran\Desktop\OracalDBProject\HRbusoness\obj\Debug\HRbusoness.dll
+C:\Users\Liran\Desktop\OracalDBProject\HRbusoness\obj\Debug\HRbusoness.pdb

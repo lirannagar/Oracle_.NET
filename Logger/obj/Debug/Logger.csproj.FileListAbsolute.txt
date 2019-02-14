@@ -1,0 +1,13 @@
+C:\Users\liran\Desktop\Projects\OracalDBProject\Logger\bin\Debug\Logger.dll
+C:\Users\liran\Desktop\Projects\OracalDBProject\Logger\bin\Debug\Logger.pdb
+C:\Users\liran\Desktop\Projects\OracalDBProject\Logger\obj\Debug\Logger.dll
+C:\Users\liran\Desktop\Projects\OracalDBProject\Logger\obj\Debug\Logger.pdb
+C:\Users\chen miriam\Desktop\OracalDBProject\Logger\bin\Debug\Logger.dll
+C:\Users\chen miriam\Desktop\OracalDBProject\Logger\bin\Debug\Logger.pdb
+C:\Users\chen miriam\Desktop\OracalDBProject\Logger\obj\Debug\Logger.csprojResolveAssemblyReference.cache
+C:\Users\chen miriam\Desktop\OracalDBProject\Logger\obj\Debug\Logger.dll
+C:\Users\chen miriam\Desktop\OracalDBProject\Logger\obj\Debug\Logger.pdb
+C:\Users\Liran\Desktop\OracalDBProject\Logger\bin\Debug\Logger.dll
+C:\Users\Liran\Desktop\OracalDBProject\Logger\bin\Debug\Logger.pdb
+C:\Users\Liran\Desktop\OracalDBProject\Logger\obj\Debug\Logger.dll
+C:\Users\Liran\Desktop\OracalDBProject\Logger\obj\Debug\Logger.pdb

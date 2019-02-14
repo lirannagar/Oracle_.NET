@@ -1,0 +1,28 @@
+﻿<Window
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:OracalDBProject.Admin"
+        xmlns:OracalDBProject="clr-namespace:OracalDBProject" x:Class="OracalDBProject.Admin.AddProductWindow"
+        mc:Ignorable="d"      
+        WindowStartupLocation="CenterScreen"
+        Title="AddProductWindow" Height="390.035" Width="313.866" Loaded="Window_Loaded">
+    <Window.Resources>
+        <OracalDBProject:MarketsDBSource x:Key="marketsDBSource"/>
+        <CollectionViewSource x:Key="pRODUCTSViewSource" Source="{Binding PRODUCTS, Source={StaticResource marketsDBSource}}"/>
+    </Window.Resources>
+    <Grid Margin="0,0,3.8,7.6" DataContext="{StaticResource pRODUCTSViewSource}">
+        <Label x:Name="IDProductLabel" Content="ID:" HorizontalAlignment="Left" Margin="10,23,0,0" VerticalAlignment="Top" Width="46" Height="23"/>
+        <Label x:Name="NamePeoductLabel" Content="Name:" HorizontalAlignment="Left" Margin="10,51,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.288,0.047" Width="46"/>
+        <Label x:Name="QuantityProductLabel" Content="Quantity:" HorizontalAlignment="Left" Margin="10,82,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.712,0.745"/>
+        <TextBox x:Name="IDProductTextBox" HorizontalAlignment="Left" Height="23" Margin="78,23,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="215"/>
+        <TextBox x:Name="NameProductTextBox" HorizontalAlignment="Left" Height="23" Margin="78,54,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="215"/>
+        <TextBox x:Name="QuantityProducTextBox" HorizontalAlignment="Left" Height="23" Margin="78,82,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="215"/>
+        <Button x:Name="AddProductButton" Content="Add Product" HorizontalAlignment="Left" Margin="78,113,0,0" VerticalAlignment="Top" Width="215" Click="AddProductButton_Click"/>
+        <Label x:Name="ExplainLabelProduct" Content="(can be empty)" HorizontalAlignment="Left" Margin="25,29,0,0" VerticalAlignment="Top" Width="53" FontSize="6" Height="20" />
+        <Button x:Name="BackButtonProduct" Content="Back" HorizontalAlignment="Left" Margin="10,5,0,0" VerticalAlignment="Top" Width="58" Click="BackButtonProduct_Click"/>
+        <DataGrid x:Name="GridAddProduct" HorizontalAlignment="Left" Margin="19,155,0,0" VerticalAlignment="Top" Height="188" Width="274" ItemsSource="{Binding}"/>
+
+    </Grid>
+</Window>
