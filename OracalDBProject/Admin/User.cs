@@ -22,6 +22,7 @@ namespace OracalDBProject.Admin
         private string _email;
         private string _address;
         private string _password;
+        private string bogibogi;
         #endregion Members
 
         #region Constructor
