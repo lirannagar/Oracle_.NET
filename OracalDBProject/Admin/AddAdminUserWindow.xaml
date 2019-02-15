@@ -8,7 +8,7 @@
         WindowStartupLocation="CenterScreen"
         Title="AddAdminUserWindow" Height="300" Width="300">
     <Grid>
-        <Button x:Name="backPanelAdminWindow" Content="Back" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Width="57"/>
+        <Button x:Name="backPanelAdminWindow" Content="Back" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Width="57" Click="backPanelAdminWindow_Click"/>
         <Label x:Name="userNameLabel" Content="First Name:" HorizontalAlignment="Left" Margin="10,34,0,0" VerticalAlignment="Top" Width="72"/>
         <Label x:Name="PasswordAdminUserLabel" Content="Password:" HorizontalAlignment="Left" Margin="10,76,0,0" VerticalAlignment="Top" Width="72"/>
         <Label x:Name="lastNameLabel" Content="Last Name:" HorizontalAlignment="Left" Margin="10,56,0,0" VerticalAlignment="Top"/>
@@ -21,7 +21,7 @@
         <TextBox x:Name="phoneNumberTextBox" HorizontalAlignment="Left" Height="17" Margin="103,105,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="176"/>
         <TextBox x:Name="emailTextBox" HorizontalAlignment="Left" Height="17" Margin="77,125,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="202"/>
         <TextBox x:Name="addressTextBox" HorizontalAlignment="Left" Height="20" Margin="77,147,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="202"/>
-        <Button x:Name="singAdminButton" Content="Sing Up" HorizontalAlignment="Left" Margin="16,203,0,0" VerticalAlignment="Top" Width="263" Height="29"/>
+        <Button x:Name="singAdminButton" Content="Sing Up" HorizontalAlignment="Left" Margin="16,203,0,0" VerticalAlignment="Top" Width="263" Height="29" Click="singAdminButton_Click"/>
 
     </Grid>
 </Window>

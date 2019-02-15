@@ -81,7 +81,16 @@ namespace OracalDBProject
 
         private void AddNewAdminButton_Click(object sender, RoutedEventArgs e)
         {
-
+            try
+            {
+                AddAdminUserWindow win = new AddAdminUserWindow();
+                win.Show();
+                this.Close();
+                Logger.Instance.Info("Open Add New Admin Window and close Panel Window");
+            }catch(Exception ex)
+            {
+                Logger.Instance.Error("Error while trying to Open Add New Admin Window and close Panel Window\nDetails:  " + ex);
+            }           
         }
         #endregion Private Methods
 
