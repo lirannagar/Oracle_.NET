@@ -1,0 +1,27 @@
+﻿<Window x:Class="OracalDBProject.Admin.AddAdminUserWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:OracalDBProject.Admin"
+        mc:Ignorable="d"
+        WindowStartupLocation="CenterScreen"
+        Title="AddAdminUserWindow" Height="300" Width="300">
+    <Grid>
+        <Button x:Name="backPanelAdminWindow" Content="Back" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Width="57"/>
+        <Label x:Name="userNameLabel" Content="First Name:" HorizontalAlignment="Left" Margin="10,34,0,0" VerticalAlignment="Top" Width="72"/>
+        <Label x:Name="PasswordAdminUserLabel" Content="Password:" HorizontalAlignment="Left" Margin="10,76,0,0" VerticalAlignment="Top" Width="72"/>
+        <Label x:Name="lastNameLabel" Content="Last Name:" HorizontalAlignment="Left" Margin="10,56,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="phoneNumberLabel" Content="Phone Number:" HorizontalAlignment="Left" Margin="10,99,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="emailLabel" Content="Email:" HorizontalAlignment="Left" Margin="10,122,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="addressLabel" Content="Address:" HorizontalAlignment="Left" Margin="10,141,0,0" VerticalAlignment="Top"/>
+        <PasswordBox x:Name="passwordBoxAdmin" HorizontalAlignment="Left" Margin="77,82,0,0" VerticalAlignment="Top" Width="202"/>
+        <TextBox x:Name="firstNameTextBox" HorizontalAlignment="Left" Height="19" Margin="77,41,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="202"/>
+        <TextBox x:Name="lastNameTextBox" HorizontalAlignment="Left" Height="17" Margin="77,62,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="202"/>
+        <TextBox x:Name="phoneNumberTextBox" HorizontalAlignment="Left" Height="17" Margin="103,105,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="176"/>
+        <TextBox x:Name="emailTextBox" HorizontalAlignment="Left" Height="17" Margin="77,125,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="202"/>
+        <TextBox x:Name="addressTextBox" HorizontalAlignment="Left" Height="20" Margin="77,147,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="202"/>
+        <Button x:Name="singAdminButton" Content="Sing Up" HorizontalAlignment="Left" Margin="16,203,0,0" VerticalAlignment="Top" Width="263" Height="29"/>
+
+    </Grid>
+</Window>
