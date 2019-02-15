@@ -47,7 +47,7 @@ namespace OracalDBProject
         {
             Logger.Instance.Info("-------------------------PROGRAM STARTED-------------------");
             OpenConnection();
-            //CreateAdminUsers();
+            CreateAdminUsers();
             SwitchAdminUser();       
             //CreateTables();
             //CreateSequences();

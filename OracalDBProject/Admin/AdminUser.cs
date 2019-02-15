@@ -78,7 +78,7 @@ namespace OracalDBProject.Admin
                 OracleSingletonComment.Instance.Parameters.Add("USER_ID", this._userId);
                 OracleSingletonComment.Instance.Parameters.Add("SALARY_NIS", this._salaryNIS);
                 OracleSingletonComment.Instance.ExecuteNonQuery();
-                OracleSingletonComment.Instance.Parameters.Clear();
+                OracleSingletonComment.Instance.Parameters.Clear();                
                 Logger.Instance.Info("Admin User Executed");
             }
             catch (OracleException ex)

@@ -102,6 +102,11 @@ namespace OracalDBProject.Admin
             }
         }
 
+        public string GetId()
+        {           
+           return _userId;
+        }
+
         public void ExecuteToDatabase()
         {
             try

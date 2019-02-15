@@ -65,18 +65,22 @@ namespace OracalDBProject.Admin
         private void singAdminButton_Click(object sender, RoutedEventArgs e)
         {
             try
-            {
-                
-                string namerole = Enums.GetAttributeOfType(ERole.ADMIN_ROLE);
-               // string roleId = namerole.ToName();
+            {                
+                string roleId = Enums.GetDescription(ERole.ADMIN_ROLE);              
                 string firstName = firstNameTextBox.Text;
                 string lastName = lastNameTextBox.Text;
                 string phoneNumber = phoneNumberTextBox.Text;
                 string email =  emailTextBox.Text;
                 string address = addressTextBox.Text;
                 string password =  passwordBoxAdmin.ToString();
-                User user = new User();
-
+                User user = new User(roleId,firstName,lastName,phoneNumber,email,address,password);
+                user.ExecuteToDatabase();
+                AdminUser adminUser = new AdminUser(user.GetId(),2000);
+                adminUser.ExecuteToDatabase();
+                OracleSingletonComment.Instance.CommandText = String.Format("CREATE USER {0} IDENTIFIED BY \"{1}\"", firstName, password);
+                OracleSingletonComment.Instance.ExecuteNonQuery();
+                OracleSingletonComment.Instance.CommandText = String.Format("grant dba to {0}", firstName);
+                OracleSingletonComment.Instance.ExecuteNonQuery();
                 Logger.Instance.Info("Admin Singed In");
             }catch(OracleException ex)
             {
