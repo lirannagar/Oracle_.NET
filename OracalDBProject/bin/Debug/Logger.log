@@ -15,3 +15,64 @@
 2019-02-16 15:50:59.740 [INFO]    Admin User Switched
 2019-02-16 15:50:59.846 [INFO]    Package Club Member Created
 2019-02-16 15:50:59.891 [INFO]    LogIn window opened
+2019-02-16 17:06:03.318 [INFO]    -------------------------PROGRAM STARTED-------------------
+2019-02-16 17:06:03.778 [INFO]    DB was opened seccefully
+2019-02-16 17:06:03.808 [INFO]    Admin User Switched
+2019-02-16 17:06:03.855 [INFO]    LogIn window opened
+2019-02-16 17:06:12.548 [INFO]    Admin panel opened
+2019-02-16 17:06:17.071 [INFO]    Club Member Window Opened
+2019-02-16 17:06:17.109 [INFO]    panel admin closed
+2019-02-16 17:07:14.430 [ERROR]   Exceptoin while trying to execute User
+Details:Oracle.ManagedDataAccess.Client.OracleException (0x80004005): ORA-02291: integrity constraint (LIRAN_ADMIN.FK_ROLES) violated - parent key not found
+ORA-06512: at "LIRAN_ADMIN.PKG_USER", line 1
+ORA-06512: at line 1
+   at OracleInternal.ServiceObjects.OracleConnectionImpl.VerifyExecution(Int32& cursorId, Boolean bThrowArrayBindRelatedErrors, SqlStatementType sqlStatementType, Int32 arrayBindCount, OracleException& exceptionForArrayBindDML, Boolean& hasMoreRowsInDB, Boolean bFirstIterationDone)
+   at OracleInternal.ServiceObjects.OracleCommandImpl.ExecuteNonQuery(String commandText, OracleParameterCollection paramColl, CommandType commandType, OracleConnectionImpl connectionImpl, Int32 longFetchSize, Int64 clientInitialLOBFS, OracleDependencyImpl orclDependencyImpl, Int64[]& scnFromExecution, OracleParameterCollection& bindByPositionParamColl, Boolean& bBindParamPresent, OracleException& exceptionForArrayBindDML, OracleConnection connection, OracleLogicalTransaction& oracleLogicalTransaction, Boolean isFromEF)
+   at Oracle.ManagedDataAccess.Client.OracleCommand.ExecuteNonQuery()
+   at OracalDBProject.Admin.User.ExecuteToDatabase() in C:\Users\Liran\Desktop\OracalDBProject\OracalDBProject\Admin\User.cs:line 124
+2019-02-16 17:09:46.330 [INFO]    -------------------------PROGRAM STARTED-------------------
+2019-02-16 17:09:46.834 [INFO]    DB was opened seccefully
+2019-02-16 17:09:46.881 [INFO]    Admin User Switched
+2019-02-16 17:09:46.943 [INFO]    LogIn window opened
+2019-02-16 17:09:49.599 [INFO]    Admin panel opened
+2019-02-16 17:10:19.624 [INFO]    Club Member Window Opened
+2019-02-16 17:10:19.664 [INFO]    panel admin closed
+2019-02-16 17:19:09.048 [INFO]    -------------------------PROGRAM STARTED-------------------
+2019-02-16 17:19:09.707 [INFO]    DB was opened seccefully
+2019-02-16 17:19:09.740 [INFO]    Admin User Switched
+2019-02-16 17:19:09.793 [INFO]    LogIn window opened
+2019-02-16 17:19:11.225 [INFO]    Admin panel opened
+2019-02-16 17:19:12.340 [INFO]    Add Admin User Window Opened
+2019-02-16 17:19:12.386 [INFO]    Open Add New Admin Window and close Panel Window
+2019-02-16 17:19:33.604 [ERROR]   Exceptoin while trying to execute User
+Details:Oracle.ManagedDataAccess.Client.OracleException (0x80004005): ORA-02291: integrity constraint (LIRAN_ADMIN.FK_ROLES) violated - parent key not found
+ORA-06512: at "LIRAN_ADMIN.PKG_USER", line 1
+ORA-06512: at line 1
+   at OracleInternal.ServiceObjects.OracleConnectionImpl.VerifyExecution(Int32& cursorId, Boolean bThrowArrayBindRelatedErrors, SqlStatementType sqlStatementType, Int32 arrayBindCount, OracleException& exceptionForArrayBindDML, Boolean& hasMoreRowsInDB, Boolean bFirstIterationDone)
+   at OracleInternal.ServiceObjects.OracleCommandImpl.ExecuteNonQuery(String commandText, OracleParameterCollection paramColl, CommandType commandType, OracleConnectionImpl connectionImpl, Int32 longFetchSize, Int64 clientInitialLOBFS, OracleDependencyImpl orclDependencyImpl, Int64[]& scnFromExecution, OracleParameterCollection& bindByPositionParamColl, Boolean& bBindParamPresent, OracleException& exceptionForArrayBindDML, OracleConnection connection, OracleLogicalTransaction& oracleLogicalTransaction, Boolean isFromEF)
+   at Oracle.ManagedDataAccess.Client.OracleCommand.ExecuteNonQuery()
+   at OracalDBProject.Admin.User.ExecuteToDatabase() in C:\Users\Liran\Desktop\OracalDBProject\OracalDBProject\Admin\User.cs:line 124
+2019-02-16 17:26:30.036 [INFO]    -------------------------PROGRAM STARTED-------------------
+2019-02-16 17:26:30.546 [INFO]    DB was opened seccefully
+2019-02-16 17:26:30.580 [INFO]    Admin User Switched
+2019-02-16 17:26:30.611 [INFO]    Role Administrator Executed
+2019-02-16 17:26:30.619 [INFO]    Role Club_Member Executed
+2019-02-16 17:26:30.627 [INFO]    Initialized Roles
+2019-02-16 17:26:30.681 [INFO]    LogIn window opened
+2019-02-16 17:26:32.979 [INFO]    Admin panel opened
+2019-02-16 17:26:49.568 [INFO]    -------------------------PROGRAM STARTED-------------------
+2019-02-16 17:26:50.220 [INFO]    DB was opened seccefully
+2019-02-16 17:26:50.256 [INFO]    Admin User Switched
+2019-02-16 17:26:50.306 [INFO]    LogIn window opened
+2019-02-16 17:26:51.752 [INFO]    Admin panel opened
+2019-02-16 17:26:53.771 [INFO]    Club Member Window Opened
+2019-02-16 17:26:53.814 [INFO]    panel admin closed
+2019-02-16 17:27:07.362 [INFO]    User dsas Executed
+2019-02-16 17:27:21.473 [ERROR]   Exceptoin while trying to execute Club Member
+Details:Oracle.ManagedDataAccess.Client.OracleException (0x80004005): ORA-04063: package body "LIRAN_ADMIN.PKG_CLUB_MEMBER" has errors
+ORA-06508: PL/SQL: could not find program unit being called: "LIRAN_ADMIN.PKG_CLUB_MEMBER"
+ORA-06512: at line 1
+   at OracleInternal.ServiceObjects.OracleConnectionImpl.VerifyExecution(Int32& cursorId, Boolean bThrowArrayBindRelatedErrors, SqlStatementType sqlStatementType, Int32 arrayBindCount, OracleException& exceptionForArrayBindDML, Boolean& hasMoreRowsInDB, Boolean bFirstIterationDone)
+   at OracleInternal.ServiceObjects.OracleCommandImpl.ExecuteNonQuery(String commandText, OracleParameterCollection paramColl, CommandType commandType, OracleConnectionImpl connectionImpl, Int32 longFetchSize, Int64 clientInitialLOBFS, OracleDependencyImpl orclDependencyImpl, Int64[]& scnFromExecution, OracleParameterCollection& bindByPositionParamColl, Boolean& bBindParamPresent, OracleException& exceptionForArrayBindDML, OracleConnection connection, OracleLogicalTransaction& oracleLogicalTransaction, Boolean isFromEF)
+   at Oracle.ManagedDataAccess.Client.OracleCommand.ExecuteNonQuery()
+   at OracalDBProject.Club_Member.ClubMember.ExecuteToDatabase() in C:\Users\Liran\Desktop\OracalDBProject\OracalDBProject\Club Member\ClubMember.cs:line 79

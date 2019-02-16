@@ -111,7 +111,7 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Club Member\ClubMemberPanelWindow.xaml">
+    <Page Include="Club Member\ClubMemberWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -145,8 +145,8 @@
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="Club Member\ClubMember.cs" />
-    <Compile Include="Club Member\ClubMemberPanelWindow.xaml.cs">
-      <DependentUpon>ClubMemberPanelWindow.xaml</DependentUpon>
+    <Compile Include="Club Member\ClubMemberWindow.xaml.cs">
+      <DependentUpon>ClubMemberWindow.xaml</DependentUpon>
     </Compile>
     <Compile Include="Club Member\IClubMember.cs" />
     <Compile Include="Logger.cs" />

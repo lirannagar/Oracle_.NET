@@ -69,7 +69,25 @@ namespace OracalDBProject.Club_Member
 
         public void ExecuteToDatabase()
         {
-          
+            try
+            {
+                OracleSingletonComment.Instance.CommandType = CommandType.StoredProcedure;
+                OracleSingletonComment.Instance.CommandText = "pkg_club_member.insertClubMember";
+                OracleSingletonComment.Instance.Parameters.Add("MEMBER_ID", this._idClubMember);
+                OracleSingletonComment.Instance.Parameters.Add("USER_ID", this._idUserId);
+                OracleSingletonComment.Instance.Parameters.Add("JOIN_DATE", this._date);
+                OracleSingletonComment.Instance.ExecuteNonQuery();
+                OracleSingletonComment.Instance.Parameters.Clear();
+                Logger.Instance.Info("User " + this._idUserId + " Executed");
+            }
+            catch (OracleException ex)
+            {
+                Logger.Instance.Error("Exceptoin while trying to execute Club Member\nDetails:" + ex);
+            }
+            catch (Oracle.ManagedDataAccess.Client.OracleException ex)
+            {
+                Logger.Instance.Error("Exceptoin while trying to execute Club Member\nDetails:" + ex);
+            }
         }
         #endregion Public Methods
 

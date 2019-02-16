@@ -25,6 +25,7 @@ namespace OracalDBProject.Admin
     {
 
         #region Control Mapping
+        const int SALARY_ADMIN = 2000;
         #endregion Control Mapping
 
         #region Members
@@ -71,7 +72,7 @@ namespace OracalDBProject.Admin
                 string password = passwordBoxAdmin.Password.ToString();
                 User user = new User(roleId, firstName, lastName, phoneNumber, email, address, password);
                 user.ExecuteToDatabase();
-                AdminUser adminUser = new AdminUser(user.GetId(), 2000);
+                AdminUser adminUser = new AdminUser(user.GetId(), SALARY_ADMIN);
                 adminUser.ExecuteToDatabase();
                 OracleCommand cmd = new OracleCommand();
                 cmd.Connection = OracleSingletonConnection.Instance;

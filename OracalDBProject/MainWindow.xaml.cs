@@ -340,7 +340,7 @@ namespace OracalDBProject
             try
             {
                 //CreateProductsPackage();
-                //CreateUserPackage();
+                CreateUserPackage();
                 //CreateAdminPackage();
                 //CreateRolePackage();
                 CreateClubMemberPackage();

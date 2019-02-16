@@ -13,6 +13,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 using Oracle.ManagedDataAccess.Client;
 using OracalDBProject.Admin;
+using OracalDBProject.Club_Member;
 
 namespace OracalDBProject
 {
@@ -76,7 +77,16 @@ namespace OracalDBProject
         }
         private void AddNewClumMemberButton_Click(object sender, RoutedEventArgs e)
         {
-
+            try
+            {
+                ClubMemberWindow win = new ClubMemberWindow();
+                win.Show();
+                this.Close();
+                Logger.Instance.Info("panel admin closed");
+            }catch(Exception ex)
+            {
+                Logger.Instance.Error("Exception while trying to close panel admin Details: " + ex);
+            }
         }
 
         private void AddNewAdminButton_Click(object sender, RoutedEventArgs e)
