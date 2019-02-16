@@ -52,7 +52,7 @@ namespace OracalDBProject
             SwitchAdminUser();       
             //CreateTables();
             //CreateSequences();
-            CreatePackages();
+            //CreatePackages();
             //InitializeRoles();
             //DropTables();
             //CreateClubMemberUsers();
