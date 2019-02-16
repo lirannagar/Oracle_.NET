@@ -15,7 +15,7 @@
         <Button x:Name="ShowClubMemberButton" Content="Show Club Member List" HorizontalAlignment="Left" Margin="342,98,0,0" VerticalAlignment="Top" Width="141" Height="30"/>
         <Button x:Name="ShowAdminButton" Content="Show Admin List" HorizontalAlignment="Left" Margin="342,62,0,0" VerticalAlignment="Top" Width="141" Height="30"/>
         <Button x:Name="AddNewAdminButton" Content="Add New Admin" HorizontalAlignment="Left" Margin="30,98,0,0" VerticalAlignment="Top" Width="141" Height="30" Click="AddNewAdminButton_Click"/>
-        <Button x:Name="DeleteAdminButton" Content="Delete Admin" HorizontalAlignment="Left" Margin="185,98,0,0" VerticalAlignment="Top" Width="141" Height="30"/>
+        <Button x:Name="DeleteAdminButton" Content="Delete Admin" HorizontalAlignment="Left" Margin="185,98,0,0" VerticalAlignment="Top" Width="141" Height="30" Click="DeleteAdminButton_Click"/>
         <Button x:Name="DeleteClubMemberButton" Content="Delete Club Member" HorizontalAlignment="Left" Margin="185,63,0,0" VerticalAlignment="Top" Width="141" Height="30"/>
 
     </Grid>

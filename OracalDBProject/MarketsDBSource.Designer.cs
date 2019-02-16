@@ -28,6 +28,8 @@ namespace OracalDBProject {
         
         private CLUB_MEMBERDataTable tableCLUB_MEMBER;
         
+        private PAYMENTDataTable tablePAYMENT;
+        
         private PRODUCTSDataTable tablePRODUCTS;
         
         private ROLESDataTable tableROLES;
@@ -41,6 +43,8 @@ namespace OracalDBProject {
         private global::System.Data.DataRelation relationFK_USERS;
         
         private global::System.Data.DataRelation relationFK_USERSS;
+        
+        private global::System.Data.DataRelation relationFK_TRANSACTIONN;
         
         private global::System.Data.DataRelation relationFK_CLUB_MEMBER;
         
@@ -83,6 +87,9 @@ namespace OracalDBProject {
                 }
                 if ((ds.Tables["CLUB_MEMBER"] != null)) {
                     base.Tables.Add(new CLUB_MEMBERDataTable(ds.Tables["CLUB_MEMBER"]));
+                }
+                if ((ds.Tables["PAYMENT"] != null)) {
+                    base.Tables.Add(new PAYMENTDataTable(ds.Tables["PAYMENT"]));
                 }
                 if ((ds.Tables["PRODUCTS"] != null)) {
                     base.Tables.Add(new PRODUCTSDataTable(ds.Tables["PRODUCTS"]));
@@ -134,6 +141,16 @@ namespace OracalDBProject {
         public CLUB_MEMBERDataTable CLUB_MEMBER {
             get {
                 return this.tableCLUB_MEMBER;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Browsable(false)]
+        [global::System.ComponentModel.DesignerSerializationVisibility(global::System.ComponentModel.DesignerSerializationVisibility.Content)]
+        public PAYMENTDataTable PAYMENT {
+            get {
+                return this.tablePAYMENT;
             }
         }
         
@@ -260,6 +277,9 @@ namespace OracalDBProject {
                 if ((ds.Tables["CLUB_MEMBER"] != null)) {
                     base.Tables.Add(new CLUB_MEMBERDataTable(ds.Tables["CLUB_MEMBER"]));
                 }
+                if ((ds.Tables["PAYMENT"] != null)) {
+                    base.Tables.Add(new PAYMENTDataTable(ds.Tables["PAYMENT"]));
+                }
                 if ((ds.Tables["PRODUCTS"] != null)) {
                     base.Tables.Add(new PRODUCTSDataTable(ds.Tables["PRODUCTS"]));
                 }
@@ -320,6 +340,12 @@ namespace OracalDBProject {
                     this.tableCLUB_MEMBER.InitVars();
                 }
             }
+            this.tablePAYMENT = ((PAYMENTDataTable)(base.Tables["PAYMENT"]));
+            if ((initTable == true)) {
+                if ((this.tablePAYMENT != null)) {
+                    this.tablePAYMENT.InitVars();
+                }
+            }
             this.tablePRODUCTS = ((PRODUCTSDataTable)(base.Tables["PRODUCTS"]));
             if ((initTable == true)) {
                 if ((this.tablePRODUCTS != null)) {
@@ -352,6 +378,7 @@ namespace OracalDBProject {
             }
             this.relationFK_USERS = this.Relations["FK_USERS"];
             this.relationFK_USERSS = this.Relations["FK_USERSS"];
+            this.relationFK_TRANSACTIONN = this.Relations["FK_TRANSACTIONN"];
             this.relationFK_CLUB_MEMBER = this.Relations["FK_CLUB_MEMBER"];
             this.relationFK_PRODUCTS = this.Relations["FK_PRODUCTS"];
             this.relationFK_TRANSACTION = this.Relations["FK_TRANSACTION"];
@@ -370,6 +397,8 @@ namespace OracalDBProject {
             base.Tables.Add(this.tableADMINISTRATOR);
             this.tableCLUB_MEMBER = new CLUB_MEMBERDataTable();
             base.Tables.Add(this.tableCLUB_MEMBER);
+            this.tablePAYMENT = new PAYMENTDataTable();
+            base.Tables.Add(this.tablePAYMENT);
             this.tablePRODUCTS = new PRODUCTSDataTable();
             base.Tables.Add(this.tablePRODUCTS);
             this.tableROLES = new ROLESDataTable();
@@ -388,6 +417,10 @@ namespace OracalDBProject {
                         this.tableUSERS.USER_IDColumn}, new global::System.Data.DataColumn[] {
                         this.tableCLUB_MEMBER.USER_IDColumn}, false);
             this.Relations.Add(this.relationFK_USERSS);
+            this.relationFK_TRANSACTIONN = new global::System.Data.DataRelation("FK_TRANSACTIONN", new global::System.Data.DataColumn[] {
+                        this.tableTRANSACTION.TRANSACTION_IDColumn}, new global::System.Data.DataColumn[] {
+                        this.tablePAYMENT.TRANSACTION_IDColumn}, false);
+            this.Relations.Add(this.relationFK_TRANSACTIONN);
             this.relationFK_CLUB_MEMBER = new global::System.Data.DataRelation("FK_CLUB_MEMBER", new global::System.Data.DataColumn[] {
                         this.tableCLUB_MEMBER.MEMBER_IDColumn}, new global::System.Data.DataColumn[] {
                         this.tableTRANSACTION.MEMBER_IDColumn}, false);
@@ -415,6 +448,12 @@ namespace OracalDBProject {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         private bool ShouldSerializeCLUB_MEMBER() {
+            return false;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        private bool ShouldSerializePAYMENT() {
             return false;
         }
         
@@ -508,6 +547,9 @@ namespace OracalDBProject {
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         public delegate void CLUB_MEMBERRowChangeEventHandler(object sender, CLUB_MEMBERRowChangeEvent e);
+        
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        public delegate void PAYMENTRowChangeEventHandler(object sender, PAYMENTRowChangeEvent e);
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         public delegate void PRODUCTSRowChangeEventHandler(object sender, PRODUCTSRowChangeEvent e);
@@ -921,7 +963,7 @@ namespace OracalDBProject {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public CLUB_MEMBERRow AddCLUB_MEMBERRow(decimal MEMBER_ID, USERSRow parentUSERSRowByFK_USERSS, System.DateTime JOIN_DATE) {
+            public CLUB_MEMBERRow AddCLUB_MEMBERRow(decimal MEMBER_ID, USERSRow parentUSERSRowByFK_USERSS, string JOIN_DATE) {
                 CLUB_MEMBERRow rowCLUB_MEMBERRow = ((CLUB_MEMBERRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         MEMBER_ID,
@@ -971,12 +1013,14 @@ namespace OracalDBProject {
                 base.Columns.Add(this.columnMEMBER_ID);
                 this.columnUSER_ID = new global::System.Data.DataColumn("USER_ID", typeof(decimal), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnUSER_ID);
-                this.columnJOIN_DATE = new global::System.Data.DataColumn("JOIN_DATE", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
+                this.columnJOIN_DATE = new global::System.Data.DataColumn("JOIN_DATE", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnJOIN_DATE);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
                                 this.columnMEMBER_ID}, true));
                 this.columnMEMBER_ID.AllowDBNull = false;
                 this.columnMEMBER_ID.Unique = true;
+                this.columnJOIN_DATE.AllowDBNull = false;
+                this.columnJOIN_DATE.MaxLength = 20;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -1063,6 +1107,328 @@ namespace OracalDBProject {
                 global::System.Xml.Schema.XmlSchemaAttribute attribute2 = new global::System.Xml.Schema.XmlSchemaAttribute();
                 attribute2.Name = "tableTypeName";
                 attribute2.FixedValue = "CLUB_MEMBERDataTable";
+                type.Attributes.Add(attribute2);
+                type.Particle = sequence;
+                global::System.Xml.Schema.XmlSchema dsSchema = ds.GetSchemaSerializable();
+                if (xs.Contains(dsSchema.TargetNamespace)) {
+                    global::System.IO.MemoryStream s1 = new global::System.IO.MemoryStream();
+                    global::System.IO.MemoryStream s2 = new global::System.IO.MemoryStream();
+                    try {
+                        global::System.Xml.Schema.XmlSchema schema = null;
+                        dsSchema.Write(s1);
+                        for (global::System.Collections.IEnumerator schemas = xs.Schemas(dsSchema.TargetNamespace).GetEnumerator(); schemas.MoveNext(); ) {
+                            schema = ((global::System.Xml.Schema.XmlSchema)(schemas.Current));
+                            s2.SetLength(0);
+                            schema.Write(s2);
+                            if ((s1.Length == s2.Length)) {
+                                s1.Position = 0;
+                                s2.Position = 0;
+                                for (; ((s1.Position != s1.Length) 
+                                            && (s1.ReadByte() == s2.ReadByte())); ) {
+                                    ;
+                                }
+                                if ((s1.Position == s1.Length)) {
+                                    return type;
+                                }
+                            }
+                        }
+                    }
+                    finally {
+                        if ((s1 != null)) {
+                            s1.Close();
+                        }
+                        if ((s2 != null)) {
+                            s2.Close();
+                        }
+                    }
+                }
+                xs.Add(dsSchema);
+                return type;
+            }
+        }
+        
+        /// <summary>
+        ///Represents the strongly named DataTable class.
+        ///</summary>
+        [global::System.Serializable()]
+        [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")]
+        public partial class PAYMENTDataTable : global::System.Data.TypedTableBase<PAYMENTRow> {
+            
+            private global::System.Data.DataColumn columnPAYMENT_ID;
+            
+            private global::System.Data.DataColumn columnTRANSACTION_ID;
+            
+            private global::System.Data.DataColumn columnPAYMENT_DATE;
+            
+            private global::System.Data.DataColumn columnPAYMENT_TOTAL;
+            
+            private global::System.Data.DataColumn columnCREDIT_CARD;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public PAYMENTDataTable() {
+                this.TableName = "PAYMENT";
+                this.BeginInit();
+                this.InitClass();
+                this.EndInit();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            internal PAYMENTDataTable(global::System.Data.DataTable table) {
+                this.TableName = table.TableName;
+                if ((table.CaseSensitive != table.DataSet.CaseSensitive)) {
+                    this.CaseSensitive = table.CaseSensitive;
+                }
+                if ((table.Locale.ToString() != table.DataSet.Locale.ToString())) {
+                    this.Locale = table.Locale;
+                }
+                if ((table.Namespace != table.DataSet.Namespace)) {
+                    this.Namespace = table.Namespace;
+                }
+                this.Prefix = table.Prefix;
+                this.MinimumCapacity = table.MinimumCapacity;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected PAYMENTDataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
+                    base(info, context) {
+                this.InitVars();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn PAYMENT_IDColumn {
+                get {
+                    return this.columnPAYMENT_ID;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn TRANSACTION_IDColumn {
+                get {
+                    return this.columnTRANSACTION_ID;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn PAYMENT_DATEColumn {
+                get {
+                    return this.columnPAYMENT_DATE;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn PAYMENT_TOTALColumn {
+                get {
+                    return this.columnPAYMENT_TOTAL;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn CREDIT_CARDColumn {
+                get {
+                    return this.columnCREDIT_CARD;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            [global::System.ComponentModel.Browsable(false)]
+            public int Count {
+                get {
+                    return this.Rows.Count;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public PAYMENTRow this[int index] {
+                get {
+                    return ((PAYMENTRow)(this.Rows[index]));
+                }
+            }
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public event PAYMENTRowChangeEventHandler PAYMENTRowChanging;
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public event PAYMENTRowChangeEventHandler PAYMENTRowChanged;
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public event PAYMENTRowChangeEventHandler PAYMENTRowDeleting;
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public event PAYMENTRowChangeEventHandler PAYMENTRowDeleted;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void AddPAYMENTRow(PAYMENTRow row) {
+                this.Rows.Add(row);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public PAYMENTRow AddPAYMENTRow(decimal PAYMENT_ID, TRANSACTIONRow parentTRANSACTIONRowByFK_TRANSACTIONN, string PAYMENT_DATE, decimal PAYMENT_TOTAL, string CREDIT_CARD) {
+                PAYMENTRow rowPAYMENTRow = ((PAYMENTRow)(this.NewRow()));
+                object[] columnValuesArray = new object[] {
+                        PAYMENT_ID,
+                        null,
+                        PAYMENT_DATE,
+                        PAYMENT_TOTAL,
+                        CREDIT_CARD};
+                if ((parentTRANSACTIONRowByFK_TRANSACTIONN != null)) {
+                    columnValuesArray[1] = parentTRANSACTIONRowByFK_TRANSACTIONN[0];
+                }
+                rowPAYMENTRow.ItemArray = columnValuesArray;
+                this.Rows.Add(rowPAYMENTRow);
+                return rowPAYMENTRow;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public PAYMENTRow FindByPAYMENT_ID(decimal PAYMENT_ID) {
+                return ((PAYMENTRow)(this.Rows.Find(new object[] {
+                            PAYMENT_ID})));
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public override global::System.Data.DataTable Clone() {
+                PAYMENTDataTable cln = ((PAYMENTDataTable)(base.Clone()));
+                cln.InitVars();
+                return cln;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override global::System.Data.DataTable CreateInstance() {
+                return new PAYMENTDataTable();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            internal void InitVars() {
+                this.columnPAYMENT_ID = base.Columns["PAYMENT_ID"];
+                this.columnTRANSACTION_ID = base.Columns["TRANSACTION_ID"];
+                this.columnPAYMENT_DATE = base.Columns["PAYMENT_DATE"];
+                this.columnPAYMENT_TOTAL = base.Columns["PAYMENT_TOTAL"];
+                this.columnCREDIT_CARD = base.Columns["CREDIT_CARD"];
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            private void InitClass() {
+                this.columnPAYMENT_ID = new global::System.Data.DataColumn("PAYMENT_ID", typeof(decimal), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnPAYMENT_ID);
+                this.columnTRANSACTION_ID = new global::System.Data.DataColumn("TRANSACTION_ID", typeof(decimal), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnTRANSACTION_ID);
+                this.columnPAYMENT_DATE = new global::System.Data.DataColumn("PAYMENT_DATE", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnPAYMENT_DATE);
+                this.columnPAYMENT_TOTAL = new global::System.Data.DataColumn("PAYMENT_TOTAL", typeof(decimal), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnPAYMENT_TOTAL);
+                this.columnCREDIT_CARD = new global::System.Data.DataColumn("CREDIT_CARD", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnCREDIT_CARD);
+                this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
+                                this.columnPAYMENT_ID}, true));
+                this.columnPAYMENT_ID.AllowDBNull = false;
+                this.columnPAYMENT_ID.Unique = true;
+                this.columnPAYMENT_DATE.AllowDBNull = false;
+                this.columnPAYMENT_DATE.MaxLength = 20;
+                this.columnPAYMENT_TOTAL.AllowDBNull = false;
+                this.columnCREDIT_CARD.AllowDBNull = false;
+                this.columnCREDIT_CARD.MaxLength = 30;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public PAYMENTRow NewPAYMENTRow() {
+                return ((PAYMENTRow)(this.NewRow()));
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override global::System.Data.DataRow NewRowFromBuilder(global::System.Data.DataRowBuilder builder) {
+                return new PAYMENTRow(builder);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override global::System.Type GetRowType() {
+                return typeof(PAYMENTRow);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override void OnRowChanged(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowChanged(e);
+                if ((this.PAYMENTRowChanged != null)) {
+                    this.PAYMENTRowChanged(this, new PAYMENTRowChangeEvent(((PAYMENTRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override void OnRowChanging(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowChanging(e);
+                if ((this.PAYMENTRowChanging != null)) {
+                    this.PAYMENTRowChanging(this, new PAYMENTRowChangeEvent(((PAYMENTRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override void OnRowDeleted(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowDeleted(e);
+                if ((this.PAYMENTRowDeleted != null)) {
+                    this.PAYMENTRowDeleted(this, new PAYMENTRowChangeEvent(((PAYMENTRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override void OnRowDeleting(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowDeleting(e);
+                if ((this.PAYMENTRowDeleting != null)) {
+                    this.PAYMENTRowDeleting(this, new PAYMENTRowChangeEvent(((PAYMENTRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void RemovePAYMENTRow(PAYMENTRow row) {
+                this.Rows.Remove(row);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
+                global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
+                global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
+                MarketsDBSource ds = new MarketsDBSource();
+                global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
+                any1.Namespace = "http://www.w3.org/2001/XMLSchema";
+                any1.MinOccurs = new decimal(0);
+                any1.MaxOccurs = decimal.MaxValue;
+                any1.ProcessContents = global::System.Xml.Schema.XmlSchemaContentProcessing.Lax;
+                sequence.Items.Add(any1);
+                global::System.Xml.Schema.XmlSchemaAny any2 = new global::System.Xml.Schema.XmlSchemaAny();
+                any2.Namespace = "urn:schemas-microsoft-com:xml-diffgram-v1";
+                any2.MinOccurs = new decimal(1);
+                any2.ProcessContents = global::System.Xml.Schema.XmlSchemaContentProcessing.Lax;
+                sequence.Items.Add(any2);
+                global::System.Xml.Schema.XmlSchemaAttribute attribute1 = new global::System.Xml.Schema.XmlSchemaAttribute();
+                attribute1.Name = "namespace";
+                attribute1.FixedValue = ds.Namespace;
+                type.Attributes.Add(attribute1);
+                global::System.Xml.Schema.XmlSchemaAttribute attribute2 = new global::System.Xml.Schema.XmlSchemaAttribute();
+                attribute2.Name = "tableTypeName";
+                attribute2.FixedValue = "PAYMENTDataTable";
                 type.Attributes.Add(attribute2);
                 type.Particle = sequence;
                 global::System.Xml.Schema.XmlSchema dsSchema = ds.GetSchemaSerializable();
@@ -1488,7 +1854,7 @@ namespace OracalDBProject {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public ROLESRow AddROLESRow(decimal ROLE_ID, string ROLE_NAME) {
+            public ROLESRow AddROLESRow(string ROLE_ID, string ROLE_NAME) {
                 ROLESRow rowROLESRow = ((ROLESRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         ROLE_ID,
@@ -1500,7 +1866,7 @@ namespace OracalDBProject {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public ROLESRow FindByROLE_ID(decimal ROLE_ID) {
+            public ROLESRow FindByROLE_ID(string ROLE_ID) {
                 return ((ROLESRow)(this.Rows.Find(new object[] {
                             ROLE_ID})));
             }
@@ -1529,7 +1895,7 @@ namespace OracalDBProject {
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             private void InitClass() {
-                this.columnROLE_ID = new global::System.Data.DataColumn("ROLE_ID", typeof(decimal), null, global::System.Data.MappingType.Element);
+                this.columnROLE_ID = new global::System.Data.DataColumn("ROLE_ID", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnROLE_ID);
                 this.columnROLE_NAME = new global::System.Data.DataColumn("ROLE_NAME", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnROLE_NAME);
@@ -1537,6 +1903,7 @@ namespace OracalDBProject {
                                 this.columnROLE_ID}, true));
                 this.columnROLE_ID.AllowDBNull = false;
                 this.columnROLE_ID.Unique = true;
+                this.columnROLE_ID.MaxLength = 20;
                 this.columnROLE_NAME.AllowDBNull = false;
                 this.columnROLE_NAME.MaxLength = 20;
             }
@@ -1772,7 +2139,7 @@ namespace OracalDBProject {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public TRANSACTIONRow AddTRANSACTIONRow(decimal TRANSACTION_ID, CLUB_MEMBERRow parentCLUB_MEMBERRowByFK_CLUB_MEMBER, System.DateTime DATE_TRANSACTION) {
+            public TRANSACTIONRow AddTRANSACTIONRow(decimal TRANSACTION_ID, CLUB_MEMBERRow parentCLUB_MEMBERRowByFK_CLUB_MEMBER, string DATE_TRANSACTION) {
                 TRANSACTIONRow rowTRANSACTIONRow = ((TRANSACTIONRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         TRANSACTION_ID,
@@ -1822,12 +2189,14 @@ namespace OracalDBProject {
                 base.Columns.Add(this.columnTRANSACTION_ID);
                 this.columnMEMBER_ID = new global::System.Data.DataColumn("MEMBER_ID", typeof(decimal), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnMEMBER_ID);
-                this.columnDATE_TRANSACTION = new global::System.Data.DataColumn("DATE_TRANSACTION", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
+                this.columnDATE_TRANSACTION = new global::System.Data.DataColumn("DATE_TRANSACTION", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnDATE_TRANSACTION);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
                                 this.columnTRANSACTION_ID}, true));
                 this.columnTRANSACTION_ID.AllowDBNull = false;
                 this.columnTRANSACTION_ID.Unique = true;
+                this.columnDATE_TRANSACTION.AllowDBNull = false;
+                this.columnDATE_TRANSACTION.MaxLength = 20;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -2436,7 +2805,7 @@ namespace OracalDBProject {
             private void InitClass() {
                 this.columnUSER_ID = new global::System.Data.DataColumn("USER_ID", typeof(decimal), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnUSER_ID);
-                this.columnROLE_ID = new global::System.Data.DataColumn("ROLE_ID", typeof(decimal), null, global::System.Data.MappingType.Element);
+                this.columnROLE_ID = new global::System.Data.DataColumn("ROLE_ID", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnROLE_ID);
                 this.columnFIRST_NAME = new global::System.Data.DataColumn("FIRST_NAME", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnFIRST_NAME);
@@ -2454,6 +2823,7 @@ namespace OracalDBProject {
                                 this.columnUSER_ID}, true));
                 this.columnUSER_ID.AllowDBNull = false;
                 this.columnUSER_ID.Unique = true;
+                this.columnROLE_ID.MaxLength = 20;
                 this.columnFIRST_NAME.AllowDBNull = false;
                 this.columnFIRST_NAME.MaxLength = 20;
                 this.columnLAST_NAME.AllowDBNull = false;
@@ -2711,14 +3081,9 @@ namespace OracalDBProject {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public System.DateTime JOIN_DATE {
+            public string JOIN_DATE {
                 get {
-                    try {
-                        return ((global::System.DateTime)(this[this.tableCLUB_MEMBER.JOIN_DATEColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'JOIN_DATE\' in table \'CLUB_MEMBER\' is DBNull.", e);
-                    }
+                    return ((string)(this[this.tableCLUB_MEMBER.JOIN_DATEColumn]));
                 }
                 set {
                     this[this.tableCLUB_MEMBER.JOIN_DATEColumn] = value;
@@ -2750,18 +3115,6 @@ namespace OracalDBProject {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public bool IsJOIN_DATENull() {
-                return this.IsNull(this.tableCLUB_MEMBER.JOIN_DATEColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void SetJOIN_DATENull() {
-                this[this.tableCLUB_MEMBER.JOIN_DATEColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public TRANSACTIONRow[] GetTRANSACTIONRows() {
                 if ((this.Table.ChildRelations["FK_CLUB_MEMBER"] == null)) {
                     return new TRANSACTIONRow[0];
@@ -2769,6 +3122,104 @@ namespace OracalDBProject {
                 else {
                     return ((TRANSACTIONRow[])(base.GetChildRows(this.Table.ChildRelations["FK_CLUB_MEMBER"])));
                 }
+            }
+        }
+        
+        /// <summary>
+        ///Represents strongly named DataRow class.
+        ///</summary>
+        public partial class PAYMENTRow : global::System.Data.DataRow {
+            
+            private PAYMENTDataTable tablePAYMENT;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            internal PAYMENTRow(global::System.Data.DataRowBuilder rb) : 
+                    base(rb) {
+                this.tablePAYMENT = ((PAYMENTDataTable)(this.Table));
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public decimal PAYMENT_ID {
+                get {
+                    return ((decimal)(this[this.tablePAYMENT.PAYMENT_IDColumn]));
+                }
+                set {
+                    this[this.tablePAYMENT.PAYMENT_IDColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public decimal TRANSACTION_ID {
+                get {
+                    try {
+                        return ((decimal)(this[this.tablePAYMENT.TRANSACTION_IDColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'TRANSACTION_ID\' in table \'PAYMENT\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tablePAYMENT.TRANSACTION_IDColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string PAYMENT_DATE {
+                get {
+                    return ((string)(this[this.tablePAYMENT.PAYMENT_DATEColumn]));
+                }
+                set {
+                    this[this.tablePAYMENT.PAYMENT_DATEColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public decimal PAYMENT_TOTAL {
+                get {
+                    return ((decimal)(this[this.tablePAYMENT.PAYMENT_TOTALColumn]));
+                }
+                set {
+                    this[this.tablePAYMENT.PAYMENT_TOTALColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string CREDIT_CARD {
+                get {
+                    return ((string)(this[this.tablePAYMENT.CREDIT_CARDColumn]));
+                }
+                set {
+                    this[this.tablePAYMENT.CREDIT_CARDColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public TRANSACTIONRow TRANSACTIONRow {
+                get {
+                    return ((TRANSACTIONRow)(this.GetParentRow(this.Table.ParentRelations["FK_TRANSACTIONN"])));
+                }
+                set {
+                    this.SetParentRow(value, this.Table.ParentRelations["FK_TRANSACTIONN"]);
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsTRANSACTION_IDNull() {
+                return this.IsNull(this.tablePAYMENT.TRANSACTION_IDColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetTRANSACTION_IDNull() {
+                this[this.tablePAYMENT.TRANSACTION_IDColumn] = global::System.Convert.DBNull;
             }
         }
         
@@ -2864,9 +3315,9 @@ namespace OracalDBProject {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public decimal ROLE_ID {
+            public string ROLE_ID {
                 get {
-                    return ((decimal)(this[this.tableROLES.ROLE_IDColumn]));
+                    return ((string)(this[this.tableROLES.ROLE_IDColumn]));
                 }
                 set {
                     this[this.tableROLES.ROLE_IDColumn] = value;
@@ -2939,14 +3390,9 @@ namespace OracalDBProject {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public System.DateTime DATE_TRANSACTION {
+            public string DATE_TRANSACTION {
                 get {
-                    try {
-                        return ((global::System.DateTime)(this[this.tableTRANSACTION.DATE_TRANSACTIONColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'DATE_TRANSACTION\' in table \'TRANSACTION\' is DBNull.", e);
-                    }
+                    return ((string)(this[this.tableTRANSACTION.DATE_TRANSACTIONColumn]));
                 }
                 set {
                     this[this.tableTRANSACTION.DATE_TRANSACTIONColumn] = value;
@@ -2978,14 +3424,13 @@ namespace OracalDBProject {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public bool IsDATE_TRANSACTIONNull() {
-                return this.IsNull(this.tableTRANSACTION.DATE_TRANSACTIONColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void SetDATE_TRANSACTIONNull() {
-                this[this.tableTRANSACTION.DATE_TRANSACTIONColumn] = global::System.Convert.DBNull;
+            public PAYMENTRow[] GetPAYMENTRows() {
+                if ((this.Table.ChildRelations["FK_TRANSACTIONN"] == null)) {
+                    return new PAYMENTRow[0];
+                }
+                else {
+                    return ((PAYMENTRow[])(base.GetChildRows(this.Table.ChildRelations["FK_TRANSACTIONN"])));
+                }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -3120,10 +3565,10 @@ namespace OracalDBProject {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public decimal ROLE_ID {
+            public string ROLE_ID {
                 get {
                     try {
-                        return ((decimal)(this[this.tableUSERS.ROLE_IDColumn]));
+                        return ((string)(this[this.tableUSERS.ROLE_IDColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
                         throw new global::System.Data.StrongTypingException("The value for column \'ROLE_ID\' in table \'USERS\' is DBNull.", e);
@@ -3300,6 +3745,40 @@ namespace OracalDBProject {
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public CLUB_MEMBERRow Row {
+                get {
+                    return this.eventRow;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataRowAction Action {
+                get {
+                    return this.eventAction;
+                }
+            }
+        }
+        
+        /// <summary>
+        ///Row event argument class
+        ///</summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        public class PAYMENTRowChangeEvent : global::System.EventArgs {
+            
+            private PAYMENTRow eventRow;
+            
+            private global::System.Data.DataRowAction eventAction;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public PAYMENTRowChangeEvent(PAYMENTRow row, global::System.Data.DataRowAction action) {
+                this.eventRow = row;
+                this.eventAction = action;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public PAYMENTRow Row {
                 get {
                     return this.eventRow;
                 }
@@ -4057,7 +4536,9 @@ namespace OracalDBProject.MarketsDBSourceTableAdapters {
             this._adapter.TableMappings.Add(tableMapping);
             this._adapter.DeleteCommand = new global::Oracle.ManagedDataAccess.Client.OracleCommand();
             this._adapter.DeleteCommand.Connection = this.Connection;
-            this._adapter.DeleteCommand.CommandText = @"DELETE FROM ""LIRAN_ADMIN"".""CLUB_MEMBER"" WHERE ((""MEMBER_ID"" = :Original_MEMBER_ID) AND ((:IsNull_USER_ID = 1 AND ""USER_ID"" IS NULL) OR (""USER_ID"" = :Original_USER_ID)) AND ((:IsNull_JOIN_DATE = 1 AND ""JOIN_DATE"" IS NULL) OR (""JOIN_DATE"" = :Original_JOIN_DATE)))";
+            this._adapter.DeleteCommand.CommandText = "DELETE FROM \"LIRAN_ADMIN\".\"CLUB_MEMBER\" WHERE ((\"MEMBER_ID\" = :Original_MEMBER_ID" +
+                ") AND ((:IsNull_USER_ID = 1 AND \"USER_ID\" IS NULL) OR (\"USER_ID\" = :Original_USE" +
+                "R_ID)) AND (\"JOIN_DATE\" = :Original_JOIN_DATE))";
             this._adapter.DeleteCommand.CommandType = global::System.Data.CommandType.Text;
             global::Oracle.ManagedDataAccess.Client.OracleParameter param = new global::Oracle.ManagedDataAccess.Client.OracleParameter();
             param.ParameterName = "Original_MEMBER_ID";
@@ -4088,20 +4569,9 @@ namespace OracalDBProject.MarketsDBSourceTableAdapters {
             param.SourceVersion = global::System.Data.DataRowVersion.Original;
             this._adapter.DeleteCommand.Parameters.Add(param);
             param = new global::Oracle.ManagedDataAccess.Client.OracleParameter();
-            param.ParameterName = "IsNull_JOIN_DATE";
-            param.DbType = global::System.Data.DbType.Int32;
-            param.OracleDbTypeEx = global::Oracle.ManagedDataAccess.Client.OracleDbType.Int32;
-            param.Size = 7;
-            param.IsNullable = true;
-            param.SourceColumn = "JOIN_DATE";
-            param.SourceVersion = global::System.Data.DataRowVersion.Original;
-            param.SourceColumnNullMapping = true;
-            this._adapter.DeleteCommand.Parameters.Add(param);
-            param = new global::Oracle.ManagedDataAccess.Client.OracleParameter();
             param.ParameterName = "Original_JOIN_DATE";
-            param.DbType = global::System.Data.DbType.Date;
-            param.OracleDbTypeEx = global::Oracle.ManagedDataAccess.Client.OracleDbType.Date;
-            param.Size = 7;
+            param.OracleDbTypeEx = global::Oracle.ManagedDataAccess.Client.OracleDbType.Varchar2;
+            param.Size = 20;
             param.IsNullable = true;
             param.SourceColumn = "JOIN_DATE";
             param.SourceVersion = global::System.Data.DataRowVersion.Original;
@@ -4129,15 +4599,14 @@ namespace OracalDBProject.MarketsDBSourceTableAdapters {
             this._adapter.InsertCommand.Parameters.Add(param);
             param = new global::Oracle.ManagedDataAccess.Client.OracleParameter();
             param.ParameterName = "JOIN_DATE";
-            param.DbType = global::System.Data.DbType.Date;
-            param.OracleDbTypeEx = global::Oracle.ManagedDataAccess.Client.OracleDbType.Date;
-            param.Size = 7;
+            param.OracleDbTypeEx = global::Oracle.ManagedDataAccess.Client.OracleDbType.Varchar2;
+            param.Size = 20;
             param.IsNullable = true;
             param.SourceColumn = "JOIN_DATE";
             this._adapter.InsertCommand.Parameters.Add(param);
             this._adapter.UpdateCommand = new global::Oracle.ManagedDataAccess.Client.OracleCommand();
             this._adapter.UpdateCommand.Connection = this.Connection;
-            this._adapter.UpdateCommand.CommandText = @"UPDATE ""LIRAN_ADMIN"".""CLUB_MEMBER"" SET ""MEMBER_ID"" = :MEMBER_ID, ""USER_ID"" = :USER_ID, ""JOIN_DATE"" = :JOIN_DATE WHERE ((""MEMBER_ID"" = :Original_MEMBER_ID) AND ((:IsNull_USER_ID = 1 AND ""USER_ID"" IS NULL) OR (""USER_ID"" = :Original_USER_ID)) AND ((:IsNull_JOIN_DATE = 1 AND ""JOIN_DATE"" IS NULL) OR (""JOIN_DATE"" = :Original_JOIN_DATE)))";
+            this._adapter.UpdateCommand.CommandText = @"UPDATE ""LIRAN_ADMIN"".""CLUB_MEMBER"" SET ""MEMBER_ID"" = :MEMBER_ID, ""USER_ID"" = :USER_ID, ""JOIN_DATE"" = :JOIN_DATE WHERE ((""MEMBER_ID"" = :Original_MEMBER_ID) AND ((:IsNull_USER_ID = 1 AND ""USER_ID"" IS NULL) OR (""USER_ID"" = :Original_USER_ID)) AND (""JOIN_DATE"" = :Original_JOIN_DATE))";
             this._adapter.UpdateCommand.CommandType = global::System.Data.CommandType.Text;
             param = new global::Oracle.ManagedDataAccess.Client.OracleParameter();
             param.ParameterName = "MEMBER_ID";
@@ -4157,9 +4626,8 @@ namespace OracalDBProject.MarketsDBSourceTableAdapters {
             this._adapter.UpdateCommand.Parameters.Add(param);
             param = new global::Oracle.ManagedDataAccess.Client.OracleParameter();
             param.ParameterName = "JOIN_DATE";
-            param.DbType = global::System.Data.DbType.Date;
-            param.OracleDbTypeEx = global::Oracle.ManagedDataAccess.Client.OracleDbType.Date;
-            param.Size = 7;
+            param.OracleDbTypeEx = global::Oracle.ManagedDataAccess.Client.OracleDbType.Varchar2;
+            param.Size = 20;
             param.IsNullable = true;
             param.SourceColumn = "JOIN_DATE";
             this._adapter.UpdateCommand.Parameters.Add(param);
@@ -4192,20 +4660,9 @@ namespace OracalDBProject.MarketsDBSourceTableAdapters {
             param.SourceVersion = global::System.Data.DataRowVersion.Original;
             this._adapter.UpdateCommand.Parameters.Add(param);
             param = new global::Oracle.ManagedDataAccess.Client.OracleParameter();
-            param.ParameterName = "IsNull_JOIN_DATE";
-            param.DbType = global::System.Data.DbType.Int32;
-            param.OracleDbTypeEx = global::Oracle.ManagedDataAccess.Client.OracleDbType.Int32;
-            param.Size = 7;
-            param.IsNullable = true;
-            param.SourceColumn = "JOIN_DATE";
-            param.SourceVersion = global::System.Data.DataRowVersion.Original;
-            param.SourceColumnNullMapping = true;
-            this._adapter.UpdateCommand.Parameters.Add(param);
-            param = new global::Oracle.ManagedDataAccess.Client.OracleParameter();
             param.ParameterName = "Original_JOIN_DATE";
-            param.DbType = global::System.Data.DbType.Date;
-            param.OracleDbTypeEx = global::Oracle.ManagedDataAccess.Client.OracleDbType.Date;
-            param.Size = 7;
+            param.OracleDbTypeEx = global::Oracle.ManagedDataAccess.Client.OracleDbType.Varchar2;
+            param.Size = 20;
             param.IsNullable = true;
             param.SourceColumn = "JOIN_DATE";
             param.SourceVersion = global::System.Data.DataRowVersion.Original;
@@ -4286,7 +4743,7 @@ namespace OracalDBProject.MarketsDBSourceTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Delete, true)]
-        public virtual int Delete(decimal Original_MEMBER_ID, global::System.Nullable<decimal> Original_USER_ID, global::System.Nullable<global::System.DateTime> Original_JOIN_DATE) {
+        public virtual int Delete(decimal Original_MEMBER_ID, global::System.Nullable<decimal> Original_USER_ID, string Original_JOIN_DATE) {
             this.Adapter.DeleteCommand.Parameters[0].Value = ((decimal)(Original_MEMBER_ID));
             if ((Original_USER_ID.HasValue == true)) {
                 this.Adapter.DeleteCommand.Parameters[1].Value = ((object)(0));
@@ -4296,13 +4753,11 @@ namespace OracalDBProject.MarketsDBSourceTableAdapters {
                 this.Adapter.DeleteCommand.Parameters[1].Value = ((object)(1));
                 this.Adapter.DeleteCommand.Parameters[2].Value = global::System.DBNull.Value;
             }
-            if ((Original_JOIN_DATE.HasValue == true)) {
-                this.Adapter.DeleteCommand.Parameters[3].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[4].Value = ((System.DateTime)(Original_JOIN_DATE.Value));
+            if ((Original_JOIN_DATE == null)) {
+                throw new global::System.ArgumentNullException("Original_JOIN_DATE");
             }
             else {
-                this.Adapter.DeleteCommand.Parameters[3].Value = ((object)(1));
-                this.Adapter.DeleteCommand.Parameters[4].Value = global::System.DBNull.Value;
+                this.Adapter.DeleteCommand.Parameters[3].Value = ((string)(Original_JOIN_DATE));
             }
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.DeleteCommand.Connection.State;
             if (((this.Adapter.DeleteCommand.Connection.State & global::System.Data.ConnectionState.Open) 
@@ -4324,7 +4779,7 @@ namespace OracalDBProject.MarketsDBSourceTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, true)]
-        public virtual int Insert(decimal MEMBER_ID, global::System.Nullable<decimal> USER_ID, global::System.Nullable<global::System.DateTime> JOIN_DATE) {
+        public virtual int Insert(decimal MEMBER_ID, global::System.Nullable<decimal> USER_ID, string JOIN_DATE) {
             this.Adapter.InsertCommand.Parameters[0].Value = ((decimal)(MEMBER_ID));
             if ((USER_ID.HasValue == true)) {
                 this.Adapter.InsertCommand.Parameters[1].Value = ((decimal)(USER_ID.Value));
@@ -4332,11 +4787,11 @@ namespace OracalDBProject.MarketsDBSourceTableAdapters {
             else {
                 this.Adapter.InsertCommand.Parameters[1].Value = global::System.DBNull.Value;
             }
-            if ((JOIN_DATE.HasValue == true)) {
-                this.Adapter.InsertCommand.Parameters[2].Value = ((System.DateTime)(JOIN_DATE.Value));
+            if ((JOIN_DATE == null)) {
+                throw new global::System.ArgumentNullException("JOIN_DATE");
             }
             else {
-                this.Adapter.InsertCommand.Parameters[2].Value = global::System.DBNull.Value;
+                this.Adapter.InsertCommand.Parameters[2].Value = ((string)(JOIN_DATE));
             }
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.InsertCommand.Connection.State;
             if (((this.Adapter.InsertCommand.Connection.State & global::System.Data.ConnectionState.Open) 
@@ -4358,7 +4813,7 @@ namespace OracalDBProject.MarketsDBSourceTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
-        public virtual int Update(decimal MEMBER_ID, global::System.Nullable<decimal> USER_ID, global::System.Nullable<global::System.DateTime> JOIN_DATE, decimal Original_MEMBER_ID, global::System.Nullable<decimal> Original_USER_ID, global::System.Nullable<global::System.DateTime> Original_JOIN_DATE) {
+        public virtual int Update(decimal MEMBER_ID, global::System.Nullable<decimal> USER_ID, string JOIN_DATE, decimal Original_MEMBER_ID, global::System.Nullable<decimal> Original_USER_ID, string Original_JOIN_DATE) {
             this.Adapter.UpdateCommand.Parameters[0].Value = ((decimal)(MEMBER_ID));
             if ((USER_ID.HasValue == true)) {
                 this.Adapter.UpdateCommand.Parameters[1].Value = ((decimal)(USER_ID.Value));
@@ -4366,11 +4821,11 @@ namespace OracalDBProject.MarketsDBSourceTableAdapters {
             else {
                 this.Adapter.UpdateCommand.Parameters[1].Value = global::System.DBNull.Value;
             }
-            if ((JOIN_DATE.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[2].Value = ((System.DateTime)(JOIN_DATE.Value));
+            if ((JOIN_DATE == null)) {
+                throw new global::System.ArgumentNullException("JOIN_DATE");
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[2].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[2].Value = ((string)(JOIN_DATE));
             }
             this.Adapter.UpdateCommand.Parameters[3].Value = ((decimal)(Original_MEMBER_ID));
             if ((Original_USER_ID.HasValue == true)) {
@@ -4381,13 +4836,11 @@ namespace OracalDBProject.MarketsDBSourceTableAdapters {
                 this.Adapter.UpdateCommand.Parameters[4].Value = ((object)(1));
                 this.Adapter.UpdateCommand.Parameters[5].Value = global::System.DBNull.Value;
             }
-            if ((Original_JOIN_DATE.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[6].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[7].Value = ((System.DateTime)(Original_JOIN_DATE.Value));
+            if ((Original_JOIN_DATE == null)) {
+                throw new global::System.ArgumentNullException("Original_JOIN_DATE");
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[6].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[7].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[6].Value = ((string)(Original_JOIN_DATE));
             }
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.UpdateCommand.Connection.State;
             if (((this.Adapter.UpdateCommand.Connection.State & global::System.Data.ConnectionState.Open) 
@@ -4409,8 +4862,560 @@ namespace OracalDBProject.MarketsDBSourceTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
-        public virtual int Update(global::System.Nullable<decimal> USER_ID, global::System.Nullable<global::System.DateTime> JOIN_DATE, decimal Original_MEMBER_ID, global::System.Nullable<decimal> Original_USER_ID, global::System.Nullable<global::System.DateTime> Original_JOIN_DATE) {
+        public virtual int Update(global::System.Nullable<decimal> USER_ID, string JOIN_DATE, decimal Original_MEMBER_ID, global::System.Nullable<decimal> Original_USER_ID, string Original_JOIN_DATE) {
             return this.Update(Original_MEMBER_ID, USER_ID, JOIN_DATE, Original_MEMBER_ID, Original_USER_ID, Original_JOIN_DATE);
+        }
+    }
+    
+    /// <summary>
+    ///Represents the connection and commands used to retrieve and save data.
+    ///</summary>
+    [global::System.ComponentModel.DesignerCategoryAttribute("code")]
+    [global::System.ComponentModel.ToolboxItem(true)]
+    [global::System.ComponentModel.DataObjectAttribute(true)]
+    [global::System.ComponentModel.DesignerAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterDesigner, Microsoft.VSDesigner" +
+        ", Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a")]
+    [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+    public partial class PAYMENTTableAdapter : global::System.ComponentModel.Component {
+        
+        private global::Oracle.ManagedDataAccess.Client.OracleDataAdapter _adapter;
+        
+        private global::Oracle.ManagedDataAccess.Client.OracleConnection _connection;
+        
+        private global::Oracle.ManagedDataAccess.Client.OracleTransaction _transaction;
+        
+        private global::Oracle.ManagedDataAccess.Client.OracleCommand[] _commandCollection;
+        
+        private bool _clearBeforeFill;
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        public PAYMENTTableAdapter() {
+            this.ClearBeforeFill = true;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        protected internal global::Oracle.ManagedDataAccess.Client.OracleDataAdapter Adapter {
+            get {
+                if ((this._adapter == null)) {
+                    this.InitAdapter();
+                }
+                return this._adapter;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        internal global::Oracle.ManagedDataAccess.Client.OracleConnection Connection {
+            get {
+                if ((this._connection == null)) {
+                    this.InitConnection();
+                }
+                return this._connection;
+            }
+            set {
+                this._connection = value;
+                if ((this.Adapter.InsertCommand != null)) {
+                    this.Adapter.InsertCommand.Connection = value;
+                }
+                if ((this.Adapter.DeleteCommand != null)) {
+                    this.Adapter.DeleteCommand.Connection = value;
+                }
+                if ((this.Adapter.UpdateCommand != null)) {
+                    this.Adapter.UpdateCommand.Connection = value;
+                }
+                for (int i = 0; (i < this.CommandCollection.Length); i = (i + 1)) {
+                    if ((this.CommandCollection[i] != null)) {
+                        ((global::Oracle.ManagedDataAccess.Client.OracleCommand)(this.CommandCollection[i])).Connection = value;
+                    }
+                }
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        internal global::Oracle.ManagedDataAccess.Client.OracleTransaction Transaction {
+            get {
+                return this._transaction;
+            }
+            set {
+                this._transaction = value;
+                for (int i = 0; (i < this.CommandCollection.Length); i = (i + 1)) {
+                    this.CommandCollection[i].Transaction = this._transaction;
+                }
+                if (((this.Adapter != null) 
+                            && (this.Adapter.DeleteCommand != null))) {
+                    this.Adapter.DeleteCommand.Transaction = this._transaction;
+                }
+                if (((this.Adapter != null) 
+                            && (this.Adapter.InsertCommand != null))) {
+                    this.Adapter.InsertCommand.Transaction = this._transaction;
+                }
+                if (((this.Adapter != null) 
+                            && (this.Adapter.UpdateCommand != null))) {
+                    this.Adapter.UpdateCommand.Transaction = this._transaction;
+                }
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        protected global::Oracle.ManagedDataAccess.Client.OracleCommand[] CommandCollection {
+            get {
+                if ((this._commandCollection == null)) {
+                    this.InitCommandCollection();
+                }
+                return this._commandCollection;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        public bool ClearBeforeFill {
+            get {
+                return this._clearBeforeFill;
+            }
+            set {
+                this._clearBeforeFill = value;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        private void InitAdapter() {
+            this._adapter = new global::Oracle.ManagedDataAccess.Client.OracleDataAdapter();
+            global::System.Data.Common.DataTableMapping tableMapping = new global::System.Data.Common.DataTableMapping();
+            tableMapping.SourceTable = "Table";
+            tableMapping.DataSetTable = "PAYMENT";
+            tableMapping.ColumnMappings.Add("PAYMENT_ID", "PAYMENT_ID");
+            tableMapping.ColumnMappings.Add("TRANSACTION_ID", "TRANSACTION_ID");
+            tableMapping.ColumnMappings.Add("PAYMENT_DATE", "PAYMENT_DATE");
+            tableMapping.ColumnMappings.Add("PAYMENT_TOTAL", "PAYMENT_TOTAL");
+            tableMapping.ColumnMappings.Add("CREDIT_CARD", "CREDIT_CARD");
+            this._adapter.TableMappings.Add(tableMapping);
+            this._adapter.DeleteCommand = new global::Oracle.ManagedDataAccess.Client.OracleCommand();
+            this._adapter.DeleteCommand.Connection = this.Connection;
+            this._adapter.DeleteCommand.CommandText = @"DELETE FROM ""LIRAN_ADMIN"".""PAYMENT"" WHERE ((""PAYMENT_ID"" = :Original_PAYMENT_ID) AND ((:IsNull_TRANSACTION_ID = 1 AND ""TRANSACTION_ID"" IS NULL) OR (""TRANSACTION_ID"" = :Original_TRANSACTION_ID)) AND (""PAYMENT_DATE"" = :Original_PAYMENT_DATE) AND (""PAYMENT_TOTAL"" = :Original_PAYMENT_TOTAL) AND (""CREDIT_CARD"" = :Original_CREDIT_CARD))";
+            this._adapter.DeleteCommand.CommandType = global::System.Data.CommandType.Text;
+            global::Oracle.ManagedDataAccess.Client.OracleParameter param = new global::Oracle.ManagedDataAccess.Client.OracleParameter();
+            param.ParameterName = "Original_PAYMENT_ID";
+            param.DbType = global::System.Data.DbType.Decimal;
+            param.OracleDbTypeEx = global::Oracle.ManagedDataAccess.Client.OracleDbType.Decimal;
+            param.Size = 22;
+            param.IsNullable = true;
+            param.SourceColumn = "PAYMENT_ID";
+            param.SourceVersion = global::System.Data.DataRowVersion.Original;
+            this._adapter.DeleteCommand.Parameters.Add(param);
+            param = new global::Oracle.ManagedDataAccess.Client.OracleParameter();
+            param.ParameterName = "IsNull_TRANSACTION_ID";
+            param.DbType = global::System.Data.DbType.Int32;
+            param.OracleDbTypeEx = global::Oracle.ManagedDataAccess.Client.OracleDbType.Int32;
+            param.Size = 22;
+            param.IsNullable = true;
+            param.SourceColumn = "TRANSACTION_ID";
+            param.SourceVersion = global::System.Data.DataRowVersion.Original;
+            param.SourceColumnNullMapping = true;
+            this._adapter.DeleteCommand.Parameters.Add(param);
+            param = new global::Oracle.ManagedDataAccess.Client.OracleParameter();
+            param.ParameterName = "Original_TRANSACTION_ID";
+            param.DbType = global::System.Data.DbType.Decimal;
+            param.OracleDbTypeEx = global::Oracle.ManagedDataAccess.Client.OracleDbType.Decimal;
+            param.Size = 22;
+            param.IsNullable = true;
+            param.SourceColumn = "TRANSACTION_ID";
+            param.SourceVersion = global::System.Data.DataRowVersion.Original;
+            this._adapter.DeleteCommand.Parameters.Add(param);
+            param = new global::Oracle.ManagedDataAccess.Client.OracleParameter();
+            param.ParameterName = "Original_PAYMENT_DATE";
+            param.OracleDbTypeEx = global::Oracle.ManagedDataAccess.Client.OracleDbType.Varchar2;
+            param.Size = 20;
+            param.IsNullable = true;
+            param.SourceColumn = "PAYMENT_DATE";
+            param.SourceVersion = global::System.Data.DataRowVersion.Original;
+            this._adapter.DeleteCommand.Parameters.Add(param);
+            param = new global::Oracle.ManagedDataAccess.Client.OracleParameter();
+            param.ParameterName = "Original_PAYMENT_TOTAL";
+            param.DbType = global::System.Data.DbType.Decimal;
+            param.OracleDbTypeEx = global::Oracle.ManagedDataAccess.Client.OracleDbType.Decimal;
+            param.Size = 22;
+            param.IsNullable = true;
+            param.SourceColumn = "PAYMENT_TOTAL";
+            param.SourceVersion = global::System.Data.DataRowVersion.Original;
+            this._adapter.DeleteCommand.Parameters.Add(param);
+            param = new global::Oracle.ManagedDataAccess.Client.OracleParameter();
+            param.ParameterName = "Original_CREDIT_CARD";
+            param.OracleDbTypeEx = global::Oracle.ManagedDataAccess.Client.OracleDbType.Varchar2;
+            param.Size = 30;
+            param.IsNullable = true;
+            param.SourceColumn = "CREDIT_CARD";
+            param.SourceVersion = global::System.Data.DataRowVersion.Original;
+            this._adapter.DeleteCommand.Parameters.Add(param);
+            this._adapter.InsertCommand = new global::Oracle.ManagedDataAccess.Client.OracleCommand();
+            this._adapter.InsertCommand.Connection = this.Connection;
+            this._adapter.InsertCommand.CommandText = "INSERT INTO \"LIRAN_ADMIN\".\"PAYMENT\" (\"PAYMENT_ID\", \"TRANSACTION_ID\", \"PAYMENT_DAT" +
+                "E\", \"PAYMENT_TOTAL\", \"CREDIT_CARD\") VALUES (:PAYMENT_ID, :TRANSACTION_ID, :PAYME" +
+                "NT_DATE, :PAYMENT_TOTAL, :CREDIT_CARD)";
+            this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
+            param = new global::Oracle.ManagedDataAccess.Client.OracleParameter();
+            param.ParameterName = "PAYMENT_ID";
+            param.DbType = global::System.Data.DbType.Decimal;
+            param.OracleDbTypeEx = global::Oracle.ManagedDataAccess.Client.OracleDbType.Decimal;
+            param.Size = 22;
+            param.IsNullable = true;
+            param.SourceColumn = "PAYMENT_ID";
+            this._adapter.InsertCommand.Parameters.Add(param);
+            param = new global::Oracle.ManagedDataAccess.Client.OracleParameter();
+            param.ParameterName = "TRANSACTION_ID";
+            param.DbType = global::System.Data.DbType.Decimal;
+            param.OracleDbTypeEx = global::Oracle.ManagedDataAccess.Client.OracleDbType.Decimal;
+            param.Size = 22;
+            param.IsNullable = true;
+            param.SourceColumn = "TRANSACTION_ID";
+            this._adapter.InsertCommand.Parameters.Add(param);
+            param = new global::Oracle.ManagedDataAccess.Client.OracleParameter();
+            param.ParameterName = "PAYMENT_DATE";
+            param.OracleDbTypeEx = global::Oracle.ManagedDataAccess.Client.OracleDbType.Varchar2;
+            param.Size = 20;
+            param.IsNullable = true;
+            param.SourceColumn = "PAYMENT_DATE";
+            this._adapter.InsertCommand.Parameters.Add(param);
+            param = new global::Oracle.ManagedDataAccess.Client.OracleParameter();
+            param.ParameterName = "PAYMENT_TOTAL";
+            param.DbType = global::System.Data.DbType.Decimal;
+            param.OracleDbTypeEx = global::Oracle.ManagedDataAccess.Client.OracleDbType.Decimal;
+            param.Size = 22;
+            param.IsNullable = true;
+            param.SourceColumn = "PAYMENT_TOTAL";
+            this._adapter.InsertCommand.Parameters.Add(param);
+            param = new global::Oracle.ManagedDataAccess.Client.OracleParameter();
+            param.ParameterName = "CREDIT_CARD";
+            param.OracleDbTypeEx = global::Oracle.ManagedDataAccess.Client.OracleDbType.Varchar2;
+            param.Size = 30;
+            param.IsNullable = true;
+            param.SourceColumn = "CREDIT_CARD";
+            this._adapter.InsertCommand.Parameters.Add(param);
+            this._adapter.UpdateCommand = new global::Oracle.ManagedDataAccess.Client.OracleCommand();
+            this._adapter.UpdateCommand.Connection = this.Connection;
+            this._adapter.UpdateCommand.CommandText = @"UPDATE ""LIRAN_ADMIN"".""PAYMENT"" SET ""PAYMENT_ID"" = :PAYMENT_ID, ""TRANSACTION_ID"" = :TRANSACTION_ID, ""PAYMENT_DATE"" = :PAYMENT_DATE, ""PAYMENT_TOTAL"" = :PAYMENT_TOTAL, ""CREDIT_CARD"" = :CREDIT_CARD WHERE ((""PAYMENT_ID"" = :Original_PAYMENT_ID) AND ((:IsNull_TRANSACTION_ID = 1 AND ""TRANSACTION_ID"" IS NULL) OR (""TRANSACTION_ID"" = :Original_TRANSACTION_ID)) AND (""PAYMENT_DATE"" = :Original_PAYMENT_DATE) AND (""PAYMENT_TOTAL"" = :Original_PAYMENT_TOTAL) AND (""CREDIT_CARD"" = :Original_CREDIT_CARD))";
+            this._adapter.UpdateCommand.CommandType = global::System.Data.CommandType.Text;
+            param = new global::Oracle.ManagedDataAccess.Client.OracleParameter();
+            param.ParameterName = "PAYMENT_ID";
+            param.DbType = global::System.Data.DbType.Decimal;
+            param.OracleDbTypeEx = global::Oracle.ManagedDataAccess.Client.OracleDbType.Decimal;
+            param.Size = 22;
+            param.IsNullable = true;
+            param.SourceColumn = "PAYMENT_ID";
+            this._adapter.UpdateCommand.Parameters.Add(param);
+            param = new global::Oracle.ManagedDataAccess.Client.OracleParameter();
+            param.ParameterName = "TRANSACTION_ID";
+            param.DbType = global::System.Data.DbType.Decimal;
+            param.OracleDbTypeEx = global::Oracle.ManagedDataAccess.Client.OracleDbType.Decimal;
+            param.Size = 22;
+            param.IsNullable = true;
+            param.SourceColumn = "TRANSACTION_ID";
+            this._adapter.UpdateCommand.Parameters.Add(param);
+            param = new global::Oracle.ManagedDataAccess.Client.OracleParameter();
+            param.ParameterName = "PAYMENT_DATE";
+            param.OracleDbTypeEx = global::Oracle.ManagedDataAccess.Client.OracleDbType.Varchar2;
+            param.Size = 20;
+            param.IsNullable = true;
+            param.SourceColumn = "PAYMENT_DATE";
+            this._adapter.UpdateCommand.Parameters.Add(param);
+            param = new global::Oracle.ManagedDataAccess.Client.OracleParameter();
+            param.ParameterName = "PAYMENT_TOTAL";
+            param.DbType = global::System.Data.DbType.Decimal;
+            param.OracleDbTypeEx = global::Oracle.ManagedDataAccess.Client.OracleDbType.Decimal;
+            param.Size = 22;
+            param.IsNullable = true;
+            param.SourceColumn = "PAYMENT_TOTAL";
+            this._adapter.UpdateCommand.Parameters.Add(param);
+            param = new global::Oracle.ManagedDataAccess.Client.OracleParameter();
+            param.ParameterName = "CREDIT_CARD";
+            param.OracleDbTypeEx = global::Oracle.ManagedDataAccess.Client.OracleDbType.Varchar2;
+            param.Size = 30;
+            param.IsNullable = true;
+            param.SourceColumn = "CREDIT_CARD";
+            this._adapter.UpdateCommand.Parameters.Add(param);
+            param = new global::Oracle.ManagedDataAccess.Client.OracleParameter();
+            param.ParameterName = "Original_PAYMENT_ID";
+            param.DbType = global::System.Data.DbType.Decimal;
+            param.OracleDbTypeEx = global::Oracle.ManagedDataAccess.Client.OracleDbType.Decimal;
+            param.Size = 22;
+            param.IsNullable = true;
+            param.SourceColumn = "PAYMENT_ID";
+            param.SourceVersion = global::System.Data.DataRowVersion.Original;
+            this._adapter.UpdateCommand.Parameters.Add(param);
+            param = new global::Oracle.ManagedDataAccess.Client.OracleParameter();
+            param.ParameterName = "IsNull_TRANSACTION_ID";
+            param.DbType = global::System.Data.DbType.Int32;
+            param.OracleDbTypeEx = global::Oracle.ManagedDataAccess.Client.OracleDbType.Int32;
+            param.Size = 22;
+            param.IsNullable = true;
+            param.SourceColumn = "TRANSACTION_ID";
+            param.SourceVersion = global::System.Data.DataRowVersion.Original;
+            param.SourceColumnNullMapping = true;
+            this._adapter.UpdateCommand.Parameters.Add(param);
+            param = new global::Oracle.ManagedDataAccess.Client.OracleParameter();
+            param.ParameterName = "Original_TRANSACTION_ID";
+            param.DbType = global::System.Data.DbType.Decimal;
+            param.OracleDbTypeEx = global::Oracle.ManagedDataAccess.Client.OracleDbType.Decimal;
+            param.Size = 22;
+            param.IsNullable = true;
+            param.SourceColumn = "TRANSACTION_ID";
+            param.SourceVersion = global::System.Data.DataRowVersion.Original;
+            this._adapter.UpdateCommand.Parameters.Add(param);
+            param = new global::Oracle.ManagedDataAccess.Client.OracleParameter();
+            param.ParameterName = "Original_PAYMENT_DATE";
+            param.OracleDbTypeEx = global::Oracle.ManagedDataAccess.Client.OracleDbType.Varchar2;
+            param.Size = 20;
+            param.IsNullable = true;
+            param.SourceColumn = "PAYMENT_DATE";
+            param.SourceVersion = global::System.Data.DataRowVersion.Original;
+            this._adapter.UpdateCommand.Parameters.Add(param);
+            param = new global::Oracle.ManagedDataAccess.Client.OracleParameter();
+            param.ParameterName = "Original_PAYMENT_TOTAL";
+            param.DbType = global::System.Data.DbType.Decimal;
+            param.OracleDbTypeEx = global::Oracle.ManagedDataAccess.Client.OracleDbType.Decimal;
+            param.Size = 22;
+            param.IsNullable = true;
+            param.SourceColumn = "PAYMENT_TOTAL";
+            param.SourceVersion = global::System.Data.DataRowVersion.Original;
+            this._adapter.UpdateCommand.Parameters.Add(param);
+            param = new global::Oracle.ManagedDataAccess.Client.OracleParameter();
+            param.ParameterName = "Original_CREDIT_CARD";
+            param.OracleDbTypeEx = global::Oracle.ManagedDataAccess.Client.OracleDbType.Varchar2;
+            param.Size = 30;
+            param.IsNullable = true;
+            param.SourceColumn = "CREDIT_CARD";
+            param.SourceVersion = global::System.Data.DataRowVersion.Original;
+            this._adapter.UpdateCommand.Parameters.Add(param);
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        private void InitConnection() {
+            this._connection = new global::Oracle.ManagedDataAccess.Client.OracleConnection();
+            this._connection.ConnectionString = global::OracalDBProject.Properties.Settings.Default.ConnectionProductsString;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        private void InitCommandCollection() {
+            this._commandCollection = new global::Oracle.ManagedDataAccess.Client.OracleCommand[1];
+            this._commandCollection[0] = new global::Oracle.ManagedDataAccess.Client.OracleCommand();
+            this._commandCollection[0].Connection = this.Connection;
+            this._commandCollection[0].CommandText = "SELECT PAYMENT_ID, TRANSACTION_ID, PAYMENT_DATE, PAYMENT_TOTAL, CREDIT_CARD FROM " +
+                "LIRAN_ADMIN.PAYMENT";
+            this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
+        public virtual int Fill(MarketsDBSource.PAYMENTDataTable dataTable) {
+            this.Adapter.SelectCommand = this.CommandCollection[0];
+            if ((this.ClearBeforeFill == true)) {
+                dataTable.Clear();
+            }
+            int returnValue = this.Adapter.Fill(dataTable);
+            return returnValue;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
+        public virtual MarketsDBSource.PAYMENTDataTable GetData() {
+            this.Adapter.SelectCommand = this.CommandCollection[0];
+            MarketsDBSource.PAYMENTDataTable dataTable = new MarketsDBSource.PAYMENTDataTable();
+            this.Adapter.Fill(dataTable);
+            return dataTable;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        public virtual int Update(MarketsDBSource.PAYMENTDataTable dataTable) {
+            return this.Adapter.Update(dataTable);
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        public virtual int Update(MarketsDBSource dataSet) {
+            return this.Adapter.Update(dataSet, "PAYMENT");
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        public virtual int Update(global::System.Data.DataRow dataRow) {
+            return this.Adapter.Update(new global::System.Data.DataRow[] {
+                        dataRow});
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        public virtual int Update(global::System.Data.DataRow[] dataRows) {
+            return this.Adapter.Update(dataRows);
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Delete, true)]
+        public virtual int Delete(decimal Original_PAYMENT_ID, global::System.Nullable<decimal> Original_TRANSACTION_ID, string Original_PAYMENT_DATE, decimal Original_PAYMENT_TOTAL, string Original_CREDIT_CARD) {
+            this.Adapter.DeleteCommand.Parameters[0].Value = ((decimal)(Original_PAYMENT_ID));
+            if ((Original_TRANSACTION_ID.HasValue == true)) {
+                this.Adapter.DeleteCommand.Parameters[1].Value = ((object)(0));
+                this.Adapter.DeleteCommand.Parameters[2].Value = ((decimal)(Original_TRANSACTION_ID.Value));
+            }
+            else {
+                this.Adapter.DeleteCommand.Parameters[1].Value = ((object)(1));
+                this.Adapter.DeleteCommand.Parameters[2].Value = global::System.DBNull.Value;
+            }
+            if ((Original_PAYMENT_DATE == null)) {
+                throw new global::System.ArgumentNullException("Original_PAYMENT_DATE");
+            }
+            else {
+                this.Adapter.DeleteCommand.Parameters[3].Value = ((string)(Original_PAYMENT_DATE));
+            }
+            this.Adapter.DeleteCommand.Parameters[4].Value = ((decimal)(Original_PAYMENT_TOTAL));
+            if ((Original_CREDIT_CARD == null)) {
+                throw new global::System.ArgumentNullException("Original_CREDIT_CARD");
+            }
+            else {
+                this.Adapter.DeleteCommand.Parameters[5].Value = ((string)(Original_CREDIT_CARD));
+            }
+            global::System.Data.ConnectionState previousConnectionState = this.Adapter.DeleteCommand.Connection.State;
+            if (((this.Adapter.DeleteCommand.Connection.State & global::System.Data.ConnectionState.Open) 
+                        != global::System.Data.ConnectionState.Open)) {
+                this.Adapter.DeleteCommand.Connection.Open();
+            }
+            try {
+                int returnValue = this.Adapter.DeleteCommand.ExecuteNonQuery();
+                return returnValue;
+            }
+            finally {
+                if ((previousConnectionState == global::System.Data.ConnectionState.Closed)) {
+                    this.Adapter.DeleteCommand.Connection.Close();
+                }
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, true)]
+        public virtual int Insert(decimal PAYMENT_ID, global::System.Nullable<decimal> TRANSACTION_ID, string PAYMENT_DATE, decimal PAYMENT_TOTAL, string CREDIT_CARD) {
+            this.Adapter.InsertCommand.Parameters[0].Value = ((decimal)(PAYMENT_ID));
+            if ((TRANSACTION_ID.HasValue == true)) {
+                this.Adapter.InsertCommand.Parameters[1].Value = ((decimal)(TRANSACTION_ID.Value));
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[1].Value = global::System.DBNull.Value;
+            }
+            if ((PAYMENT_DATE == null)) {
+                throw new global::System.ArgumentNullException("PAYMENT_DATE");
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[2].Value = ((string)(PAYMENT_DATE));
+            }
+            this.Adapter.InsertCommand.Parameters[3].Value = ((decimal)(PAYMENT_TOTAL));
+            if ((CREDIT_CARD == null)) {
+                throw new global::System.ArgumentNullException("CREDIT_CARD");
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[4].Value = ((string)(CREDIT_CARD));
+            }
+            global::System.Data.ConnectionState previousConnectionState = this.Adapter.InsertCommand.Connection.State;
+            if (((this.Adapter.InsertCommand.Connection.State & global::System.Data.ConnectionState.Open) 
+                        != global::System.Data.ConnectionState.Open)) {
+                this.Adapter.InsertCommand.Connection.Open();
+            }
+            try {
+                int returnValue = this.Adapter.InsertCommand.ExecuteNonQuery();
+                return returnValue;
+            }
+            finally {
+                if ((previousConnectionState == global::System.Data.ConnectionState.Closed)) {
+                    this.Adapter.InsertCommand.Connection.Close();
+                }
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
+        public virtual int Update(decimal PAYMENT_ID, global::System.Nullable<decimal> TRANSACTION_ID, string PAYMENT_DATE, decimal PAYMENT_TOTAL, string CREDIT_CARD, decimal Original_PAYMENT_ID, global::System.Nullable<decimal> Original_TRANSACTION_ID, string Original_PAYMENT_DATE, decimal Original_PAYMENT_TOTAL, string Original_CREDIT_CARD) {
+            this.Adapter.UpdateCommand.Parameters[0].Value = ((decimal)(PAYMENT_ID));
+            if ((TRANSACTION_ID.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[1].Value = ((decimal)(TRANSACTION_ID.Value));
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[1].Value = global::System.DBNull.Value;
+            }
+            if ((PAYMENT_DATE == null)) {
+                throw new global::System.ArgumentNullException("PAYMENT_DATE");
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[2].Value = ((string)(PAYMENT_DATE));
+            }
+            this.Adapter.UpdateCommand.Parameters[3].Value = ((decimal)(PAYMENT_TOTAL));
+            if ((CREDIT_CARD == null)) {
+                throw new global::System.ArgumentNullException("CREDIT_CARD");
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[4].Value = ((string)(CREDIT_CARD));
+            }
+            this.Adapter.UpdateCommand.Parameters[5].Value = ((decimal)(Original_PAYMENT_ID));
+            if ((Original_TRANSACTION_ID.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[6].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[7].Value = ((decimal)(Original_TRANSACTION_ID.Value));
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[6].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[7].Value = global::System.DBNull.Value;
+            }
+            if ((Original_PAYMENT_DATE == null)) {
+                throw new global::System.ArgumentNullException("Original_PAYMENT_DATE");
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[8].Value = ((string)(Original_PAYMENT_DATE));
+            }
+            this.Adapter.UpdateCommand.Parameters[9].Value = ((decimal)(Original_PAYMENT_TOTAL));
+            if ((Original_CREDIT_CARD == null)) {
+                throw new global::System.ArgumentNullException("Original_CREDIT_CARD");
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[10].Value = ((string)(Original_CREDIT_CARD));
+            }
+            global::System.Data.ConnectionState previousConnectionState = this.Adapter.UpdateCommand.Connection.State;
+            if (((this.Adapter.UpdateCommand.Connection.State & global::System.Data.ConnectionState.Open) 
+                        != global::System.Data.ConnectionState.Open)) {
+                this.Adapter.UpdateCommand.Connection.Open();
+            }
+            try {
+                int returnValue = this.Adapter.UpdateCommand.ExecuteNonQuery();
+                return returnValue;
+            }
+            finally {
+                if ((previousConnectionState == global::System.Data.ConnectionState.Closed)) {
+                    this.Adapter.UpdateCommand.Connection.Close();
+                }
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
+        public virtual int Update(global::System.Nullable<decimal> TRANSACTION_ID, string PAYMENT_DATE, decimal PAYMENT_TOTAL, string CREDIT_CARD, decimal Original_PAYMENT_ID, global::System.Nullable<decimal> Original_TRANSACTION_ID, string Original_PAYMENT_DATE, decimal Original_PAYMENT_TOTAL, string Original_CREDIT_CARD) {
+            return this.Update(Original_PAYMENT_ID, TRANSACTION_ID, PAYMENT_DATE, PAYMENT_TOTAL, CREDIT_CARD, Original_PAYMENT_ID, Original_TRANSACTION_ID, Original_PAYMENT_DATE, Original_PAYMENT_TOTAL, Original_CREDIT_CARD);
         }
     }
     
@@ -5004,9 +6009,8 @@ namespace OracalDBProject.MarketsDBSourceTableAdapters {
             this._adapter.DeleteCommand.CommandType = global::System.Data.CommandType.Text;
             global::Oracle.ManagedDataAccess.Client.OracleParameter param = new global::Oracle.ManagedDataAccess.Client.OracleParameter();
             param.ParameterName = "Original_ROLE_ID";
-            param.DbType = global::System.Data.DbType.Decimal;
-            param.OracleDbTypeEx = global::Oracle.ManagedDataAccess.Client.OracleDbType.Decimal;
-            param.Size = 22;
+            param.OracleDbTypeEx = global::Oracle.ManagedDataAccess.Client.OracleDbType.Varchar2;
+            param.Size = 20;
             param.IsNullable = true;
             param.SourceColumn = "ROLE_ID";
             param.SourceVersion = global::System.Data.DataRowVersion.Original;
@@ -5026,9 +6030,8 @@ namespace OracalDBProject.MarketsDBSourceTableAdapters {
             this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
             param = new global::Oracle.ManagedDataAccess.Client.OracleParameter();
             param.ParameterName = "ROLE_ID";
-            param.DbType = global::System.Data.DbType.Decimal;
-            param.OracleDbTypeEx = global::Oracle.ManagedDataAccess.Client.OracleDbType.Decimal;
-            param.Size = 22;
+            param.OracleDbTypeEx = global::Oracle.ManagedDataAccess.Client.OracleDbType.Varchar2;
+            param.Size = 20;
             param.IsNullable = true;
             param.SourceColumn = "ROLE_ID";
             this._adapter.InsertCommand.Parameters.Add(param);
@@ -5046,9 +6049,8 @@ namespace OracalDBProject.MarketsDBSourceTableAdapters {
             this._adapter.UpdateCommand.CommandType = global::System.Data.CommandType.Text;
             param = new global::Oracle.ManagedDataAccess.Client.OracleParameter();
             param.ParameterName = "ROLE_ID";
-            param.DbType = global::System.Data.DbType.Decimal;
-            param.OracleDbTypeEx = global::Oracle.ManagedDataAccess.Client.OracleDbType.Decimal;
-            param.Size = 22;
+            param.OracleDbTypeEx = global::Oracle.ManagedDataAccess.Client.OracleDbType.Varchar2;
+            param.Size = 20;
             param.IsNullable = true;
             param.SourceColumn = "ROLE_ID";
             this._adapter.UpdateCommand.Parameters.Add(param);
@@ -5061,9 +6063,8 @@ namespace OracalDBProject.MarketsDBSourceTableAdapters {
             this._adapter.UpdateCommand.Parameters.Add(param);
             param = new global::Oracle.ManagedDataAccess.Client.OracleParameter();
             param.ParameterName = "Original_ROLE_ID";
-            param.DbType = global::System.Data.DbType.Decimal;
-            param.OracleDbTypeEx = global::Oracle.ManagedDataAccess.Client.OracleDbType.Decimal;
-            param.Size = 22;
+            param.OracleDbTypeEx = global::Oracle.ManagedDataAccess.Client.OracleDbType.Varchar2;
+            param.Size = 20;
             param.IsNullable = true;
             param.SourceColumn = "ROLE_ID";
             param.SourceVersion = global::System.Data.DataRowVersion.Original;
@@ -5152,8 +6153,13 @@ namespace OracalDBProject.MarketsDBSourceTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Delete, true)]
-        public virtual int Delete(decimal Original_ROLE_ID, string Original_ROLE_NAME) {
-            this.Adapter.DeleteCommand.Parameters[0].Value = ((decimal)(Original_ROLE_ID));
+        public virtual int Delete(string Original_ROLE_ID, string Original_ROLE_NAME) {
+            if ((Original_ROLE_ID == null)) {
+                throw new global::System.ArgumentNullException("Original_ROLE_ID");
+            }
+            else {
+                this.Adapter.DeleteCommand.Parameters[0].Value = ((string)(Original_ROLE_ID));
+            }
             if ((Original_ROLE_NAME == null)) {
                 throw new global::System.ArgumentNullException("Original_ROLE_NAME");
             }
@@ -5180,8 +6186,13 @@ namespace OracalDBProject.MarketsDBSourceTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, true)]
-        public virtual int Insert(decimal ROLE_ID, string ROLE_NAME) {
-            this.Adapter.InsertCommand.Parameters[0].Value = ((decimal)(ROLE_ID));
+        public virtual int Insert(string ROLE_ID, string ROLE_NAME) {
+            if ((ROLE_ID == null)) {
+                throw new global::System.ArgumentNullException("ROLE_ID");
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[0].Value = ((string)(ROLE_ID));
+            }
             if ((ROLE_NAME == null)) {
                 throw new global::System.ArgumentNullException("ROLE_NAME");
             }
@@ -5208,15 +6219,25 @@ namespace OracalDBProject.MarketsDBSourceTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
-        public virtual int Update(decimal ROLE_ID, string ROLE_NAME, decimal Original_ROLE_ID, string Original_ROLE_NAME) {
-            this.Adapter.UpdateCommand.Parameters[0].Value = ((decimal)(ROLE_ID));
+        public virtual int Update(string ROLE_ID, string ROLE_NAME, string Original_ROLE_ID, string Original_ROLE_NAME) {
+            if ((ROLE_ID == null)) {
+                throw new global::System.ArgumentNullException("ROLE_ID");
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[0].Value = ((string)(ROLE_ID));
+            }
             if ((ROLE_NAME == null)) {
                 throw new global::System.ArgumentNullException("ROLE_NAME");
             }
             else {
                 this.Adapter.UpdateCommand.Parameters[1].Value = ((string)(ROLE_NAME));
             }
-            this.Adapter.UpdateCommand.Parameters[2].Value = ((decimal)(Original_ROLE_ID));
+            if ((Original_ROLE_ID == null)) {
+                throw new global::System.ArgumentNullException("Original_ROLE_ID");
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[2].Value = ((string)(Original_ROLE_ID));
+            }
             if ((Original_ROLE_NAME == null)) {
                 throw new global::System.ArgumentNullException("Original_ROLE_NAME");
             }
@@ -5243,7 +6264,7 @@ namespace OracalDBProject.MarketsDBSourceTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
-        public virtual int Update(string ROLE_NAME, decimal Original_ROLE_ID, string Original_ROLE_NAME) {
+        public virtual int Update(string ROLE_NAME, string Original_ROLE_ID, string Original_ROLE_NAME) {
             return this.Update(Original_ROLE_ID, ROLE_NAME, Original_ROLE_ID, Original_ROLE_NAME);
         }
     }
@@ -5375,7 +6396,9 @@ namespace OracalDBProject.MarketsDBSourceTableAdapters {
             this._adapter.TableMappings.Add(tableMapping);
             this._adapter.DeleteCommand = new global::Oracle.ManagedDataAccess.Client.OracleCommand();
             this._adapter.DeleteCommand.Connection = this.Connection;
-            this._adapter.DeleteCommand.CommandText = @"DELETE FROM ""LIRAN_ADMIN"".""TRANSACTION"" WHERE ((""TRANSACTION_ID"" = :Original_TRANSACTION_ID) AND ((:IsNull_MEMBER_ID = 1 AND ""MEMBER_ID"" IS NULL) OR (""MEMBER_ID"" = :Original_MEMBER_ID)) AND ((:IsNull_DATE_TRANSACTION = 1 AND ""DATE_TRANSACTION"" IS NULL) OR (""DATE_TRANSACTION"" = :Original_DATE_TRANSACTION)))";
+            this._adapter.DeleteCommand.CommandText = "DELETE FROM \"LIRAN_ADMIN\".\"TRANSACTION\" WHERE ((\"TRANSACTION_ID\" = :Original_TRAN" +
+                "SACTION_ID) AND ((:IsNull_MEMBER_ID = 1 AND \"MEMBER_ID\" IS NULL) OR (\"MEMBER_ID\"" +
+                " = :Original_MEMBER_ID)) AND (\"DATE_TRANSACTION\" = :Original_DATE_TRANSACTION))";
             this._adapter.DeleteCommand.CommandType = global::System.Data.CommandType.Text;
             global::Oracle.ManagedDataAccess.Client.OracleParameter param = new global::Oracle.ManagedDataAccess.Client.OracleParameter();
             param.ParameterName = "Original_TRANSACTION_ID";
@@ -5406,20 +6429,9 @@ namespace OracalDBProject.MarketsDBSourceTableAdapters {
             param.SourceVersion = global::System.Data.DataRowVersion.Original;
             this._adapter.DeleteCommand.Parameters.Add(param);
             param = new global::Oracle.ManagedDataAccess.Client.OracleParameter();
-            param.ParameterName = "IsNull_DATE_TRANSACTION";
-            param.DbType = global::System.Data.DbType.Int32;
-            param.OracleDbTypeEx = global::Oracle.ManagedDataAccess.Client.OracleDbType.Int32;
-            param.Size = 7;
-            param.IsNullable = true;
-            param.SourceColumn = "DATE_TRANSACTION";
-            param.SourceVersion = global::System.Data.DataRowVersion.Original;
-            param.SourceColumnNullMapping = true;
-            this._adapter.DeleteCommand.Parameters.Add(param);
-            param = new global::Oracle.ManagedDataAccess.Client.OracleParameter();
             param.ParameterName = "Original_DATE_TRANSACTION";
-            param.DbType = global::System.Data.DbType.Date;
-            param.OracleDbTypeEx = global::Oracle.ManagedDataAccess.Client.OracleDbType.Date;
-            param.Size = 7;
+            param.OracleDbTypeEx = global::Oracle.ManagedDataAccess.Client.OracleDbType.Varchar2;
+            param.Size = 20;
             param.IsNullable = true;
             param.SourceColumn = "DATE_TRANSACTION";
             param.SourceVersion = global::System.Data.DataRowVersion.Original;
@@ -5447,15 +6459,14 @@ namespace OracalDBProject.MarketsDBSourceTableAdapters {
             this._adapter.InsertCommand.Parameters.Add(param);
             param = new global::Oracle.ManagedDataAccess.Client.OracleParameter();
             param.ParameterName = "DATE_TRANSACTION";
-            param.DbType = global::System.Data.DbType.Date;
-            param.OracleDbTypeEx = global::Oracle.ManagedDataAccess.Client.OracleDbType.Date;
-            param.Size = 7;
+            param.OracleDbTypeEx = global::Oracle.ManagedDataAccess.Client.OracleDbType.Varchar2;
+            param.Size = 20;
             param.IsNullable = true;
             param.SourceColumn = "DATE_TRANSACTION";
             this._adapter.InsertCommand.Parameters.Add(param);
             this._adapter.UpdateCommand = new global::Oracle.ManagedDataAccess.Client.OracleCommand();
             this._adapter.UpdateCommand.Connection = this.Connection;
-            this._adapter.UpdateCommand.CommandText = @"UPDATE ""LIRAN_ADMIN"".""TRANSACTION"" SET ""TRANSACTION_ID"" = :TRANSACTION_ID, ""MEMBER_ID"" = :MEMBER_ID, ""DATE_TRANSACTION"" = :DATE_TRANSACTION WHERE ((""TRANSACTION_ID"" = :Original_TRANSACTION_ID) AND ((:IsNull_MEMBER_ID = 1 AND ""MEMBER_ID"" IS NULL) OR (""MEMBER_ID"" = :Original_MEMBER_ID)) AND ((:IsNull_DATE_TRANSACTION = 1 AND ""DATE_TRANSACTION"" IS NULL) OR (""DATE_TRANSACTION"" = :Original_DATE_TRANSACTION)))";
+            this._adapter.UpdateCommand.CommandText = @"UPDATE ""LIRAN_ADMIN"".""TRANSACTION"" SET ""TRANSACTION_ID"" = :TRANSACTION_ID, ""MEMBER_ID"" = :MEMBER_ID, ""DATE_TRANSACTION"" = :DATE_TRANSACTION WHERE ((""TRANSACTION_ID"" = :Original_TRANSACTION_ID) AND ((:IsNull_MEMBER_ID = 1 AND ""MEMBER_ID"" IS NULL) OR (""MEMBER_ID"" = :Original_MEMBER_ID)) AND (""DATE_TRANSACTION"" = :Original_DATE_TRANSACTION))";
             this._adapter.UpdateCommand.CommandType = global::System.Data.CommandType.Text;
             param = new global::Oracle.ManagedDataAccess.Client.OracleParameter();
             param.ParameterName = "TRANSACTION_ID";
@@ -5475,9 +6486,8 @@ namespace OracalDBProject.MarketsDBSourceTableAdapters {
             this._adapter.UpdateCommand.Parameters.Add(param);
             param = new global::Oracle.ManagedDataAccess.Client.OracleParameter();
             param.ParameterName = "DATE_TRANSACTION";
-            param.DbType = global::System.Data.DbType.Date;
-            param.OracleDbTypeEx = global::Oracle.ManagedDataAccess.Client.OracleDbType.Date;
-            param.Size = 7;
+            param.OracleDbTypeEx = global::Oracle.ManagedDataAccess.Client.OracleDbType.Varchar2;
+            param.Size = 20;
             param.IsNullable = true;
             param.SourceColumn = "DATE_TRANSACTION";
             this._adapter.UpdateCommand.Parameters.Add(param);
@@ -5510,20 +6520,9 @@ namespace OracalDBProject.MarketsDBSourceTableAdapters {
             param.SourceVersion = global::System.Data.DataRowVersion.Original;
             this._adapter.UpdateCommand.Parameters.Add(param);
             param = new global::Oracle.ManagedDataAccess.Client.OracleParameter();
-            param.ParameterName = "IsNull_DATE_TRANSACTION";
-            param.DbType = global::System.Data.DbType.Int32;
-            param.OracleDbTypeEx = global::Oracle.ManagedDataAccess.Client.OracleDbType.Int32;
-            param.Size = 7;
-            param.IsNullable = true;
-            param.SourceColumn = "DATE_TRANSACTION";
-            param.SourceVersion = global::System.Data.DataRowVersion.Original;
-            param.SourceColumnNullMapping = true;
-            this._adapter.UpdateCommand.Parameters.Add(param);
-            param = new global::Oracle.ManagedDataAccess.Client.OracleParameter();
             param.ParameterName = "Original_DATE_TRANSACTION";
-            param.DbType = global::System.Data.DbType.Date;
-            param.OracleDbTypeEx = global::Oracle.ManagedDataAccess.Client.OracleDbType.Date;
-            param.Size = 7;
+            param.OracleDbTypeEx = global::Oracle.ManagedDataAccess.Client.OracleDbType.Varchar2;
+            param.Size = 20;
             param.IsNullable = true;
             param.SourceColumn = "DATE_TRANSACTION";
             param.SourceVersion = global::System.Data.DataRowVersion.Original;
@@ -5604,7 +6603,7 @@ namespace OracalDBProject.MarketsDBSourceTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Delete, true)]
-        public virtual int Delete(decimal Original_TRANSACTION_ID, global::System.Nullable<decimal> Original_MEMBER_ID, global::System.Nullable<global::System.DateTime> Original_DATE_TRANSACTION) {
+        public virtual int Delete(decimal Original_TRANSACTION_ID, global::System.Nullable<decimal> Original_MEMBER_ID, string Original_DATE_TRANSACTION) {
             this.Adapter.DeleteCommand.Parameters[0].Value = ((decimal)(Original_TRANSACTION_ID));
             if ((Original_MEMBER_ID.HasValue == true)) {
                 this.Adapter.DeleteCommand.Parameters[1].Value = ((object)(0));
@@ -5614,13 +6613,11 @@ namespace OracalDBProject.MarketsDBSourceTableAdapters {
                 this.Adapter.DeleteCommand.Parameters[1].Value = ((object)(1));
                 this.Adapter.DeleteCommand.Parameters[2].Value = global::System.DBNull.Value;
             }
-            if ((Original_DATE_TRANSACTION.HasValue == true)) {
-                this.Adapter.DeleteCommand.Parameters[3].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[4].Value = ((System.DateTime)(Original_DATE_TRANSACTION.Value));
+            if ((Original_DATE_TRANSACTION == null)) {
+                throw new global::System.ArgumentNullException("Original_DATE_TRANSACTION");
             }
             else {
-                this.Adapter.DeleteCommand.Parameters[3].Value = ((object)(1));
-                this.Adapter.DeleteCommand.Parameters[4].Value = global::System.DBNull.Value;
+                this.Adapter.DeleteCommand.Parameters[3].Value = ((string)(Original_DATE_TRANSACTION));
             }
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.DeleteCommand.Connection.State;
             if (((this.Adapter.DeleteCommand.Connection.State & global::System.Data.ConnectionState.Open) 
@@ -5642,7 +6639,7 @@ namespace OracalDBProject.MarketsDBSourceTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, true)]
-        public virtual int Insert(decimal TRANSACTION_ID, global::System.Nullable<decimal> MEMBER_ID, global::System.Nullable<global::System.DateTime> DATE_TRANSACTION) {
+        public virtual int Insert(decimal TRANSACTION_ID, global::System.Nullable<decimal> MEMBER_ID, string DATE_TRANSACTION) {
             this.Adapter.InsertCommand.Parameters[0].Value = ((decimal)(TRANSACTION_ID));
             if ((MEMBER_ID.HasValue == true)) {
                 this.Adapter.InsertCommand.Parameters[1].Value = ((decimal)(MEMBER_ID.Value));
@@ -5650,11 +6647,11 @@ namespace OracalDBProject.MarketsDBSourceTableAdapters {
             else {
                 this.Adapter.InsertCommand.Parameters[1].Value = global::System.DBNull.Value;
             }
-            if ((DATE_TRANSACTION.HasValue == true)) {
-                this.Adapter.InsertCommand.Parameters[2].Value = ((System.DateTime)(DATE_TRANSACTION.Value));
+            if ((DATE_TRANSACTION == null)) {
+                throw new global::System.ArgumentNullException("DATE_TRANSACTION");
             }
             else {
-                this.Adapter.InsertCommand.Parameters[2].Value = global::System.DBNull.Value;
+                this.Adapter.InsertCommand.Parameters[2].Value = ((string)(DATE_TRANSACTION));
             }
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.InsertCommand.Connection.State;
             if (((this.Adapter.InsertCommand.Connection.State & global::System.Data.ConnectionState.Open) 
@@ -5676,7 +6673,7 @@ namespace OracalDBProject.MarketsDBSourceTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
-        public virtual int Update(decimal TRANSACTION_ID, global::System.Nullable<decimal> MEMBER_ID, global::System.Nullable<global::System.DateTime> DATE_TRANSACTION, decimal Original_TRANSACTION_ID, global::System.Nullable<decimal> Original_MEMBER_ID, global::System.Nullable<global::System.DateTime> Original_DATE_TRANSACTION) {
+        public virtual int Update(decimal TRANSACTION_ID, global::System.Nullable<decimal> MEMBER_ID, string DATE_TRANSACTION, decimal Original_TRANSACTION_ID, global::System.Nullable<decimal> Original_MEMBER_ID, string Original_DATE_TRANSACTION) {
             this.Adapter.UpdateCommand.Parameters[0].Value = ((decimal)(TRANSACTION_ID));
             if ((MEMBER_ID.HasValue == true)) {
                 this.Adapter.UpdateCommand.Parameters[1].Value = ((decimal)(MEMBER_ID.Value));
@@ -5684,11 +6681,11 @@ namespace OracalDBProject.MarketsDBSourceTableAdapters {
             else {
                 this.Adapter.UpdateCommand.Parameters[1].Value = global::System.DBNull.Value;
             }
-            if ((DATE_TRANSACTION.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[2].Value = ((System.DateTime)(DATE_TRANSACTION.Value));
+            if ((DATE_TRANSACTION == null)) {
+                throw new global::System.ArgumentNullException("DATE_TRANSACTION");
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[2].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[2].Value = ((string)(DATE_TRANSACTION));
             }
             this.Adapter.UpdateCommand.Parameters[3].Value = ((decimal)(Original_TRANSACTION_ID));
             if ((Original_MEMBER_ID.HasValue == true)) {
@@ -5699,13 +6696,11 @@ namespace OracalDBProject.MarketsDBSourceTableAdapters {
                 this.Adapter.UpdateCommand.Parameters[4].Value = ((object)(1));
                 this.Adapter.UpdateCommand.Parameters[5].Value = global::System.DBNull.Value;
             }
-            if ((Original_DATE_TRANSACTION.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[6].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[7].Value = ((System.DateTime)(Original_DATE_TRANSACTION.Value));
+            if ((Original_DATE_TRANSACTION == null)) {
+                throw new global::System.ArgumentNullException("Original_DATE_TRANSACTION");
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[6].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[7].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[6].Value = ((string)(Original_DATE_TRANSACTION));
             }
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.UpdateCommand.Connection.State;
             if (((this.Adapter.UpdateCommand.Connection.State & global::System.Data.ConnectionState.Open) 
@@ -5727,7 +6722,7 @@ namespace OracalDBProject.MarketsDBSourceTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
-        public virtual int Update(global::System.Nullable<decimal> MEMBER_ID, global::System.Nullable<global::System.DateTime> DATE_TRANSACTION, decimal Original_TRANSACTION_ID, global::System.Nullable<decimal> Original_MEMBER_ID, global::System.Nullable<global::System.DateTime> Original_DATE_TRANSACTION) {
+        public virtual int Update(global::System.Nullable<decimal> MEMBER_ID, string DATE_TRANSACTION, decimal Original_TRANSACTION_ID, global::System.Nullable<decimal> Original_MEMBER_ID, string Original_DATE_TRANSACTION) {
             return this.Update(Original_TRANSACTION_ID, MEMBER_ID, DATE_TRANSACTION, Original_TRANSACTION_ID, Original_MEMBER_ID, Original_DATE_TRANSACTION);
         }
     }
@@ -6130,7 +7125,7 @@ namespace OracalDBProject.MarketsDBSourceTableAdapters {
             param.ParameterName = "IsNull_ROLE_ID";
             param.DbType = global::System.Data.DbType.Int32;
             param.OracleDbTypeEx = global::Oracle.ManagedDataAccess.Client.OracleDbType.Int32;
-            param.Size = 22;
+            param.Size = 20;
             param.IsNullable = true;
             param.SourceColumn = "ROLE_ID";
             param.SourceVersion = global::System.Data.DataRowVersion.Original;
@@ -6138,9 +7133,8 @@ namespace OracalDBProject.MarketsDBSourceTableAdapters {
             this._adapter.DeleteCommand.Parameters.Add(param);
             param = new global::Oracle.ManagedDataAccess.Client.OracleParameter();
             param.ParameterName = "Original_ROLE_ID";
-            param.DbType = global::System.Data.DbType.Decimal;
-            param.OracleDbTypeEx = global::Oracle.ManagedDataAccess.Client.OracleDbType.Decimal;
-            param.Size = 22;
+            param.OracleDbTypeEx = global::Oracle.ManagedDataAccess.Client.OracleDbType.Varchar2;
+            param.Size = 20;
             param.IsNullable = true;
             param.SourceColumn = "ROLE_ID";
             param.SourceVersion = global::System.Data.DataRowVersion.Original;
@@ -6207,9 +7201,8 @@ namespace OracalDBProject.MarketsDBSourceTableAdapters {
             this._adapter.InsertCommand.Parameters.Add(param);
             param = new global::Oracle.ManagedDataAccess.Client.OracleParameter();
             param.ParameterName = "ROLE_ID";
-            param.DbType = global::System.Data.DbType.Decimal;
-            param.OracleDbTypeEx = global::Oracle.ManagedDataAccess.Client.OracleDbType.Decimal;
-            param.Size = 22;
+            param.OracleDbTypeEx = global::Oracle.ManagedDataAccess.Client.OracleDbType.Varchar2;
+            param.Size = 20;
             param.IsNullable = true;
             param.SourceColumn = "ROLE_ID";
             this._adapter.InsertCommand.Parameters.Add(param);
@@ -6269,9 +7262,8 @@ namespace OracalDBProject.MarketsDBSourceTableAdapters {
             this._adapter.UpdateCommand.Parameters.Add(param);
             param = new global::Oracle.ManagedDataAccess.Client.OracleParameter();
             param.ParameterName = "ROLE_ID";
-            param.DbType = global::System.Data.DbType.Decimal;
-            param.OracleDbTypeEx = global::Oracle.ManagedDataAccess.Client.OracleDbType.Decimal;
-            param.Size = 22;
+            param.OracleDbTypeEx = global::Oracle.ManagedDataAccess.Client.OracleDbType.Varchar2;
+            param.Size = 20;
             param.IsNullable = true;
             param.SourceColumn = "ROLE_ID";
             this._adapter.UpdateCommand.Parameters.Add(param);
@@ -6330,7 +7322,7 @@ namespace OracalDBProject.MarketsDBSourceTableAdapters {
             param.ParameterName = "IsNull_ROLE_ID";
             param.DbType = global::System.Data.DbType.Int32;
             param.OracleDbTypeEx = global::Oracle.ManagedDataAccess.Client.OracleDbType.Int32;
-            param.Size = 22;
+            param.Size = 20;
             param.IsNullable = true;
             param.SourceColumn = "ROLE_ID";
             param.SourceVersion = global::System.Data.DataRowVersion.Original;
@@ -6338,9 +7330,8 @@ namespace OracalDBProject.MarketsDBSourceTableAdapters {
             this._adapter.UpdateCommand.Parameters.Add(param);
             param = new global::Oracle.ManagedDataAccess.Client.OracleParameter();
             param.ParameterName = "Original_ROLE_ID";
-            param.DbType = global::System.Data.DbType.Decimal;
-            param.OracleDbTypeEx = global::Oracle.ManagedDataAccess.Client.OracleDbType.Decimal;
-            param.Size = 22;
+            param.OracleDbTypeEx = global::Oracle.ManagedDataAccess.Client.OracleDbType.Varchar2;
+            param.Size = 20;
             param.IsNullable = true;
             param.SourceColumn = "ROLE_ID";
             param.SourceVersion = global::System.Data.DataRowVersion.Original;
@@ -6470,15 +7461,15 @@ namespace OracalDBProject.MarketsDBSourceTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Delete, true)]
-        public virtual int Delete(decimal Original_USER_ID, global::System.Nullable<decimal> Original_ROLE_ID, string Original_FIRST_NAME, string Original_LAST_NAME, string Original_USER_PHONE_NUMBER, string Original_USER_EMAIL, string Original_USER_ADDRESS, string Original_PASSWORD_ENCRYPTED) {
+        public virtual int Delete(decimal Original_USER_ID, string Original_ROLE_ID, string Original_FIRST_NAME, string Original_LAST_NAME, string Original_USER_PHONE_NUMBER, string Original_USER_EMAIL, string Original_USER_ADDRESS, string Original_PASSWORD_ENCRYPTED) {
             this.Adapter.DeleteCommand.Parameters[0].Value = ((decimal)(Original_USER_ID));
-            if ((Original_ROLE_ID.HasValue == true)) {
-                this.Adapter.DeleteCommand.Parameters[1].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[2].Value = ((decimal)(Original_ROLE_ID.Value));
-            }
-            else {
+            if ((Original_ROLE_ID == null)) {
                 this.Adapter.DeleteCommand.Parameters[1].Value = ((object)(1));
                 this.Adapter.DeleteCommand.Parameters[2].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.DeleteCommand.Parameters[1].Value = ((object)(0));
+                this.Adapter.DeleteCommand.Parameters[2].Value = ((string)(Original_ROLE_ID));
             }
             if ((Original_FIRST_NAME == null)) {
                 throw new global::System.ArgumentNullException("Original_FIRST_NAME");
@@ -6536,13 +7527,13 @@ namespace OracalDBProject.MarketsDBSourceTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, true)]
-        public virtual int Insert(decimal USER_ID, global::System.Nullable<decimal> ROLE_ID, string FIRST_NAME, string LAST_NAME, string USER_PHONE_NUMBER, string USER_EMAIL, string USER_ADDRESS, string PASSWORD_ENCRYPTED) {
+        public virtual int Insert(decimal USER_ID, string ROLE_ID, string FIRST_NAME, string LAST_NAME, string USER_PHONE_NUMBER, string USER_EMAIL, string USER_ADDRESS, string PASSWORD_ENCRYPTED) {
             this.Adapter.InsertCommand.Parameters[0].Value = ((decimal)(USER_ID));
-            if ((ROLE_ID.HasValue == true)) {
-                this.Adapter.InsertCommand.Parameters[1].Value = ((decimal)(ROLE_ID.Value));
+            if ((ROLE_ID == null)) {
+                this.Adapter.InsertCommand.Parameters[1].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.InsertCommand.Parameters[1].Value = global::System.DBNull.Value;
+                this.Adapter.InsertCommand.Parameters[1].Value = ((string)(ROLE_ID));
             }
             if ((FIRST_NAME == null)) {
                 throw new global::System.ArgumentNullException("FIRST_NAME");
@@ -6602,7 +7593,7 @@ namespace OracalDBProject.MarketsDBSourceTableAdapters {
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
         public virtual int Update(
                     decimal USER_ID, 
-                    global::System.Nullable<decimal> ROLE_ID, 
+                    string ROLE_ID, 
                     string FIRST_NAME, 
                     string LAST_NAME, 
                     string USER_PHONE_NUMBER, 
@@ -6610,7 +7601,7 @@ namespace OracalDBProject.MarketsDBSourceTableAdapters {
                     string USER_ADDRESS, 
                     string PASSWORD_ENCRYPTED, 
                     decimal Original_USER_ID, 
-                    global::System.Nullable<decimal> Original_ROLE_ID, 
+                    string Original_ROLE_ID, 
                     string Original_FIRST_NAME, 
                     string Original_LAST_NAME, 
                     string Original_USER_PHONE_NUMBER, 
@@ -6618,11 +7609,11 @@ namespace OracalDBProject.MarketsDBSourceTableAdapters {
                     string Original_USER_ADDRESS, 
                     string Original_PASSWORD_ENCRYPTED) {
             this.Adapter.UpdateCommand.Parameters[0].Value = ((decimal)(USER_ID));
-            if ((ROLE_ID.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[1].Value = ((decimal)(ROLE_ID.Value));
+            if ((ROLE_ID == null)) {
+                this.Adapter.UpdateCommand.Parameters[1].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[1].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[1].Value = ((string)(ROLE_ID));
             }
             if ((FIRST_NAME == null)) {
                 throw new global::System.ArgumentNullException("FIRST_NAME");
@@ -6661,13 +7652,13 @@ namespace OracalDBProject.MarketsDBSourceTableAdapters {
                 this.Adapter.UpdateCommand.Parameters[7].Value = ((string)(PASSWORD_ENCRYPTED));
             }
             this.Adapter.UpdateCommand.Parameters[8].Value = ((decimal)(Original_USER_ID));
-            if ((Original_ROLE_ID.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[9].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[10].Value = ((decimal)(Original_ROLE_ID.Value));
-            }
-            else {
+            if ((Original_ROLE_ID == null)) {
                 this.Adapter.UpdateCommand.Parameters[9].Value = ((object)(1));
                 this.Adapter.UpdateCommand.Parameters[10].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[9].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[10].Value = ((string)(Original_ROLE_ID));
             }
             if ((Original_FIRST_NAME == null)) {
                 throw new global::System.ArgumentNullException("Original_FIRST_NAME");
@@ -6725,7 +7716,7 @@ namespace OracalDBProject.MarketsDBSourceTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
-        public virtual int Update(global::System.Nullable<decimal> ROLE_ID, string FIRST_NAME, string LAST_NAME, string USER_PHONE_NUMBER, string USER_EMAIL, string USER_ADDRESS, string PASSWORD_ENCRYPTED, decimal Original_USER_ID, global::System.Nullable<decimal> Original_ROLE_ID, string Original_FIRST_NAME, string Original_LAST_NAME, string Original_USER_PHONE_NUMBER, string Original_USER_EMAIL, string Original_USER_ADDRESS, string Original_PASSWORD_ENCRYPTED) {
+        public virtual int Update(string ROLE_ID, string FIRST_NAME, string LAST_NAME, string USER_PHONE_NUMBER, string USER_EMAIL, string USER_ADDRESS, string PASSWORD_ENCRYPTED, decimal Original_USER_ID, string Original_ROLE_ID, string Original_FIRST_NAME, string Original_LAST_NAME, string Original_USER_PHONE_NUMBER, string Original_USER_EMAIL, string Original_USER_ADDRESS, string Original_PASSWORD_ENCRYPTED) {
             return this.Update(Original_USER_ID, ROLE_ID, FIRST_NAME, LAST_NAME, USER_PHONE_NUMBER, USER_EMAIL, USER_ADDRESS, PASSWORD_ENCRYPTED, Original_USER_ID, Original_ROLE_ID, Original_FIRST_NAME, Original_LAST_NAME, Original_USER_PHONE_NUMBER, Original_USER_EMAIL, Original_USER_ADDRESS, Original_PASSWORD_ENCRYPTED);
         }
     }
@@ -6844,6 +7835,8 @@ namespace OracalDBProject.MarketsDBSourceTableAdapters {
         
         private CLUB_MEMBERTableAdapter _cLUB_MEMBERTableAdapter;
         
+        private PAYMENTTableAdapter _pAYMENTTableAdapter;
+        
         private PRODUCTSTableAdapter _pRODUCTSTableAdapter;
         
         private ROLESTableAdapter _rOLESTableAdapter;
@@ -6894,6 +7887,20 @@ namespace OracalDBProject.MarketsDBSourceTableAdapters {
             }
             set {
                 this._cLUB_MEMBERTableAdapter = value;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.EditorAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterManagerPropertyEditor, Microso" +
+            "ft.VSDesigner, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3" +
+            "a", "System.Drawing.Design.UITypeEditor")]
+        public PAYMENTTableAdapter PAYMENTTableAdapter {
+            get {
+                return this._pAYMENTTableAdapter;
+            }
+            set {
+                this._pAYMENTTableAdapter = value;
             }
         }
         
@@ -6994,6 +8001,10 @@ namespace OracalDBProject.MarketsDBSourceTableAdapters {
                             && (this._cLUB_MEMBERTableAdapter.Connection != null))) {
                     return this._cLUB_MEMBERTableAdapter.Connection;
                 }
+                if (((this._pAYMENTTableAdapter != null) 
+                            && (this._pAYMENTTableAdapter.Connection != null))) {
+                    return this._pAYMENTTableAdapter.Connection;
+                }
                 if (((this._pRODUCTSTableAdapter != null) 
                             && (this._pRODUCTSTableAdapter.Connection != null))) {
                     return this._pRODUCTSTableAdapter.Connection;
@@ -7031,6 +8042,9 @@ namespace OracalDBProject.MarketsDBSourceTableAdapters {
                     count = (count + 1);
                 }
                 if ((this._cLUB_MEMBERTableAdapter != null)) {
+                    count = (count + 1);
+                }
+                if ((this._pAYMENTTableAdapter != null)) {
                     count = (count + 1);
                 }
                 if ((this._pRODUCTSTableAdapter != null)) {
@@ -7113,6 +8127,15 @@ namespace OracalDBProject.MarketsDBSourceTableAdapters {
                     allChangedRows.AddRange(updatedRows);
                 }
             }
+            if ((this._pAYMENTTableAdapter != null)) {
+                global::System.Data.DataRow[] updatedRows = dataSet.PAYMENT.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
+                updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
+                if (((updatedRows != null) 
+                            && (0 < updatedRows.Length))) {
+                    result = (result + this._pAYMENTTableAdapter.Update(updatedRows));
+                    allChangedRows.AddRange(updatedRows);
+                }
+            }
             if ((this._tRANSACTION_DETAILSTableAdapter != null)) {
                 global::System.Data.DataRow[] updatedRows = dataSet.TRANSACTION_DETAILS.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
                 updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
@@ -7180,6 +8203,14 @@ namespace OracalDBProject.MarketsDBSourceTableAdapters {
                     allAddedRows.AddRange(addedRows);
                 }
             }
+            if ((this._pAYMENTTableAdapter != null)) {
+                global::System.Data.DataRow[] addedRows = dataSet.PAYMENT.Select(null, null, global::System.Data.DataViewRowState.Added);
+                if (((addedRows != null) 
+                            && (0 < addedRows.Length))) {
+                    result = (result + this._pAYMENTTableAdapter.Update(addedRows));
+                    allAddedRows.AddRange(addedRows);
+                }
+            }
             if ((this._tRANSACTION_DETAILSTableAdapter != null)) {
                 global::System.Data.DataRow[] addedRows = dataSet.TRANSACTION_DETAILS.Select(null, null, global::System.Data.DataViewRowState.Added);
                 if (((addedRows != null) 
@@ -7203,6 +8234,14 @@ namespace OracalDBProject.MarketsDBSourceTableAdapters {
                 if (((deletedRows != null) 
                             && (0 < deletedRows.Length))) {
                     result = (result + this._tRANSACTION_DETAILSTableAdapter.Update(deletedRows));
+                    allChangedRows.AddRange(deletedRows);
+                }
+            }
+            if ((this._pAYMENTTableAdapter != null)) {
+                global::System.Data.DataRow[] deletedRows = dataSet.PAYMENT.Select(null, null, global::System.Data.DataViewRowState.Deleted);
+                if (((deletedRows != null) 
+                            && (0 < deletedRows.Length))) {
+                    result = (result + this._pAYMENTTableAdapter.Update(deletedRows));
                     allChangedRows.AddRange(deletedRows);
                 }
             }
@@ -7303,6 +8342,11 @@ namespace OracalDBProject.MarketsDBSourceTableAdapters {
                 throw new global::System.ArgumentException("All TableAdapters managed by a TableAdapterManager must use the same connection s" +
                         "tring.");
             }
+            if (((this._pAYMENTTableAdapter != null) 
+                        && (this.MatchTableAdapterConnection(this._pAYMENTTableAdapter.Connection) == false))) {
+                throw new global::System.ArgumentException("All TableAdapters managed by a TableAdapterManager must use the same connection s" +
+                        "tring.");
+            }
             if (((this._pRODUCTSTableAdapter != null) 
                         && (this.MatchTableAdapterConnection(this._pRODUCTSTableAdapter.Connection) == false))) {
                 throw new global::System.ArgumentException("All TableAdapters managed by a TableAdapterManager must use the same connection s" +
@@ -7376,6 +8420,15 @@ namespace OracalDBProject.MarketsDBSourceTableAdapters {
                     if (this._cLUB_MEMBERTableAdapter.Adapter.AcceptChangesDuringUpdate) {
                         this._cLUB_MEMBERTableAdapter.Adapter.AcceptChangesDuringUpdate = false;
                         adaptersWithAcceptChangesDuringUpdate.Add(this._cLUB_MEMBERTableAdapter.Adapter);
+                    }
+                }
+                if ((this._pAYMENTTableAdapter != null)) {
+                    revertConnections.Add(this._pAYMENTTableAdapter, this._pAYMENTTableAdapter.Connection);
+                    this._pAYMENTTableAdapter.Connection = ((global::Oracle.ManagedDataAccess.Client.OracleConnection)(workConnection));
+                    this._pAYMENTTableAdapter.Transaction = ((global::Oracle.ManagedDataAccess.Client.OracleTransaction)(workTransaction));
+                    if (this._pAYMENTTableAdapter.Adapter.AcceptChangesDuringUpdate) {
+                        this._pAYMENTTableAdapter.Adapter.AcceptChangesDuringUpdate = false;
+                        adaptersWithAcceptChangesDuringUpdate.Add(this._pAYMENTTableAdapter.Adapter);
                     }
                 }
                 if ((this._pRODUCTSTableAdapter != null)) {
@@ -7488,6 +8541,10 @@ namespace OracalDBProject.MarketsDBSourceTableAdapters {
                 if ((this._cLUB_MEMBERTableAdapter != null)) {
                     this._cLUB_MEMBERTableAdapter.Connection = ((global::Oracle.ManagedDataAccess.Client.OracleConnection)(revertConnections[this._cLUB_MEMBERTableAdapter]));
                     this._cLUB_MEMBERTableAdapter.Transaction = null;
+                }
+                if ((this._pAYMENTTableAdapter != null)) {
+                    this._pAYMENTTableAdapter.Connection = ((global::Oracle.ManagedDataAccess.Client.OracleConnection)(revertConnections[this._pAYMENTTableAdapter]));
+                    this._pAYMENTTableAdapter.Transaction = null;
                 }
                 if ((this._pRODUCTSTableAdapter != null)) {
                     this._pRODUCTSTableAdapter.Connection = ((global::Oracle.ManagedDataAccess.Client.OracleConnection)(revertConnections[this._pRODUCTSTableAdapter]));

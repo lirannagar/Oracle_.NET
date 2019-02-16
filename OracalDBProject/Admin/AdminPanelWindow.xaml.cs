@@ -46,6 +46,20 @@ namespace OracalDBProject
         #endregion Constructor
 
         #region Private Methods
+        private void DeleteAdminButton_Click(object sender, RoutedEventArgs e)
+        {
+            try
+            {
+                DeleteAdminWindow win = new DeleteAdminWindow();
+                win.Show();
+                this.Close();
+                Logger.Instance.Info("Delete Admin Window opened");
+            }
+            catch(Exception ex)
+            {
+                Logger.Instance.Error("Exception while trying to Delete Admin User Details:\n" + ex);
+            }
+        }
         private void AddNewProductButton_Click(object sender, RoutedEventArgs e)
         {
             try
@@ -102,6 +116,7 @@ namespace OracalDBProject
                 Logger.Instance.Error("Error while trying to Open Add New Admin Window and close Panel Window\nDetails:  " + ex);
             }           
         }
+
         #endregion Private Methods
 
         #region Public Methods

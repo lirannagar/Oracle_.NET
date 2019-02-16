@@ -1,20 +1,49 @@
-﻿2019-02-16 19:47:04.422 [INFO]    -------------------------PROGRAM STARTED-------------------
-2019-02-16 19:47:05.102 [INFO]    DB was opened seccefully
-2019-02-16 19:47:05.152 [INFO]    Admin User Switched
-2019-02-16 19:47:05.215 [INFO]    LogIn window opened
-2019-02-16 19:47:06.441 [INFO]    Admin panel opened
-2019-02-16 19:47:08.010 [INFO]    Club Member Window Opened
-2019-02-16 19:47:08.041 [INFO]    panel admin closed
-2019-02-16 19:47:20.658 [INFO]    User alen Executed
-2019-02-16 19:47:20.668 [INFO]    Club Member  Executed
-2019-02-16 19:47:20.693 [INFO]    Club member Singed UP
-2019-02-16 19:50:41.574 [INFO]    -------------------------PROGRAM STARTED-------------------
-2019-02-16 19:50:42.094 [INFO]    DB was opened seccefully
-2019-02-16 19:50:42.131 [INFO]    Admin User Switched
-2019-02-16 19:50:42.189 [INFO]    LogIn window opened
-2019-02-16 19:50:43.643 [INFO]    Admin panel opened
-2019-02-16 19:50:44.760 [INFO]    Club Member Window Opened
-2019-02-16 19:50:44.795 [INFO]    panel admin closed
-2019-02-16 19:50:55.412 [INFO]    User kingman Executed
-2019-02-16 19:50:55.423 [INFO]    Club Member 1048 Executed
-2019-02-16 19:50:55.457 [INFO]    Club member Singed UP
+﻿2019-02-16 23:56:57.523 [INFO]    -------------------------PROGRAM STARTED-------------------
+2019-02-16 23:56:58.045 [INFO]    DB was opened seccefully
+2019-02-16 23:56:58.150 [ERROR]   Exeption while trying to drop tables
+Details:
+Oracle.ManagedDataAccess.Client.OracleException (0x80004005): ORA-00942: table or view does not exist
+   at OracleInternal.ServiceObjects.OracleConnectionImpl.VerifyExecution(Int32& cursorId, Boolean bThrowArrayBindRelatedErrors, SqlStatementType sqlStatementType, Int32 arrayBindCount, OracleException& exceptionForArrayBindDML, Boolean& hasMoreRowsInDB, Boolean bFirstIterationDone)
+   at OracleInternal.ServiceObjects.OracleCommandImpl.ExecuteReader(String commandText, OracleParameterCollection paramColl, CommandType commandType, OracleConnectionImpl connectionImpl, OracleDataReaderImpl& rdrImpl, Int32 longFetchSize, Int64 clientInitialLOBFS, OracleDependencyImpl orclDependencyImpl, Int64[] scnForExecution, Int64[]& scnFromExecution, OracleParameterCollection& bindByPositionParamColl, Boolean& bBindParamPresent, Int64& internalInitialLOBFS, OracleException& exceptionForArrayBindDML, OracleConnection connection, OracleLogicalTransaction& oracleLogicalTransaction, IEnumerable`1 adrianParsedStmt, Boolean isDescribeOnly, Boolean isFromEF)
+   at Oracle.ManagedDataAccess.Client.OracleCommand.ExecuteReader(Boolean requery, Boolean fillRequest, CommandBehavior behavior)
+   at Oracle.ManagedDataAccess.Client.OracleCommand.ExecuteReader()
+   at OracalDBProject.MainWindow.DropTables() in C:\Users\Liran\Desktop\OracalDBProject\OracalDBProject\MainWindow.xaml.cs:line 457
+2019-02-16 23:56:58.253 [INFO]    LogIn window opened
+2019-02-16 23:57:23.099 [INFO]    -------------------------PROGRAM STARTED-------------------
+2019-02-16 23:57:23.628 [INFO]    DB was opened seccefully
+2019-02-16 23:57:23.670 [ERROR]   Exeption while trying to drop tables
+Details:
+Oracle.ManagedDataAccess.Client.OracleException (0x80004005): ORA-00942: table or view does not exist
+   at OracleInternal.ServiceObjects.OracleConnectionImpl.VerifyExecution(Int32& cursorId, Boolean bThrowArrayBindRelatedErrors, SqlStatementType sqlStatementType, Int32 arrayBindCount, OracleException& exceptionForArrayBindDML, Boolean& hasMoreRowsInDB, Boolean bFirstIterationDone)
+   at OracleInternal.ServiceObjects.OracleCommandImpl.ExecuteReader(String commandText, OracleParameterCollection paramColl, CommandType commandType, OracleConnectionImpl connectionImpl, OracleDataReaderImpl& rdrImpl, Int32 longFetchSize, Int64 clientInitialLOBFS, OracleDependencyImpl orclDependencyImpl, Int64[] scnForExecution, Int64[]& scnFromExecution, OracleParameterCollection& bindByPositionParamColl, Boolean& bBindParamPresent, Int64& internalInitialLOBFS, OracleException& exceptionForArrayBindDML, OracleConnection connection, OracleLogicalTransaction& oracleLogicalTransaction, IEnumerable`1 adrianParsedStmt, Boolean isDescribeOnly, Boolean isFromEF)
+   at Oracle.ManagedDataAccess.Client.OracleCommand.ExecuteReader(Boolean requery, Boolean fillRequest, CommandBehavior behavior)
+   at Oracle.ManagedDataAccess.Client.OracleCommand.ExecuteReader()
+   at OracalDBProject.MainWindow.DropTables() in C:\Users\Liran\Desktop\OracalDBProject\OracalDBProject\MainWindow.xaml.cs:line 457
+2019-02-16 23:57:23.717 [INFO]    LogIn window opened
+2019-02-16 23:58:05.628 [INFO]    -------------------------PROGRAM STARTED-------------------
+2019-02-16 23:58:06.243 [INFO]    DB was opened seccefully
+2019-02-16 23:58:06.293 [INFO]    Admin User Switched
+2019-02-16 23:58:06.523 [INFO]    Table Payment DROPED
+2019-02-16 23:58:06.550 [INFO]    Table transaction_details DROPED
+2019-02-16 23:58:06.582 [INFO]    Table products DROPED
+2019-02-16 23:58:06.602 [INFO]    Table TRANSACTION DROPED
+2019-02-16 23:58:06.621 [INFO]    Table club_member DROPED
+2019-02-16 23:58:06.639 [INFO]    Table administrator DROPED
+2019-02-16 23:58:06.657 [INFO]    Table users DROPED
+2019-02-16 23:58:06.680 [INFO]    Table roles DROPED
+2019-02-16 23:58:06.719 [INFO]    LogIn window opened
+2019-02-16 23:58:52.680 [INFO]    -------------------------PROGRAM STARTED-------------------
+2019-02-16 23:58:53.290 [INFO]    DB was opened seccefully
+2019-02-16 23:58:53.326 [INFO]    Admin User Switched
+2019-02-16 23:58:53.372 [INFO]    TABLE Roles was CREATED
+2019-02-16 23:58:53.392 [INFO]    TABLE Users was CREATED
+2019-02-16 23:58:53.410 [INFO]    TABLE Administrator was CREATED
+2019-02-16 23:58:53.424 [INFO]    TABLE Club_member was CREATED
+2019-02-16 23:58:53.436 [INFO]    TABLE Transaction was CREATED
+2019-02-16 23:58:53.450 [INFO]    TABLE Products was CREATED
+2019-02-16 23:58:53.464 [INFO]    TABLE Transaction_Details was CREATED
+2019-02-16 23:58:53.486 [INFO]    TABLE Payment was CREATED
+2019-02-16 23:58:53.585 [INFO]    Role Administrator Executed
+2019-02-16 23:58:53.600 [INFO]    Role Club_Member Executed
+2019-02-16 23:58:53.612 [INFO]    Initialized Roles
+2019-02-16 23:58:53.702 [INFO]    LogIn window opened

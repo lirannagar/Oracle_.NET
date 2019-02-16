@@ -50,10 +50,10 @@ namespace OracalDBProject
             OpenConnection();
            // CreateAdminUsers();
             SwitchAdminUser();       
-            //CreateTables();
+            CreateTables();
             //CreateSequences();
             //CreatePackages();
-            //InitializeRoles();
+            InitializeRoles();
             //DropTables();
             //CreateClubMemberUsers();
             try

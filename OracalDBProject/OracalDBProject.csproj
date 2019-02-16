@@ -107,6 +107,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Admin\DeleteAdminWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Admin\DeleteProductWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -129,6 +133,9 @@
       <DependentUpon>AdminPanelWindow.xaml</DependentUpon>
     </Compile>
     <Compile Include="Admin\AdminUser.cs" />
+    <Compile Include="Admin\DeleteAdminWindow.xaml.cs">
+      <DependentUpon>DeleteAdminWindow.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Admin\DeleteProductWindow.xaml.cs">
       <DependentUpon>DeleteProductWindow.xaml</DependentUpon>
     </Compile>
