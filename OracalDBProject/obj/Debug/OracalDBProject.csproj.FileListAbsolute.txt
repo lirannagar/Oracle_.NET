@@ -94,3 +94,5 @@ C:\Users\Liran\Desktop\OracalDBProject\OracalDBProject\bin\Debug\Oracle.ManagedD
 C:\Users\Liran\Desktop\OracalDBProject\OracalDBProject\bin\Debug\EntityFramework.xml
 C:\Users\Liran\Desktop\OracalDBProject\OracalDBProject\bin\Debug\EntityFramework.SqlServer.xml
 C:\Users\Liran\Desktop\OracalDBProject\OracalDBProject\obj\Debug\GeneratedInternalTypeHelper.g.cs
+C:\Users\Liran\Desktop\OracalDBProject\OracalDBProject\obj\Debug\Admin\AddAdminUserWindow.g.cs
+C:\Users\Liran\Desktop\OracalDBProject\OracalDBProject\obj\Debug\Admin\AddAdminUserWindow.baml

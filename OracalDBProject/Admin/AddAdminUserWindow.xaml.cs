@@ -72,7 +72,7 @@ namespace OracalDBProject.Admin
                 string phoneNumber = phoneNumberTextBox.Text;
                 string email =  emailTextBox.Text;
                 string address = addressTextBox.Text;
-                string password =  passwordBoxAdmin.ToString();
+                string password = passwordBoxAdmin.Password.ToString();
                 User user = new User(roleId,firstName,lastName,phoneNumber,email,address,password);
                 user.ExecuteToDatabase();
                 AdminUser adminUser = new AdminUser(user.GetId(),2000);

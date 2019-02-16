@@ -123,9 +123,12 @@ namespace OracalDBProject.Admin
                 OracleSingletonComment.Instance.Parameters.Add("PASSWORD_ENCRYPTED", this._password);               
                 OracleSingletonComment.Instance.ExecuteNonQuery();
                 OracleSingletonComment.Instance.Parameters.Clear();
-                Logger.Instance.Info("User Executed");
+                Logger.Instance.Info("User " + this._firstName + " Executed");
             }
             catch (OracleException ex)
+            {
+                Logger.Instance.Error("Exceptoin while trying to execute User\nDetails:" + ex);
+            }catch (Oracle.ManagedDataAccess.Client.OracleException ex)
             {
                 Logger.Instance.Error("Exceptoin while trying to execute User\nDetails:" + ex);
             }

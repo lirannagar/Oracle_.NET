@@ -21,7 +21,7 @@ namespace OracalDBProject.Admin
         #endregion Members
 
         #region Constructor
-        public AdminUser( string userId, int salaryNIS, string adminId =  null)
+        public AdminUser(string userId, int salaryNIS, string adminId =  null)
         {
             InsertUserID(userId);
             InsertSalary(salaryNIS);
@@ -71,17 +71,21 @@ namespace OracalDBProject.Admin
         public void ExecuteToDatabase()
         {
             try
-            {
+            {               
                 OracleSingletonComment.Instance.CommandType = CommandType.StoredProcedure;
                 OracleSingletonComment.Instance.CommandText = "pkg_admin.insertAdmin";
-                OracleSingletonComment.Instance.Parameters.Add("ADMIN_ID", this._adminId);
-                OracleSingletonComment.Instance.Parameters.Add("USER_ID", this._userId);
+                OracleSingletonComment.Instance.Parameters.Add("ADMIN_ID", Int32.Parse(this._adminId));
+                OracleSingletonComment.Instance.Parameters.Add("USER_ID", Int32.Parse(this._userId));
                 OracleSingletonComment.Instance.Parameters.Add("SALARY_NIS", this._salaryNIS);
                 OracleSingletonComment.Instance.ExecuteNonQuery();
                 OracleSingletonComment.Instance.Parameters.Clear();                
                 Logger.Instance.Info("Admin User Executed");
             }
             catch (OracleException ex)
+            {
+                Logger.Instance.Error("Exceptoin while trying to execute Admin User\nDetails:" + ex);
+            }
+            catch (Oracle.ManagedDataAccess.Client.OracleException ex)
             {
                 Logger.Instance.Error("Exceptoin while trying to execute Admin User\nDetails:" + ex);
             }

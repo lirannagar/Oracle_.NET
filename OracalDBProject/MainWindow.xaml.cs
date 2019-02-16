@@ -18,6 +18,7 @@ using System.Configuration;
 using Oracle.ManagedDataAccess.Types;
 using Logger;
 using OracalDBProject.Admin;
+using static OracalDBProject.Admin.Enums;
 
 namespace OracalDBProject
 {
@@ -47,11 +48,12 @@ namespace OracalDBProject
         {
             Logger.Instance.Info("-------------------------PROGRAM STARTED-------------------");
             OpenConnection();
-            CreateAdminUsers();
+            //CreateAdminUsers();
             SwitchAdminUser();       
             //CreateTables();
             //CreateSequences();
             //CreatePackages();
+            //InitializeRoles();
             //DropTables();
             //CreateClubMemberUsers();
             try
@@ -75,6 +77,24 @@ namespace OracalDBProject
         #endregion Constructor
 
         #region Private Methods
+        private void InitializeRoles()
+        {
+            try
+            {
+                string adminId = Enums.GetDescription(ERole.ADMIN_ROLE);
+                string adminName = "Administrator";
+                Role adminRole = new Role(adminId,adminName);
+                adminRole.ExecuteToDatabase();
+                string clubMemberId = Enums.GetDescription(ERole.CLUB_MEMBER_ROLE);
+                string clubMemberName = "Club_Member";
+                Role clubMemberRole = new Role(clubMemberId, clubMemberName);
+                clubMemberRole.ExecuteToDatabase();
+                Logger.Instance.Info("Initialized Roles");
+            }catch(Exception ex)
+            {
+                Logger.Instance.Error("Exception while trying to Initialize Roles Details: " + ex );
+            }
+        }
         private void CreateAdminUserSequence()
         {
             try
@@ -165,6 +185,7 @@ namespace OracalDBProject
                 dr = OracleSingletonComment.Instance.ExecuteReader();
                 OracleSingletonComment.Instance.CommandText = bodyAdminPackageStirng;
                 dr = OracleSingletonComment.Instance.ExecuteReader();
+                Logger.Instance.Info("Admin Package Created");
             }
             catch (OracleException ex)
             {
@@ -176,15 +197,15 @@ namespace OracalDBProject
             try
             {
                 string declareUserPackageStirng = "create or replace package pkg_user is"
-                                     + " PROCEDURE insertUsers(user_id number,role_id number,first_name varchar2,last_name varchar2,user_phone varchar2,user_email varchar2,user_address varchar2,password_encrypted varchar2);"
+                                     + " PROCEDURE insertUsers(user_id number,role_id varchar2,first_name varchar2,last_name varchar2,user_phone_number varchar2,user_email varchar2,user_address varchar2,password_encrypted varchar2);"
                                      + " end pkg_user;";
                 string bodyUsersPackageStirng = "create or replace package body pkg_user is"
                                   + " PROCEDURE insertUsers("
                                   + " user_id number,"
-                                  + " role_id number,"
+                                  + " role_id varchar2,"
                                   + " first_name varchar2,"
                                   + " last_name varchar2,"
-                                  + " user_phone varchar2,"
+                                  + " user_phone_number varchar2,"
                                   + " user_email varchar2,"
                                   + " user_address varchar2,"
                                   + " password_encrypted varchar2)"
@@ -198,6 +219,7 @@ namespace OracalDBProject
                 dr = OracleSingletonComment.Instance.ExecuteReader();
                 OracleSingletonComment.Instance.CommandText = bodyUsersPackageStirng;
                 dr = OracleSingletonComment.Instance.ExecuteReader();
+                Logger.Instance.Info("User Package Created");
             }
             catch(OracleException ex)
             {
@@ -234,9 +256,35 @@ namespace OracalDBProject
             {
                 throw new Exception("Exception during create Products Package" ,ex);
             }
+        }
+        private void CreateRolePackage()
+        {
+            try
+            {
+                string declareRolesPackageStirng = "create or replace package pkg_role is"
+                                                     + " PROCEDURE insertRole(role_id varchar2,role_name varchar2);"
+                                                     + " end pkg_role;";
+                string bodyRolesPackageStirng = "create or replace package body pkg_role is"
+                                                  + " PROCEDURE insertRole("
+                                                  + " role_id varchar2,"                                                
+                                                  + " role_name varchar2)"
+                                                  + " IS"
+                                                  + " BEGIN"
+                                                  + " INSERT INTO ROLES (\"ROLE_ID\", \"ROLE_NAME\")"
+                                                  + " VALUES (ROLE_ID, ROLE_NAME);"
+                                                  + " END;"
+                                                  + " end pkg_role;";
+                OracleSingletonComment.Instance.CommandText = declareRolesPackageStirng;
+                dr = OracleSingletonComment.Instance.ExecuteReader();
+                OracleSingletonComment.Instance.CommandText = bodyRolesPackageStirng;
+                dr = OracleSingletonComment.Instance.ExecuteReader();
+                Logger.Instance.Info("Package Role Created");
 
-
-
+            }
+            catch (OracleException ex)
+            {
+                throw new Exception("Exception during create Role Package" ,  ex);
+            }
         }
         private void CreatePackages()
         {
@@ -244,7 +292,8 @@ namespace OracalDBProject
             {
                 //CreateProductsPackage();
                 CreateUserPackage();
-                CreateAdminPackage();
+                //CreateAdminPackage();
+                //CreateRolePackage();
             }
             catch(OracleException ex)
             {
@@ -390,14 +439,14 @@ namespace OracalDBProject
             {
                 string rolesStringTable = "create table Roles"+
                     "("
-                    + "role_ID number(20) not null,"
+                    + "role_ID VARCHAR2(20) not null,"
                     + "role_Name VARCHAR2(20) not null,"
                     + "CONSTRAINT Roles_pk PRIMARY KEY (role_ID)" 
                     +")";
                 string userStringTable = "create table Users" +
                     "("
                     + "User_id number(20) not null,"
-                    + "role_id number(20) ,"
+                    + "role_id VARCHAR2(20) ,"
                     + "first_name VARCHAR2(20) not null,"
                     + "last_name VARCHAR2(20) not null,"
                     + "user_phone_number VARCHAR2(20) not null,"
