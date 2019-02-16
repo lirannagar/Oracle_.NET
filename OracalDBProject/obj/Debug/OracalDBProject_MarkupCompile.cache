@@ -10,11 +10,11 @@ none
 false
 DEBUG;TRACE
 C:\Users\Liran\Desktop\OracalDBProject\OracalDBProject\App.xaml
-7-2073726902
+71730084566
 
-26948367914
+26731384943
 21-408203167
-Admin\AddAdminUserWindow.xaml;Admin\AddProductWindow.xaml;Admin\AdminPanelWindow.xaml;Admin\DeleteProductWindow.xaml;Admin\Window1.xaml;Club Member\ClubMemberWindow.xaml;MainWindow.xaml;
+Admin\AddAdminUserWindow.xaml;Admin\AddProductWindow.xaml;Admin\AdminPanelWindow.xaml;Admin\DeleteAdminWindow.xaml;Admin\DeleteProductWindow.xaml;Club Member\ClubMemberWindow.xaml;MainWindow.xaml;
 
 False
 

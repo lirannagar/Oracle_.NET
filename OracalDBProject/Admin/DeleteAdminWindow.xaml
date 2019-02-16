@@ -7,13 +7,40 @@
         xmlns:OracalDBProject="clr-namespace:OracalDBProject" x:Class="OracalDBProject.Admin.DeleteAdminWindow"
         mc:Ignorable="d"
         WindowStartupLocation="CenterScreen"
-        Title="DeleteAdminWindow" Height="300" Width="300" Loaded="Window_Loaded">
+        Title="DeleteAdminWindow" Height="300" Width="750.8" Loaded="Window_Loaded">
     <Window.Resources>
         <OracalDBProject:MarketsDBSource x:Key="marketsDBSource"/>
         <CollectionViewSource x:Key="uSERSViewSource" Source="{Binding USERS, Source={StaticResource marketsDBSource}}"/>
     </Window.Resources>
-    <Grid DataContext="{StaticResource uSERSViewSource}">
-        <DataGrid x:Name="dataGrid" HorizontalAlignment="Left" Margin="10,101,0,0" VerticalAlignment="Top" Height="159" Width="274" ItemsSource="{Binding}"/>
+    <Grid DataContext="{StaticResource uSERSViewSource}" Margin="10,0,0.4,0.4" RenderTransformOrigin="0.5,0.5">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="575*"/>
+            <ColumnDefinition Width="119*"/>
+            <ColumnDefinition Width="13*"/>
+            <ColumnDefinition Width="20*"/>
+            <ColumnDefinition Width="6*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RenderTransform>
+            <TransformGroup>
+                <ScaleTransform/>
+                <SkewTransform/>
+                <RotateTransform Angle="-0.006"/>
+                <TranslateTransform/>
+            </TransformGroup>
+        </Grid.RenderTransform>
+        <DataGrid x:Name="dataGrid" HorizontalAlignment="Left" Margin="10,86,0,0" VerticalAlignment="Top" Height="159" Width="674" ItemsSource="{Binding}" Grid.ColumnSpan="2"/>
+        <Button x:Name="searchButtonDeleteWindow" Content="Search" HorizontalAlignment="Left" Margin="539,60,0,0" VerticalAlignment="Top" Width="48" Click="searchButtonDeleteWindow_Click" Height="19" Grid.ColumnSpan="2"/>
+        <ComboBox x:Name="searchComboBoxDeleteAdmin" Margin="229,57,182.2,179">
+            <ComboBoxItem Content="By Name"/>
+            <ComboBoxItem IsSelected="True" Content="By ID"/>
+        </ComboBox>
+        <TextBox x:Name="textBoxSearchDeleteAdmin" HorizontalAlignment="Left" Height="21" Margin="397,60,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="137"/>
+        <Label x:Name="searchLabelAdmin" Content="Search:" HorizontalAlignment="Left" Margin="133,61,0,0" VerticalAlignment="Top" Width="60"/>
+        <Label x:Name="deleteLabel" Content="Enter ID Admin:" HorizontalAlignment="Left" Margin="133,30,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.403,-0.027"/>
+        <TextBox x:Name="deleteTextBox" HorizontalAlignment="Left" Height="23" Margin="397,32,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="137"/>
+        <Button x:Name="deleteButtonAdmin" Grid.ColumnSpan="2" Content="Delete" HorizontalAlignment="Left" Margin="539,34,0,0" VerticalAlignment="Top" Width="49"/>
+        <Button x:Name="showAllAdminsButton" Content="Show All Admins" HorizontalAlignment="Left" Margin="397,8,0,0" VerticalAlignment="Top" Width="190" Grid.ColumnSpan="2" Click="showAllAdminsButton_Click"/>
+        <Button x:Name="backButton" Content="Back" HorizontalAlignment="Left" Margin="10,8,0,0" VerticalAlignment="Top" Width="75" Click="backButton_Click"/>
 
     </Grid>
 </Window>

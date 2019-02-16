@@ -96,5 +96,5 @@ C:\Users\Liran\Desktop\OracalDBProject\OracalDBProject\obj\Debug\Admin\AddAdminU
 C:\Users\Liran\Desktop\OracalDBProject\OracalDBProject\obj\Debug\Admin\AddAdminUserWindow.baml
 C:\Users\Liran\Desktop\OracalDBProject\OracalDBProject\obj\Debug\Club Member\ClubMemberWindow.g.cs
 C:\Users\Liran\Desktop\OracalDBProject\OracalDBProject\obj\Debug\Club Member\ClubMemberWindow.baml
-C:\Users\Liran\Desktop\OracalDBProject\OracalDBProject\obj\Debug\Admin\Window1.g.cs
-C:\Users\Liran\Desktop\OracalDBProject\OracalDBProject\obj\Debug\Admin\Window1.baml
+C:\Users\Liran\Desktop\OracalDBProject\OracalDBProject\obj\Debug\Admin\DeleteAdminWindow.g.cs
+C:\Users\Liran\Desktop\OracalDBProject\OracalDBProject\obj\Debug\Admin\DeleteAdminWindow.baml
