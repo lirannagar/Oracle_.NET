@@ -1,4 +1,6 @@
-﻿using Oracle.DataAccess.Client;
+﻿using Oracle.ManagedDataAccess.Client;
+
+
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -56,36 +58,51 @@ namespace OracalDBProject.Admin
           
 
         }
+        private void singAdminButton_Click(object sender, RoutedEventArgs e)
+        {
+            try
+            {
+                string roleId = Enums.GetDescription(ERole.ADMIN_ROLE);
+                string firstName = firstNameTextBox.Text;
+                string lastName = lastNameTextBox.Text;
+                string phoneNumber = phoneNumberTextBox.Text;
+                string email = emailTextBox.Text;
+                string address = addressTextBox.Text;
+                string password = passwordBoxAdmin.Password.ToString();
+                User user = new User(roleId, firstName, lastName, phoneNumber, email, address, password);
+                user.ExecuteToDatabase();
+                AdminUser adminUser = new AdminUser(user.GetId(), 2000);
+                adminUser.ExecuteToDatabase();
+                OracleCommand cmd = new OracleCommand();
+                cmd.Connection = OracleSingletonConnection.Instance;
+                cmd.CommandText = String.Format("CREATE USER {0} IDENTIFIED BY \"{1}\"", firstName, password);
+                cmd.ExecuteNonQuery();
+                cmd.CommandText = String.Format("grant dba to {0}", firstName);
+                cmd.ExecuteNonQuery();
+                CleanTextBoxes();
+                Logger.Instance.Info("Admin " + firstName + " Singed In");
+            }
+            catch (OracleException ex)
+            {
+                Logger.Instance.Error("Exception while trying to Sing Admin Details\n" + ex);
+            }
+        }
+
+        private void CleanTextBoxes()
+        {
+            firstNameTextBox.Clear();
+            lastNameTextBox.Clear();
+            passwordBoxAdmin.Clear();
+            addressTextBox.Clear();
+            emailTextBox.Clear();
+            phoneNumberTextBox.Clear();
+        }
 
         #endregion Private Methods
 
         #region Public Methods
         #endregion Public Methods
 
-        private void singAdminButton_Click(object sender, RoutedEventArgs e)
-        {
-            try
-            {                
-                string roleId = Enums.GetDescription(ERole.ADMIN_ROLE);              
-                string firstName = firstNameTextBox.Text;
-                string lastName = lastNameTextBox.Text;
-                string phoneNumber = phoneNumberTextBox.Text;
-                string email =  emailTextBox.Text;
-                string address = addressTextBox.Text;
-                string password = passwordBoxAdmin.Password.ToString();
-                User user = new User(roleId,firstName,lastName,phoneNumber,email,address,password);
-                user.ExecuteToDatabase();
-                AdminUser adminUser = new AdminUser(user.GetId(),2000);
-                adminUser.ExecuteToDatabase();
-                OracleSingletonComment.Instance.CommandText = String.Format("CREATE USER {0} IDENTIFIED BY \"{1}\"", firstName, password);
-                OracleSingletonComment.Instance.ExecuteNonQuery();
-                OracleSingletonComment.Instance.CommandText = String.Format("grant dba to {0}", firstName);
-                OracleSingletonComment.Instance.ExecuteNonQuery();
-                Logger.Instance.Info("Admin Singed In");
-            }catch(OracleException ex)
-            {
-                Logger.Instance.Error("Exception while trying to Sing Admin Details\n" + ex);
-            }
-        }
+
     }
 }

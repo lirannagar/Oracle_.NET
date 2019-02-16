@@ -1,48 +1,17 @@
-﻿2019-02-15 21:37:12.002 [INFO]    -------------------------PROGRAM STARTED-------------------
-2019-02-15 21:37:12.563 [INFO]    DB was opened seccefully
-2019-02-15 21:37:12.600 [INFO]    Admin User Switched
-2019-02-15 21:37:12.672 [INFO]    LogIn window opened
-2019-02-15 21:37:15.334 [INFO]    Admin panel opened
-2019-02-15 21:37:16.560 [INFO]    Add Admin User Window Opened
-2019-02-15 21:37:16.605 [INFO]    Open Add New Admin Window and close Panel Window
-2019-02-15 21:37:33.489 [INFO]    User yoni Executed
-2019-02-15 21:37:43.720 [ERROR]   Exceptoin while trying to execute Admin User
-Details:Oracle.ManagedDataAccess.Client.OracleException (0x80004005): ORA-04063: package body "LIRAN_ADMIN.PKG_ADMIN" has errors
-ORA-06508: PL/SQL: could not find program unit being called: "LIRAN_ADMIN.PKG_ADMIN"
-ORA-06512: at line 1
-   at OracleInternal.ServiceObjects.OracleConnectionImpl.VerifyExecution(Int32& cursorId, Boolean bThrowArrayBindRelatedErrors, SqlStatementType sqlStatementType, Int32 arrayBindCount, OracleException& exceptionForArrayBindDML, Boolean& hasMoreRowsInDB, Boolean bFirstIterationDone)
-   at OracleInternal.ServiceObjects.OracleCommandImpl.ExecuteNonQuery(String commandText, OracleParameterCollection paramColl, CommandType commandType, OracleConnectionImpl connectionImpl, Int32 longFetchSize, Int64 clientInitialLOBFS, OracleDependencyImpl orclDependencyImpl, Int64[]& scnFromExecution, OracleParameterCollection& bindByPositionParamColl, Boolean& bBindParamPresent, OracleException& exceptionForArrayBindDML, OracleConnection connection, OracleLogicalTransaction& oracleLogicalTransaction, Boolean isFromEF)
-   at Oracle.ManagedDataAccess.Client.OracleCommand.ExecuteNonQuery()
-   at OracalDBProject.Admin.AdminUser.ExecuteToDatabase() in C:\Users\Liran\Desktop\OracalDBProject\OracalDBProject\Admin\AdminUser.cs:line 80
-2019-02-15 21:46:47.736 [INFO]    -------------------------PROGRAM STARTED-------------------
-2019-02-15 21:46:48.404 [INFO]    DB was opened seccefully
-2019-02-15 21:46:48.470 [INFO]    Admin User Switched
-2019-02-15 21:46:48.534 [INFO]    LogIn window opened
-2019-02-15 21:46:50.247 [INFO]    Admin panel opened
-2019-02-15 21:46:51.383 [INFO]    Add Admin User Window Opened
-2019-02-15 21:46:51.438 [INFO]    Open Add New Admin Window and close Panel Window
-2019-02-15 21:47:05.708 [INFO]    User mark Executed
-2019-02-15 21:53:15.805 [INFO]    -------------------------PROGRAM STARTED-------------------
-2019-02-15 21:53:16.554 [INFO]    DB was opened seccefully
-2019-02-15 21:53:16.600 [INFO]    Admin User Switched
-2019-02-15 21:53:16.719 [INFO]    LogIn window opened
-2019-02-15 21:53:18.550 [INFO]    Admin panel opened
-2019-02-15 21:53:19.491 [INFO]    Add Admin User Window Opened
-2019-02-15 21:53:19.550 [INFO]    Open Add New Admin Window and close Panel Window
-2019-02-15 21:53:36.155 [INFO]    User role Executed
-2019-02-15 22:08:15.802 [INFO]    -------------------------PROGRAM STARTED-------------------
-2019-02-15 22:08:16.889 [INFO]    DB was opened seccefully
-2019-02-15 22:08:16.953 [INFO]    Admin User Switched
-2019-02-15 22:08:17.108 [INFO]    LogIn window opened
-2019-02-15 22:08:21.547 [INFO]    Admin panel opened
-2019-02-15 22:08:23.641 [INFO]    Add Admin User Window Opened
-2019-02-15 22:08:23.705 [INFO]    Open Add New Admin Window and close Panel Window
-2019-02-15 22:08:40.301 [INFO]    User karin Executed
-2019-02-15 22:10:01.770 [ERROR]   Exceptoin while trying to execute Admin User
-Details:Oracle.ManagedDataAccess.Client.OracleException (0x80004005): ORA-04063: package body "LIRAN_ADMIN.PKG_ADMIN" has errors
-ORA-06508: PL/SQL: could not find program unit being called: "LIRAN_ADMIN.PKG_ADMIN"
-ORA-06512: at line 1
-   at OracleInternal.ServiceObjects.OracleConnectionImpl.VerifyExecution(Int32& cursorId, Boolean bThrowArrayBindRelatedErrors, SqlStatementType sqlStatementType, Int32 arrayBindCount, OracleException& exceptionForArrayBindDML, Boolean& hasMoreRowsInDB, Boolean bFirstIterationDone)
-   at OracleInternal.ServiceObjects.OracleCommandImpl.ExecuteNonQuery(String commandText, OracleParameterCollection paramColl, CommandType commandType, OracleConnectionImpl connectionImpl, Int32 longFetchSize, Int64 clientInitialLOBFS, OracleDependencyImpl orclDependencyImpl, Int64[]& scnFromExecution, OracleParameterCollection& bindByPositionParamColl, Boolean& bBindParamPresent, OracleException& exceptionForArrayBindDML, OracleConnection connection, OracleLogicalTransaction& oracleLogicalTransaction, Boolean isFromEF)
-   at Oracle.ManagedDataAccess.Client.OracleCommand.ExecuteNonQuery()
-   at OracalDBProject.Admin.AdminUser.ExecuteToDatabase() in C:\Users\Liran\Desktop\OracalDBProject\OracalDBProject\Admin\AdminUser.cs:line 80
+﻿2019-02-16 11:16:28.704 [INFO]    -------------------------PROGRAM STARTED-------------------
+2019-02-16 11:16:29.096 [INFO]    DB was opened seccefully
+2019-02-16 11:16:29.125 [INFO]    Admin User Switched
+2019-02-16 11:16:29.172 [INFO]    LogIn window opened
+2019-02-16 11:17:32.699 [INFO]    Admin panel opened
+2019-02-16 11:17:33.850 [INFO]    Add Admin User Window Opened
+2019-02-16 11:17:33.881 [INFO]    Open Add New Admin Window and close Panel Window
+2019-02-16 11:18:00.013 [INFO]    User MOSHE Executed
+2019-02-16 11:18:00.031 [INFO]    Admin User Executed
+2019-02-16 11:18:00.045 [INFO]    Admin Singed In
+2019-02-16 11:36:39.928 [INFO]    -------------------------PROGRAM STARTED-------------------
+2019-02-16 11:36:40.342 [INFO]    DB was opened seccefully
+2019-02-16 11:36:40.372 [INFO]    Admin User Switched
+2019-02-16 11:36:40.418 [INFO]    LogIn window opened
+2019-02-16 11:36:44.488 [INFO]    Admin panel opened
+2019-02-16 11:36:45.965 [INFO]    Add Admin User Window Opened
+2019-02-16 11:36:45.993 [INFO]    Open Add New Admin Window and close Panel Window

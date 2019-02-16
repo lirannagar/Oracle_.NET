@@ -48,7 +48,7 @@ namespace OracalDBProject
         {
             Logger.Instance.Info("-------------------------PROGRAM STARTED-------------------");
             OpenConnection();
-            //CreateAdminUsers();
+           // CreateAdminUsers();
             SwitchAdminUser();       
             //CreateTables();
             //CreateSequences();
@@ -168,12 +168,12 @@ namespace OracalDBProject
             try
             {
                 string declareAdminPackageStirng = "create or replace package pkg_admin is"
-                                     + " PROCEDURE insertAdmin(admin_id number,role_id number,salary_nis number);"
+                                     + " PROCEDURE insertAdmin(admin_id number,user_id number,salary_nis number);"
                                      + " end pkg_admin;";
                 string bodyAdminPackageStirng = "create or replace package body pkg_admin is"
                   + " PROCEDURE insertAdmin("
                   + " admin_id number,"
-                  + " role_id number,"
+                  + " user_id number,"
                   + " salary_nis number)"
                   + " IS"
                   + " BEGIN"
@@ -291,8 +291,8 @@ namespace OracalDBProject
             try
             {
                 //CreateProductsPackage();
-                CreateUserPackage();
-                //CreateAdminPackage();
+                //CreateUserPackage();
+                CreateAdminPackage();
                 //CreateRolePackage();
             }
             catch(OracleException ex)
