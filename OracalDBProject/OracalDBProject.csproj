@@ -144,9 +144,11 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="Club Member\ClubMember.cs" />
     <Compile Include="Club Member\ClubMemberPanelWindow.xaml.cs">
       <DependentUpon>ClubMemberPanelWindow.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Club Member\IClubMember.cs" />
     <Compile Include="Logger.cs" />
     <Compile Include="MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
@@ -178,7 +180,6 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <None Include="Logger.log" />
     <None Include="MarketsDBSource.xsc">
       <DependentUpon>MarketsDBSource.xsd</DependentUpon>
     </None>

@@ -6,11 +6,6 @@
         xmlns:local="clr-namespace:OracalDBProject"
         mc:Ignorable="d"
         Title="Club Member" Height="350" Width="525">
-    <Grid>
-        <Button x:Name="ShowProductsButton" Content="Show Product List" HorizontalAlignment="Left" Margin="179,125,0,0" VerticalAlignment="Top" Width="141" Height="30"/>
-        <Button x:Name="AddNewProductButton" Content="Add New Product" HorizontalAlignment="Left" Margin="179,40,0,0" VerticalAlignment="Top" Width="141" Height="30"/>
-        <Button x:Name="DeleteProductButton" Content="Delete Product" HorizontalAlignment="Left" Margin="179,218,0,0" VerticalAlignment="Top" Width="141" Height="30"/>
-
-    </Grid>
+    <Grid/>
 </Window>
 

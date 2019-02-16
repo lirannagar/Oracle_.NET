@@ -11,3 +11,4 @@ C:\Users\Liran\Desktop\OracalDBProject\Logger\bin\Debug\Logger.dll
 C:\Users\Liran\Desktop\OracalDBProject\Logger\bin\Debug\Logger.pdb
 C:\Users\Liran\Desktop\OracalDBProject\Logger\obj\Debug\Logger.dll
 C:\Users\Liran\Desktop\OracalDBProject\Logger\obj\Debug\Logger.pdb
+C:\Users\Liran\Desktop\OracalDBProject\Logger\obj\Debug\Logger.csprojResolveAssemblyReference.cache

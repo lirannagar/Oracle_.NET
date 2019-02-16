@@ -52,7 +52,7 @@ namespace OracalDBProject
             SwitchAdminUser();       
             //CreateTables();
             //CreateSequences();
-            //CreatePackages();
+            CreatePackages();
             //InitializeRoles();
             //DropTables();
             //CreateClubMemberUsers();
@@ -113,13 +113,32 @@ namespace OracalDBProject
                 Logger.Instance.Error("Exception while trying to Create Admin Sequence\nDetails: " + ex);
             }
         }
+        private void CreateClubMemberSequence()
+        {
+            try
+            {
+                string adminUserSequenceString = "CREATE SEQUENCE club_member_seq"
+                                + " START WITH     10000"
+                                + " INCREMENT BY   1"
+                                + " NOCACHE"
+                                + " NOCYCLE";
+                OracleSingletonComment.Instance.CommandText = adminUserSequenceString;
+                dr = OracleSingletonComment.Instance.ExecuteReader();
+                Logger.Instance.Info("Club Member Sequence Created");
+            }
+            catch (OracleException ex)
+            {
+                Logger.Instance.Error("Exception while trying to Create Club Member Sequence\nDetails: " + ex);
+            }
+        }
         private void CreateSequences()
         {
             try
             {
-                CreateProductSequence();
-                CreateUserSequence();
-                CreateAdminUserSequence();
+                //CreateProductSequence();
+                //CreateUserSequence();
+                //CreateAdminUserSequence();
+                CreateClubMemberSequence();
                 Logger.Instance.Info("All Sequences Created");
             }
             catch (OracleException ex)
@@ -286,14 +305,45 @@ namespace OracalDBProject
                 throw new Exception("Exception during create Role Package" ,  ex);
             }
         }
+        private void CreateClubMemberPackage()
+        {
+            try
+            {
+                string declareClubMemberPackageStirng = "create or replace package pkg_club_member is"
+                                                     + " PROCEDURE insertClubMember(number_id number,user_id number,join_date varchar2);"
+                                                     + " end pkg_club_member;";
+                string bodyClubMemberPackageStirng = "create or replace package body pkg_club_member is"
+                                                  + " PROCEDURE insertClubMember("
+                                                  + " number_id number,"
+                                                  + " user_id number,"
+                                                  + " join_date varchar2)"
+                                                  + " IS"
+                                                  + " BEGIN"
+                                                  + " INSERT INTO ROLES (\"MEMBER_ID\", \"USER_ID\", \"JOIN_DATE\")"
+                                                  + " VALUES (MEMBER_ID, USER_ID, JOIN_DATE);"
+                                                  + " END;"
+                                                  + " end pkg_club_member;";
+                OracleSingletonComment.Instance.CommandText = declareClubMemberPackageStirng;
+                dr = OracleSingletonComment.Instance.ExecuteReader();
+                OracleSingletonComment.Instance.CommandText = bodyClubMemberPackageStirng;
+                dr = OracleSingletonComment.Instance.ExecuteReader();
+                Logger.Instance.Info("Package Club Member Created");
+
+            }
+            catch (OracleException ex)
+            {
+                throw new Exception("Exception during create Club Member Package", ex);
+            }
+        }
         private void CreatePackages()
         {
             try
             {
                 //CreateProductsPackage();
                 //CreateUserPackage();
-                CreateAdminPackage();
+                //CreateAdminPackage();
                 //CreateRolePackage();
+                CreateClubMemberPackage();
             }
             catch(OracleException ex)
             {
@@ -472,7 +522,7 @@ namespace OracalDBProject
                     "("
                     + "member_id number(20) not null,"
                     + "user_id number(20),"
-                    + "join_date DATE DEFAULT (sysdate),"
+                    + "join_date VARCHAR2(20) not null,"
                     + "CONSTRAINT Club_member_pk PRIMARY KEY (member_id),"
                     + "CONSTRAINT fk_Userss"
                       + " FOREIGN KEY (user_id)"
@@ -482,7 +532,7 @@ namespace OracalDBProject
                     "("
                     + "Transaction_id number(20) not null,"
                     + "member_id number(20) ,"
-                    + "date_transaction DATE DEFAULT (sysdate),"
+                    + "date_transaction VARCHAR2(20) not null,"
                     + "CONSTRAINT Transaction_pk PRIMARY KEY (Transaction_id),"
                     + "CONSTRAINT fk_Club_member"
                       + " FOREIGN KEY (member_id)"
@@ -511,7 +561,7 @@ namespace OracalDBProject
                     "("
                     + "Payment_id number(20) not null,"
                     + "transaction_id number(20) ,"
-                    + "payment_date DATE DEFAULT (sysdate),"
+                    + "payment_date VARCHAR2(20) not null,"
                     + "payment_total number(38) not null,"
                     + "credit_card VARCHAR2(30) not null,"
                     + "CONSTRAINT Payment_pk PRIMARY KEY (Payment_id),"

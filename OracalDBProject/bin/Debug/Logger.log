@@ -1,17 +1,17 @@
-﻿2019-02-16 11:16:28.704 [INFO]    -------------------------PROGRAM STARTED-------------------
-2019-02-16 11:16:29.096 [INFO]    DB was opened seccefully
-2019-02-16 11:16:29.125 [INFO]    Admin User Switched
-2019-02-16 11:16:29.172 [INFO]    LogIn window opened
-2019-02-16 11:17:32.699 [INFO]    Admin panel opened
-2019-02-16 11:17:33.850 [INFO]    Add Admin User Window Opened
-2019-02-16 11:17:33.881 [INFO]    Open Add New Admin Window and close Panel Window
-2019-02-16 11:18:00.013 [INFO]    User MOSHE Executed
-2019-02-16 11:18:00.031 [INFO]    Admin User Executed
-2019-02-16 11:18:00.045 [INFO]    Admin Singed In
-2019-02-16 11:36:39.928 [INFO]    -------------------------PROGRAM STARTED-------------------
-2019-02-16 11:36:40.342 [INFO]    DB was opened seccefully
-2019-02-16 11:36:40.372 [INFO]    Admin User Switched
-2019-02-16 11:36:40.418 [INFO]    LogIn window opened
-2019-02-16 11:36:44.488 [INFO]    Admin panel opened
-2019-02-16 11:36:45.965 [INFO]    Add Admin User Window Opened
-2019-02-16 11:36:45.993 [INFO]    Open Add New Admin Window and close Panel Window
+﻿2019-02-16 14:42:28.619 [INFO]    -------------------------PROGRAM STARTED-------------------
+2019-02-16 14:42:29.210 [INFO]    DB was opened seccefully
+2019-02-16 14:42:29.239 [INFO]    Admin User Switched
+2019-02-16 14:42:29.279 [INFO]    TABLE Roles was CREATED
+2019-02-16 14:42:29.301 [INFO]    TABLE Users was CREATED
+2019-02-16 14:42:29.324 [INFO]    TABLE Administrator was CREATED
+2019-02-16 14:42:29.347 [INFO]    TABLE Club_member was CREATED
+2019-02-16 14:42:29.373 [INFO]    TABLE Transaction was CREATED
+2019-02-16 14:42:29.400 [INFO]    TABLE Products was CREATED
+2019-02-16 14:42:29.421 [INFO]    TABLE Transaction_Details was CREATED
+2019-02-16 14:42:29.450 [INFO]    TABLE Payment was CREATED
+2019-02-16 14:42:29.553 [INFO]    LogIn window opened
+2019-02-16 15:50:59.022 [INFO]    -------------------------PROGRAM STARTED-------------------
+2019-02-16 15:50:59.666 [INFO]    DB was opened seccefully
+2019-02-16 15:50:59.740 [INFO]    Admin User Switched
+2019-02-16 15:50:59.846 [INFO]    Package Club Member Created
+2019-02-16 15:50:59.891 [INFO]    LogIn window opened
