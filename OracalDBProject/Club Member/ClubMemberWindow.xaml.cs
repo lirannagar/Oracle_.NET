@@ -58,13 +58,13 @@ namespace OracalDBProject.Club_Member
                 cmd.Connection = OracleSingletonConnection.Instance;
                 cmd.CommandText = String.Format("CREATE USER {0} IDENTIFIED BY \"{1}\"", firstName, password);
                 cmd.ExecuteNonQuery();
-                cmd.CommandText = String.Format("GRANT SELECT ON suppliers TO {0}", firstName);
+                cmd.CommandText = String.Format("GRANT SELECT ON PRODUCTS TO {0}", firstName);
                 cmd.ExecuteNonQuery();
                 CleanTextBoxes();
-                Logger.Instance.Info("Club member Singed In");
+                Logger.Instance.Info("Club member Singed UP");
             }catch(Exception ex)
             {
-                Logger.Instance.Error("Exception while trying to sing In User \nDetails "  + ex);
+                Logger.Instance.Error("Exception while trying to sing UP Club member \nDetails " + ex);
             }
     
         }

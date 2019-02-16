@@ -120,7 +120,7 @@ namespace OracalDBProject.Admin
                 OracleSingletonComment.Instance.Parameters.Add("USER_PHONE_NUMBER", this._phoneNumber);
                 OracleSingletonComment.Instance.Parameters.Add("USER_EMAIL", this._email);
                 OracleSingletonComment.Instance.Parameters.Add("USER_ADDRESS", this._address);
-                OracleSingletonComment.Instance.Parameters.Add("PASSWORD_ENCRYPTED", this._password);               
+                OracleSingletonComment.Instance.Parameters.Add("PASSWORD_ENCRYPTED", this._password);
                 OracleSingletonComment.Instance.ExecuteNonQuery();
                 OracleSingletonComment.Instance.Parameters.Clear();
                 Logger.Instance.Info("User " + this._firstName + " Executed");

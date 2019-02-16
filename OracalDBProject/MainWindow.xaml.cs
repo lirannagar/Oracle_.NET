@@ -310,16 +310,16 @@ namespace OracalDBProject
             try
             {
                 string declareClubMemberPackageStirng = "create or replace package pkg_club_member is"
-                                                     + " PROCEDURE insertClubMember(number_id number,user_id number,join_date varchar2);"
+                                                     + " PROCEDURE insertClubMember(member_id number,user_id number,join_date varchar2);"
                                                      + " end pkg_club_member;";
                 string bodyClubMemberPackageStirng = "create or replace package body pkg_club_member is"
                                                   + " PROCEDURE insertClubMember("
-                                                  + " number_id number,"
+                                                  + " member_id number,"
                                                   + " user_id number,"
                                                   + " join_date varchar2)"
                                                   + " IS"
                                                   + " BEGIN"
-                                                  + " INSERT INTO ROLES (\"MEMBER_ID\", \"USER_ID\", \"JOIN_DATE\")"
+                                                  + " INSERT INTO CLUB_MEMBER (\"MEMBER_ID\", \"USER_ID\", \"JOIN_DATE\")"
                                                   + " VALUES (MEMBER_ID, USER_ID, JOIN_DATE);"
                                                   + " END;"
                                                   + " end pkg_club_member;";
@@ -340,7 +340,7 @@ namespace OracalDBProject
             try
             {
                 //CreateProductsPackage();
-                CreateUserPackage();
+                //CreateUserPackage();
                 //CreateAdminPackage();
                 //CreateRolePackage();
                 CreateClubMemberPackage();

@@ -23,7 +23,9 @@ namespace OracalDBProject.Club_Member
         #region Constructor
         public ClubMember(string idUserId, string date, string idClubMember = null)
         {
-
+            InsertClubMemberID(idClubMember);
+            InsertDate(date);
+            InsertUserID(idUserId);
         }
 
         #endregion Constructor
@@ -78,7 +80,7 @@ namespace OracalDBProject.Club_Member
                 OracleSingletonComment.Instance.Parameters.Add("JOIN_DATE", this._date);
                 OracleSingletonComment.Instance.ExecuteNonQuery();
                 OracleSingletonComment.Instance.Parameters.Clear();
-                Logger.Instance.Info("User " + this._idUserId + " Executed");
+                Logger.Instance.Info("Club Member " + this._idUserId + " Executed");
             }
             catch (OracleException ex)
             {

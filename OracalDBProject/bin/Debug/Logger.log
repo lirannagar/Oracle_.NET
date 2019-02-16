@@ -1,78 +1,20 @@
-﻿2019-02-16 14:42:28.619 [INFO]    -------------------------PROGRAM STARTED-------------------
-2019-02-16 14:42:29.210 [INFO]    DB was opened seccefully
-2019-02-16 14:42:29.239 [INFO]    Admin User Switched
-2019-02-16 14:42:29.279 [INFO]    TABLE Roles was CREATED
-2019-02-16 14:42:29.301 [INFO]    TABLE Users was CREATED
-2019-02-16 14:42:29.324 [INFO]    TABLE Administrator was CREATED
-2019-02-16 14:42:29.347 [INFO]    TABLE Club_member was CREATED
-2019-02-16 14:42:29.373 [INFO]    TABLE Transaction was CREATED
-2019-02-16 14:42:29.400 [INFO]    TABLE Products was CREATED
-2019-02-16 14:42:29.421 [INFO]    TABLE Transaction_Details was CREATED
-2019-02-16 14:42:29.450 [INFO]    TABLE Payment was CREATED
-2019-02-16 14:42:29.553 [INFO]    LogIn window opened
-2019-02-16 15:50:59.022 [INFO]    -------------------------PROGRAM STARTED-------------------
-2019-02-16 15:50:59.666 [INFO]    DB was opened seccefully
-2019-02-16 15:50:59.740 [INFO]    Admin User Switched
-2019-02-16 15:50:59.846 [INFO]    Package Club Member Created
-2019-02-16 15:50:59.891 [INFO]    LogIn window opened
-2019-02-16 17:06:03.318 [INFO]    -------------------------PROGRAM STARTED-------------------
-2019-02-16 17:06:03.778 [INFO]    DB was opened seccefully
-2019-02-16 17:06:03.808 [INFO]    Admin User Switched
-2019-02-16 17:06:03.855 [INFO]    LogIn window opened
-2019-02-16 17:06:12.548 [INFO]    Admin panel opened
-2019-02-16 17:06:17.071 [INFO]    Club Member Window Opened
-2019-02-16 17:06:17.109 [INFO]    panel admin closed
-2019-02-16 17:07:14.430 [ERROR]   Exceptoin while trying to execute User
-Details:Oracle.ManagedDataAccess.Client.OracleException (0x80004005): ORA-02291: integrity constraint (LIRAN_ADMIN.FK_ROLES) violated - parent key not found
-ORA-06512: at "LIRAN_ADMIN.PKG_USER", line 1
-ORA-06512: at line 1
-   at OracleInternal.ServiceObjects.OracleConnectionImpl.VerifyExecution(Int32& cursorId, Boolean bThrowArrayBindRelatedErrors, SqlStatementType sqlStatementType, Int32 arrayBindCount, OracleException& exceptionForArrayBindDML, Boolean& hasMoreRowsInDB, Boolean bFirstIterationDone)
-   at OracleInternal.ServiceObjects.OracleCommandImpl.ExecuteNonQuery(String commandText, OracleParameterCollection paramColl, CommandType commandType, OracleConnectionImpl connectionImpl, Int32 longFetchSize, Int64 clientInitialLOBFS, OracleDependencyImpl orclDependencyImpl, Int64[]& scnFromExecution, OracleParameterCollection& bindByPositionParamColl, Boolean& bBindParamPresent, OracleException& exceptionForArrayBindDML, OracleConnection connection, OracleLogicalTransaction& oracleLogicalTransaction, Boolean isFromEF)
-   at Oracle.ManagedDataAccess.Client.OracleCommand.ExecuteNonQuery()
-   at OracalDBProject.Admin.User.ExecuteToDatabase() in C:\Users\Liran\Desktop\OracalDBProject\OracalDBProject\Admin\User.cs:line 124
-2019-02-16 17:09:46.330 [INFO]    -------------------------PROGRAM STARTED-------------------
-2019-02-16 17:09:46.834 [INFO]    DB was opened seccefully
-2019-02-16 17:09:46.881 [INFO]    Admin User Switched
-2019-02-16 17:09:46.943 [INFO]    LogIn window opened
-2019-02-16 17:09:49.599 [INFO]    Admin panel opened
-2019-02-16 17:10:19.624 [INFO]    Club Member Window Opened
-2019-02-16 17:10:19.664 [INFO]    panel admin closed
-2019-02-16 17:19:09.048 [INFO]    -------------------------PROGRAM STARTED-------------------
-2019-02-16 17:19:09.707 [INFO]    DB was opened seccefully
-2019-02-16 17:19:09.740 [INFO]    Admin User Switched
-2019-02-16 17:19:09.793 [INFO]    LogIn window opened
-2019-02-16 17:19:11.225 [INFO]    Admin panel opened
-2019-02-16 17:19:12.340 [INFO]    Add Admin User Window Opened
-2019-02-16 17:19:12.386 [INFO]    Open Add New Admin Window and close Panel Window
-2019-02-16 17:19:33.604 [ERROR]   Exceptoin while trying to execute User
-Details:Oracle.ManagedDataAccess.Client.OracleException (0x80004005): ORA-02291: integrity constraint (LIRAN_ADMIN.FK_ROLES) violated - parent key not found
-ORA-06512: at "LIRAN_ADMIN.PKG_USER", line 1
-ORA-06512: at line 1
-   at OracleInternal.ServiceObjects.OracleConnectionImpl.VerifyExecution(Int32& cursorId, Boolean bThrowArrayBindRelatedErrors, SqlStatementType sqlStatementType, Int32 arrayBindCount, OracleException& exceptionForArrayBindDML, Boolean& hasMoreRowsInDB, Boolean bFirstIterationDone)
-   at OracleInternal.ServiceObjects.OracleCommandImpl.ExecuteNonQuery(String commandText, OracleParameterCollection paramColl, CommandType commandType, OracleConnectionImpl connectionImpl, Int32 longFetchSize, Int64 clientInitialLOBFS, OracleDependencyImpl orclDependencyImpl, Int64[]& scnFromExecution, OracleParameterCollection& bindByPositionParamColl, Boolean& bBindParamPresent, OracleException& exceptionForArrayBindDML, OracleConnection connection, OracleLogicalTransaction& oracleLogicalTransaction, Boolean isFromEF)
-   at Oracle.ManagedDataAccess.Client.OracleCommand.ExecuteNonQuery()
-   at OracalDBProject.Admin.User.ExecuteToDatabase() in C:\Users\Liran\Desktop\OracalDBProject\OracalDBProject\Admin\User.cs:line 124
-2019-02-16 17:26:30.036 [INFO]    -------------------------PROGRAM STARTED-------------------
-2019-02-16 17:26:30.546 [INFO]    DB was opened seccefully
-2019-02-16 17:26:30.580 [INFO]    Admin User Switched
-2019-02-16 17:26:30.611 [INFO]    Role Administrator Executed
-2019-02-16 17:26:30.619 [INFO]    Role Club_Member Executed
-2019-02-16 17:26:30.627 [INFO]    Initialized Roles
-2019-02-16 17:26:30.681 [INFO]    LogIn window opened
-2019-02-16 17:26:32.979 [INFO]    Admin panel opened
-2019-02-16 17:26:49.568 [INFO]    -------------------------PROGRAM STARTED-------------------
-2019-02-16 17:26:50.220 [INFO]    DB was opened seccefully
-2019-02-16 17:26:50.256 [INFO]    Admin User Switched
-2019-02-16 17:26:50.306 [INFO]    LogIn window opened
-2019-02-16 17:26:51.752 [INFO]    Admin panel opened
-2019-02-16 17:26:53.771 [INFO]    Club Member Window Opened
-2019-02-16 17:26:53.814 [INFO]    panel admin closed
-2019-02-16 17:27:07.362 [INFO]    User dsas Executed
-2019-02-16 17:27:21.473 [ERROR]   Exceptoin while trying to execute Club Member
-Details:Oracle.ManagedDataAccess.Client.OracleException (0x80004005): ORA-04063: package body "LIRAN_ADMIN.PKG_CLUB_MEMBER" has errors
-ORA-06508: PL/SQL: could not find program unit being called: "LIRAN_ADMIN.PKG_CLUB_MEMBER"
-ORA-06512: at line 1
-   at OracleInternal.ServiceObjects.OracleConnectionImpl.VerifyExecution(Int32& cursorId, Boolean bThrowArrayBindRelatedErrors, SqlStatementType sqlStatementType, Int32 arrayBindCount, OracleException& exceptionForArrayBindDML, Boolean& hasMoreRowsInDB, Boolean bFirstIterationDone)
-   at OracleInternal.ServiceObjects.OracleCommandImpl.ExecuteNonQuery(String commandText, OracleParameterCollection paramColl, CommandType commandType, OracleConnectionImpl connectionImpl, Int32 longFetchSize, Int64 clientInitialLOBFS, OracleDependencyImpl orclDependencyImpl, Int64[]& scnFromExecution, OracleParameterCollection& bindByPositionParamColl, Boolean& bBindParamPresent, OracleException& exceptionForArrayBindDML, OracleConnection connection, OracleLogicalTransaction& oracleLogicalTransaction, Boolean isFromEF)
-   at Oracle.ManagedDataAccess.Client.OracleCommand.ExecuteNonQuery()
-   at OracalDBProject.Club_Member.ClubMember.ExecuteToDatabase() in C:\Users\Liran\Desktop\OracalDBProject\OracalDBProject\Club Member\ClubMember.cs:line 79
+﻿2019-02-16 19:47:04.422 [INFO]    -------------------------PROGRAM STARTED-------------------
+2019-02-16 19:47:05.102 [INFO]    DB was opened seccefully
+2019-02-16 19:47:05.152 [INFO]    Admin User Switched
+2019-02-16 19:47:05.215 [INFO]    LogIn window opened
+2019-02-16 19:47:06.441 [INFO]    Admin panel opened
+2019-02-16 19:47:08.010 [INFO]    Club Member Window Opened
+2019-02-16 19:47:08.041 [INFO]    panel admin closed
+2019-02-16 19:47:20.658 [INFO]    User alen Executed
+2019-02-16 19:47:20.668 [INFO]    Club Member  Executed
+2019-02-16 19:47:20.693 [INFO]    Club member Singed UP
+2019-02-16 19:50:41.574 [INFO]    -------------------------PROGRAM STARTED-------------------
+2019-02-16 19:50:42.094 [INFO]    DB was opened seccefully
+2019-02-16 19:50:42.131 [INFO]    Admin User Switched
+2019-02-16 19:50:42.189 [INFO]    LogIn window opened
+2019-02-16 19:50:43.643 [INFO]    Admin panel opened
+2019-02-16 19:50:44.760 [INFO]    Club Member Window Opened
+2019-02-16 19:50:44.795 [INFO]    panel admin closed
+2019-02-16 19:50:55.412 [INFO]    User kingman Executed
+2019-02-16 19:50:55.423 [INFO]    Club Member 1048 Executed
+2019-02-16 19:50:55.457 [INFO]    Club member Singed UP
