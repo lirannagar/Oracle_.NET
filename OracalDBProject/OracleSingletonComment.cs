@@ -9,7 +9,7 @@ namespace OracalDBProject
 {
     public class OracleSingletonComment
     {
-        
+        //
         private static OracleCommand instance;
 
         public static OracleCommand Instance

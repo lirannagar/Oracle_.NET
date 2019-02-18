@@ -98,3 +98,6 @@ C:\Users\Liran\Desktop\OracalDBProject\OracalDBProject\obj\Debug\Club Member\Clu
 C:\Users\Liran\Desktop\OracalDBProject\OracalDBProject\obj\Debug\Club Member\ClubMemberWindow.baml
 C:\Users\Liran\Desktop\OracalDBProject\OracalDBProject\obj\Debug\Admin\DeleteAdminWindow.g.cs
 C:\Users\Liran\Desktop\OracalDBProject\OracalDBProject\obj\Debug\Admin\DeleteAdminWindow.baml
+C:\Users\Liran\Source\Repos\Oracle_.NET\OracalDBProject\bin\Debug\OracalDBProject.exe.config
+C:\Users\Liran\Source\Repos\Oracle_.NET\OracalDBProject\obj\Debug\OracalDBProject.exe
+C:\Users\Liran\Source\Repos\Oracle_.NET\OracalDBProject\obj\Debug\OracalDBProject.pdb
