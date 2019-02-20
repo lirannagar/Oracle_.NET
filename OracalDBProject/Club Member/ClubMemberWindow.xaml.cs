@@ -58,7 +58,7 @@ namespace OracalDBProject.Club_Member
                 cmd.Connection = OracleSingletonConnection.Instance;
                 cmd.CommandText = String.Format("CREATE USER {0} IDENTIFIED BY \"{1}\"", firstName, password);
                 cmd.ExecuteNonQuery();
-                cmd.CommandText = String.Format("GRANT SELECT ON PRODUCTS TO {0}", firstName);
+                cmd.CommandText = String.Format("GRANT SELECT, insert, update, delete ON PRODUCTS TO {0}", firstName);
                 cmd.ExecuteNonQuery();
                 CleanTextBoxes();
                 Logger.Instance.Info("Club member Singed UP");
