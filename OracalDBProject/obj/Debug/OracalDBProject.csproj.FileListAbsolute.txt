@@ -101,3 +101,6 @@ C:\Users\Liran\Desktop\OracalDBProject\OracalDBProject\obj\Debug\Admin\DeleteAdm
 C:\Users\Liran\Source\Repos\Oracle_.NET\OracalDBProject\bin\Debug\OracalDBProject.exe.config
 C:\Users\Liran\Source\Repos\Oracle_.NET\OracalDBProject\obj\Debug\OracalDBProject.exe
 C:\Users\Liran\Source\Repos\Oracle_.NET\OracalDBProject\obj\Debug\OracalDBProject.pdb
+C:\Users\Liran\Source\Repos\Oracle_.NET2\OracalDBProject\bin\Debug\OracalDBProject.exe.config
+C:\Users\Liran\Source\Repos\Oracle_.NET2\OracalDBProject\obj\Debug\OracalDBProject.exe
+C:\Users\Liran\Source\Repos\Oracle_.NET2\OracalDBProject\obj\Debug\OracalDBProject.pdb

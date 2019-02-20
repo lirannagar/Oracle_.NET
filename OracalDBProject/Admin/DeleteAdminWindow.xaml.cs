@@ -129,7 +129,10 @@ namespace OracalDBProject.Admin
 
         private void deleteButtonAdmin_Click(object sender, RoutedEventArgs e)
         {
-            //SELECT ADMINISTRATOR.USER_ID FROM ADMINISTRATOR WHERE ADMIN_ID= 10022;
+            string adminUser = deleteTextBox.Text;
+            string sensorIDQuery = "SELECT ADMINISTRATOR.USER_ID FROM ADMINISTRATOR WHERE ADMIN_ID= " + Int32.Parse(adminUser) + ";";
+            //var Id = OracleSingletonComment.Instance.ExecuteStream.ExecuteGeneralQueryRetrieveInteger(sensorIDQuery);
+            /////////
         }
     }
 }
