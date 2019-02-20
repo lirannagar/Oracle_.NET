@@ -115,6 +115,14 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Admin\ShowAllAdminWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Admin\ShowAllProductsWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Club Member\ClubMemberWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -146,6 +154,12 @@
     <Compile Include="Admin\IUser.cs" />
     <Compile Include="Admin\Product.cs" />
     <Compile Include="Admin\Role.cs" />
+    <Compile Include="Admin\ShowAllAdminWindow.xaml.cs">
+      <DependentUpon>ShowAllAdminWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\ShowAllProductsWindow.xaml.cs">
+      <DependentUpon>ShowAllProductsWindow.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Admin\User.cs" />
     <Compile Include="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>

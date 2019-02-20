@@ -139,3 +139,7 @@ C:\Users\Liran\Source\Repos\Oracle_.NET2\OracalDBProject\obj\Debug\MainWindow.ba
 C:\Users\Liran\Source\Repos\Oracle_.NET2\OracalDBProject\obj\Debug\OracalDBProject.g.resources
 C:\Users\Liran\Source\Repos\Oracle_.NET2\OracalDBProject\obj\Debug\OracalDBProject.Properties.Resources.resources
 C:\Users\Liran\Source\Repos\Oracle_.NET2\OracalDBProject\obj\Debug\OracalDBProject.csproj.GenerateResource.Cache
+C:\Users\Liran\Source\Repos\Oracle_.NET2\OracalDBProject\obj\Debug\Admin\ShowAllAdminWindow.g.cs
+C:\Users\Liran\Source\Repos\Oracle_.NET2\OracalDBProject\obj\Debug\Admin\ShowAllAdminWindow.baml
+C:\Users\Liran\Source\Repos\Oracle_.NET2\OracalDBProject\obj\Debug\Admin\ShowAllProductsWindow.g.cs
+C:\Users\Liran\Source\Repos\Oracle_.NET2\OracalDBProject\obj\Debug\Admin\ShowAllProductsWindow.baml

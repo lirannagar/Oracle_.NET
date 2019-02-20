@@ -164,3 +164,77 @@ PL/SQL: SQL Statement ignored
 2019-02-20 14:24:59.638 [INFO]    Admin User Switched
 2019-02-20 14:24:59.715 [INFO]    LogIn window opened
 2019-02-20 14:25:02.029 [INFO]    Admin panel opened
+2019-02-20 15:12:02.320 [INFO]    -------------------------PROGRAM STARTED-------------------
+2019-02-20 15:12:02.791 [INFO]    DB was opened seccefully
+2019-02-20 15:12:02.821 [INFO]    Admin User Switched
+2019-02-20 15:12:02.863 [INFO]    LogIn window opened
+2019-02-20 15:12:04.470 [INFO]    Admin panel opened
+2019-02-20 15:20:46.162 [INFO]    -------------------------PROGRAM STARTED-------------------
+2019-02-20 15:20:46.605 [INFO]    DB was opened seccefully
+2019-02-20 15:20:46.636 [INFO]    Admin User Switched
+2019-02-20 15:20:46.672 [INFO]    LogIn window opened
+2019-02-20 15:20:51.928 [INFO]    Admin panel opened
+2019-02-20 15:20:53.888 [INFO]    Table Updated
+2019-02-20 15:20:53.895 [INFO]    All Admins Shown
+2019-02-20 15:20:53.986 [INFO]    show all Admin Window opened
+2019-02-20 15:20:58.392 [INFO]    Admin panel opened
+2019-02-20 15:20:58.430 [INFO]    Open Admin Paenel Window and Close show Admins Window
+2019-02-20 15:20:59.609 [INFO]    show all Products Window opened
+2019-02-20 15:21:03.917 [INFO]    Admin panel opened
+2019-02-20 15:21:03.948 [INFO]    Open Admin Panel Window and Close Show All Product Window
+2019-02-20 15:24:51.064 [INFO]    -------------------------PROGRAM STARTED-------------------
+2019-02-20 15:24:51.530 [INFO]    DB was opened seccefully
+2019-02-20 15:24:51.564 [INFO]    Admin User Switched
+2019-02-20 15:24:51.610 [INFO]    LogIn window opened
+2019-02-20 15:24:56.393 [INFO]    Admin panel opened
+2019-02-20 15:24:58.272 [INFO]    Table Updated
+2019-02-20 15:24:58.358 [INFO]    show all Products Window opened
+2019-02-20 15:24:59.558 [INFO]    Admin panel opened
+2019-02-20 15:24:59.585 [INFO]    Open Admin Panel Window and Close Show All Product Window
+2019-02-20 15:25:00.942 [INFO]    Table Updated
+2019-02-20 15:25:00.952 [INFO]    All Admins Shown
+2019-02-20 15:25:01.029 [INFO]    show all Admin Window opened
+2019-02-20 15:25:02.358 [INFO]    Admin panel opened
+2019-02-20 15:25:02.395 [INFO]    Open Admin Paenel Window and Close show Admins Window
+2019-02-20 15:25:04.863 [INFO]    Add Product Window opened
+2019-02-20 15:25:04.873 [INFO]    Table Updated
+2019-02-20 15:25:04.929 [INFO]    Admin panel close and product panel opened
+2019-02-20 15:25:23.951 [INFO]    Product Executed
+2019-02-20 15:25:23.958 [INFO]    Text box of Product cleared
+2019-02-20 15:25:25.010 [ERROR]   Exception while trying to update table
+Deatails: Oracle.ManagedDataAccess.Client.OracleException (0x80004005): ORA-06550: line 1, column 29:
+PL/SQL: ORA-00933: SQL command not properly ended
+ORA-06550: line 1, column 7:
+PL/SQL: SQL Statement ignored
+   at OracleInternal.ServiceObjects.OracleConnectionImpl.VerifyExecution(Int32& cursorId, Boolean bThrowArrayBindRelatedErrors, SqlStatementType sqlStatementType, Int32 arrayBindCount, OracleException& exceptionForArrayBindDML, Boolean& hasMoreRowsInDB, Boolean bFirstIterationDone)
+   at OracleInternal.ServiceObjects.OracleCommandImpl.ExecuteNonQuery(String commandText, OracleParameterCollection paramColl, CommandType commandType, OracleConnectionImpl connectionImpl, Int32 longFetchSize, Int64 clientInitialLOBFS, OracleDependencyImpl orclDependencyImpl, Int64[]& scnFromExecution, OracleParameterCollection& bindByPositionParamColl, Boolean& bBindParamPresent, OracleException& exceptionForArrayBindDML, OracleConnection connection, OracleLogicalTransaction& oracleLogicalTransaction, Boolean isFromEF)
+   at Oracle.ManagedDataAccess.Client.OracleCommand.ExecuteNonQuery()
+   at OracalDBProject.Admin.AddProductWindow.UpdateTable(String query) in C:\Users\Liran\Source\Repos\Oracle_.NET2\OracalDBProject\Admin\AddProductWindow.xaml.cs:line 91
+2019-02-20 15:25:25.680 [INFO]    Admin panel opened
+2019-02-20 15:25:25.731 [INFO]    Open Admin Paenel Window and Close Product Window
+2019-02-20 15:25:28.609 [ERROR]   Exception while trying to update table
+Deatails: Oracle.ManagedDataAccess.Client.OracleException (0x80004005): ORA-06550: line 1, column 29:
+PL/SQL: ORA-00933: SQL command not properly ended
+ORA-06550: line 1, column 7:
+PL/SQL: SQL Statement ignored
+   at OracleInternal.ServiceObjects.OracleConnectionImpl.VerifyExecution(Int32& cursorId, Boolean bThrowArrayBindRelatedErrors, SqlStatementType sqlStatementType, Int32 arrayBindCount, OracleException& exceptionForArrayBindDML, Boolean& hasMoreRowsInDB, Boolean bFirstIterationDone)
+   at OracleInternal.ServiceObjects.OracleCommandImpl.ExecuteNonQuery(String commandText, OracleParameterCollection paramColl, CommandType commandType, OracleConnectionImpl connectionImpl, Int32 longFetchSize, Int64 clientInitialLOBFS, OracleDependencyImpl orclDependencyImpl, Int64[]& scnFromExecution, OracleParameterCollection& bindByPositionParamColl, Boolean& bBindParamPresent, OracleException& exceptionForArrayBindDML, OracleConnection connection, OracleLogicalTransaction& oracleLogicalTransaction, Boolean isFromEF)
+   at Oracle.ManagedDataAccess.Client.OracleCommand.ExecuteNonQuery()
+   at OracalDBProject.Admin.ShowAllProductsWindow.UpdateTable(String query) in C:\Users\Liran\Source\Repos\Oracle_.NET2\OracalDBProject\Admin\ShowAllProductsWindow.xaml.cs:line 54
+2019-02-20 15:25:28.649 [INFO]    show all Products Window opened
+2019-02-20 15:25:31.120 [INFO]    Admin panel opened
+2019-02-20 15:25:31.153 [INFO]    Open Admin Panel Window and Close Show All Product Window
+2019-02-20 15:25:50.574 [INFO]    -------------------------PROGRAM STARTED-------------------
+2019-02-20 15:25:51.019 [INFO]    DB was opened seccefully
+2019-02-20 15:25:51.049 [INFO]    Admin User Switched
+2019-02-20 15:25:51.117 [INFO]    LogIn window opened
+2019-02-20 15:25:52.128 [INFO]    Admin panel opened
+2019-02-20 15:25:53.236 [INFO]    Table Updated
+2019-02-20 15:25:53.242 [INFO]    All Admins Shown
+2019-02-20 15:25:53.347 [INFO]    show all Admin Window opened
+2019-02-20 15:25:55.282 [INFO]    Admin panel opened
+2019-02-20 15:25:55.318 [INFO]    Open Admin Paenel Window and Close show Admins Window
+2019-02-20 15:25:56.478 [INFO]    Table Updated
+2019-02-20 15:25:56.522 [INFO]    show all Products Window opened
+2019-02-20 15:25:58.115 [INFO]    Admin panel opened
+2019-02-20 15:25:58.142 [INFO]    Open Admin Panel Window and Close Show All Product Window

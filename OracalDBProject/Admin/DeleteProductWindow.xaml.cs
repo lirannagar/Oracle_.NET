@@ -129,7 +129,7 @@ namespace OracalDBProject.Admin
                 AdminPanel adminPanel = new AdminPanel();
                 adminPanel.Show();
                 this.Close();
-                Logger.Instance.Info("Open Admin Paenel Window and Close Delete Product Window");
+                Logger.Instance.Info("Open Admin Panel Window and Close Delete Product Window");
             }
             catch (Exception ex)
             {

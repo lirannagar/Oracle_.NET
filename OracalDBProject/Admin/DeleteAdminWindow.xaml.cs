@@ -21,6 +21,17 @@ namespace OracalDBProject.Admin
     /// </summary>
     public partial class DeleteAdminWindow : Window
     {
+
+
+        #region Control Mapping
+        const string COMBOBOX_NAME_SEARCH = "By ID";
+        const string TABLE_NAME_UPDATE = "USERS";
+        #endregion Control Mapping
+
+        #region Members
+        #endregion Members
+
+        #region Constructor
         public DeleteAdminWindow()
         {
             try
@@ -34,8 +45,10 @@ namespace OracalDBProject.Admin
                 Logger.Instance.Error("Erorr while trying to open Delete Admin Window \nDetails" + ex);
             }
         }
+        #endregion Constructor
 
-        private void  ShowAllAdmins()
+        #region Private Methods
+        private void ShowAllAdmins()
         {
             try
             {
@@ -43,11 +56,12 @@ namespace OracalDBProject.Admin
                                                 + " FROM USERS INNER JOIN ADMINISTRATOR ON USERS.USER_ID = ADMINISTRATOR.USER_ID";
                 UpdateTable(searchQueryString);
                 Logger.Instance.Info("All Admins Shown");
-            }catch(OracleException ex)
+            }
+            catch (OracleException ex)
             {
                 Logger.Instance.Error("Erorr while trying to show all admins \nDetails" + ex);
             }
-            
+
         }
 
         private void Window_Loaded(object sender, RoutedEventArgs e)
@@ -68,7 +82,7 @@ namespace OracalDBProject.Admin
                 string searchQueryString = "";
                 string select = searchComboBoxDeleteAdmin.SelectedItem.ToString();
                 string name = textBoxSearchDeleteAdmin.Text;
-                if (select.Contains("By ID"))
+                if (select.Contains(COMBOBOX_NAME_SEARCH))
                 {
                     searchQueryString = "SELECT ADMINISTRATOR.ADMIN_ID,USERS.FIRST_NAME,USERS.LAST_NAME,USERS.PASSWORD_ENCRYPTED,USERS.USER_EMAIL,USERS.USER_PHONE_NUMBER,ADMINISTRATOR.SALARY_NIS "
                                 + " FROM USERS INNER JOIN ADMINISTRATOR ON USERS.USER_ID = ADMINISTRATOR.USER_ID"
@@ -78,7 +92,7 @@ namespace OracalDBProject.Admin
                 {
                     searchQueryString = "SELECT ADMINISTRATOR.ADMIN_ID,USERS.FIRST_NAME,USERS.LAST_NAME,USERS.PASSWORD_ENCRYPTED,USERS.USER_EMAIL,USERS.USER_PHONE_NUMBER,ADMINISTRATOR.SALARY_NIS "
                                 + " FROM USERS INNER JOIN ADMINISTRATOR ON USERS.USER_ID = ADMINISTRATOR.USER_ID"
-                                + " WHERE USERS.FIRST_NAME  = '" + textBoxSearchDeleteAdmin.Text + "'";
+                                + " WHERE USERS.FIRST_NAME  = '" + name + "'";
                 }
                 UpdateTable(searchQueryString);
             }
@@ -96,7 +110,7 @@ namespace OracalDBProject.Admin
                 OracleSingletonComment.Instance.ExecuteNonQuery();
                 OracleDataAdapter da = new OracleDataAdapter(OracleSingletonComment.Instance);
                 da.SelectCommand = OracleSingletonComment.Instance;
-                DataTable dt = new DataTable("USERS");
+                DataTable dt = new DataTable(TABLE_NAME_UPDATE);
                 da.Fill(dt);
                 dataGrid.ItemsSource = dt.DefaultView;
                 OracleSingletonComment.Instance.Cancel();
@@ -104,7 +118,7 @@ namespace OracalDBProject.Admin
             }
             catch (OracleException ex)
             {
-                //MessageBox.Show("Wrong Value!", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
+                MessageBox.Show("Wrong Value!", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
                 Logger.Instance.Error("Exception while trying to update table\nDeatails: " + ex);
             }
         }
@@ -138,7 +152,7 @@ namespace OracalDBProject.Admin
         {
             try
             {
-                OracleSingletonComment.Instance.CommandText = "DROP USER " +name+ "";
+                OracleSingletonComment.Instance.CommandText = "DROP USER " + name + "";
                 OracleSingletonComment.Instance.ExecuteNonQuery();
                 Logger.Instance.Info("Delete Admin From User DB");
             }
@@ -166,15 +180,22 @@ namespace OracalDBProject.Admin
                 UpdateTable(deleteQuery);
                 DeleteAdminFromUserDB(adminUserName);
                 ShowAllAdmins();
-                ClearTextBoxes();              
+                ClearTextBoxes();
                 Logger.Instance.Info("Admin " + adminUserId + " with ID: " + adminUserName + " deleted");
             }
-            catch(OracleException ex)
+            catch (OracleException ex)
             {
                 Logger.Instance.Error("Exception while trying to delete admin user details: " + ex);
             }
 
 
         }
+        #endregion Private Methods
+
+        #region Public Methods
+        #endregion Public Methods
+
+
+
     }
 }

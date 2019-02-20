@@ -46,6 +46,35 @@ namespace OracalDBProject
         #endregion Constructor
 
         #region Private Methods
+        private void ShowProductsButton_Click(object sender, RoutedEventArgs e)
+        {
+            try
+            {
+                ShowAllProductsWindow win = new ShowAllProductsWindow();
+                win.Show();
+                this.Close();
+                Logger.Instance.Info("show all Products Window opened");
+            }
+            catch (Exception ex)
+            {
+                Logger.Instance.Error("Exception while trying to show all Products window Details:\n" + ex);
+            }
+        }
+
+        private void ShowAdminButton_Click(object sender, RoutedEventArgs e)
+        {
+            try
+            {
+                ShowAllAdminWindow win = new ShowAllAdminWindow();
+                win.Show();
+                this.Close();
+                Logger.Instance.Info("show all Admin Window opened");
+            }
+            catch (Exception ex)
+            {
+                Logger.Instance.Error("Exception while trying to show all Admin window Details:\n" + ex);
+            }
+        }
         private void DeleteAdminButton_Click(object sender, RoutedEventArgs e)
         {
             try
@@ -116,6 +145,7 @@ namespace OracalDBProject
                 Logger.Instance.Error("Error while trying to Open Add New Admin Window and close Panel Window\nDetails:  " + ex);
             }           
         }
+
 
         #endregion Private Methods
 
