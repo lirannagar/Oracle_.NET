@@ -78,6 +78,7 @@ namespace OracalDBProject.Admin
                                        + " WHERE PRODUCTS.PRODUCT_NAME = '" + textBoxSearchDeleteProduct.Text + "'";                   
                 }
                 UpdateTable(searchQueryString);
+                Logger.Instance.Info("Search Product");
             }
             catch(OracleException ex)
             {

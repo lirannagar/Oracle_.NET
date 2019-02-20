@@ -95,10 +95,11 @@ namespace OracalDBProject.Admin
                                 + " WHERE USERS.FIRST_NAME  = '" + name + "'";
                 }
                 UpdateTable(searchQueryString);
+                Logger.Instance.Info("Search Admin Member");
             }
             catch (OracleException ex)
             {
-                Logger.Instance.Error("Exception while trying to search to Delete Product\nDeatails: " + ex);
+                Logger.Instance.Error("Exception while trying to search to Delete Admin\nDeatails: " + ex);
             }
         }
 

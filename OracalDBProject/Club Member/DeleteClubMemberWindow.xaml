@@ -1,0 +1,31 @@
+﻿<Window
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:OracalDBProject.Club_Member"
+        xmlns:OracalDBProject="clr-namespace:OracalDBProject" x:Class="OracalDBProject.Club_Member.DeleteClubMemberWindow"
+        mc:Ignorable="d"
+        WindowStartupLocation="CenterScreen"
+        Title="DeleteClubMemberWindow" Height="300" Width="540" Loaded="Window_Loaded">
+    <Window.Resources>
+        <OracalDBProject:MarketsDBSource x:Key="marketsDBSource"/>
+        <CollectionViewSource x:Key="uSERSViewSource" Source="{Binding USERS, Source={StaticResource marketsDBSource}}"/>
+    </Window.Resources>
+    <Grid DataContext="{StaticResource uSERSViewSource}">
+        <DataGrid x:Name="dataGrid" HorizontalAlignment="Left" Margin="10,119,0,0" VerticalAlignment="Top" Height="141" Width="514" ItemsSource="{Binding}"/>
+        <Label x:Name="deleteLabel" Content="Enter ID Club Memebr:" HorizontalAlignment="Left" Margin="48,52,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.313,0.063"/>
+        <Label x:Name="searchLabelClubMember" Content="Search:" HorizontalAlignment="Left" Margin="48,83,0,0" VerticalAlignment="Top" Width="56"/>
+        <ComboBox x:Name="searchComboBoxDeleteClubMember" Margin="93,80,345.6,156.4">
+            <ComboBoxItem Content="By Name"/>
+            <ComboBoxItem IsSelected="True" Content="By ID"/>
+        </ComboBox>
+        <TextBox x:Name="textBoxDelete" HorizontalAlignment="Left" Height="23" Margin="193,55,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="159"/>
+        <TextBox x:Name="textBoxSearch" HorizontalAlignment="Left" Height="23" Margin="193,87,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="159"/>
+        <Button x:Name="DeleteButton" Content="Delete" HorizontalAlignment="Left" Margin="357,58,0,0" VerticalAlignment="Top" Width="75" RenderTransformOrigin="0.085,0" Click="DeleteButton_Click"/>
+        <Button x:Name="SearchButton" Content="Search" HorizontalAlignment="Left" Margin="357,89,0,0" VerticalAlignment="Top" Width="75" Click="SearchButton_Click"/>
+        <Button x:Name="ShowAllClubMemberButton" Content="Show All Club Members" HorizontalAlignment="Left" Margin="193,31,0,0" VerticalAlignment="Top" Width="239" Click="ShowAllClubMemberButton_Click"/>
+        <Button x:Name="BackPanelAdminButton" Content="Back" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Width="75" Click="BackPanelAdminButton_Click"/>
+
+    </Grid>
+</Window>

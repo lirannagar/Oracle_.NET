@@ -46,6 +46,21 @@ namespace OracalDBProject
         #endregion Constructor
 
         #region Private Methods
+
+        private void DeleteClubMemberButton_Click(object sender, RoutedEventArgs e)
+        {
+            try
+            {
+                DeleteClubMemberWindow win = new DeleteClubMemberWindow();
+                win.Show();
+                this.Close();
+                Logger.Instance.Info("open Club Member Window opened");
+            }
+            catch (Exception ex)
+            {
+                Logger.Instance.Error("Exception while trying to open Club Member Window Details:\n" + ex);
+            }
+        }
         private void ShowProductsButton_Click(object sender, RoutedEventArgs e)
         {
             try
@@ -145,6 +160,7 @@ namespace OracalDBProject
                 Logger.Instance.Error("Error while trying to Open Add New Admin Window and close Panel Window\nDetails:  " + ex);
             }           
         }
+
 
 
         #endregion Private Methods

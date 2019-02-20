@@ -127,6 +127,14 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Club Member\DeleteClubMemberWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Club Member\ShowAllClubMemberWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -169,7 +177,13 @@
     <Compile Include="Club Member\ClubMemberWindow.xaml.cs">
       <DependentUpon>ClubMemberWindow.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Club Member\DeleteClubMemberWindow.xaml.cs">
+      <DependentUpon>DeleteClubMemberWindow.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Club Member\IClubMember.cs" />
+    <Compile Include="Club Member\ShowAllClubMemberWindow.xaml.cs">
+      <DependentUpon>ShowAllClubMemberWindow.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Logger.cs" />
     <Compile Include="MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>

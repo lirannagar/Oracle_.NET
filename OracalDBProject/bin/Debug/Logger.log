@@ -238,3 +238,93 @@ PL/SQL: SQL Statement ignored
 2019-02-20 15:25:56.522 [INFO]    show all Products Window opened
 2019-02-20 15:25:58.115 [INFO]    Admin panel opened
 2019-02-20 15:25:58.142 [INFO]    Open Admin Panel Window and Close Show All Product Window
+2019-02-20 16:11:52.944 [INFO]    -------------------------PROGRAM STARTED-------------------
+2019-02-20 16:11:53.379 [INFO]    DB was opened seccefully
+2019-02-20 16:11:53.409 [INFO]    Admin User Switched
+2019-02-20 16:11:53.456 [INFO]    LogIn window opened
+2019-02-20 16:11:55.390 [INFO]    Admin panel opened
+2019-02-20 16:12:45.986 [INFO]    -------------------------PROGRAM STARTED-------------------
+2019-02-20 16:12:46.382 [INFO]    DB was opened seccefully
+2019-02-20 16:12:46.413 [INFO]    Admin User Switched
+2019-02-20 16:12:46.451 [INFO]    LogIn window opened
+2019-02-20 16:12:47.848 [INFO]    Admin panel opened
+2019-02-20 16:12:52.688 [INFO]    Club Member Window Opened
+2019-02-20 16:12:52.725 [INFO]    panel admin closed
+2019-02-20 16:13:10.090 [INFO]    User club Executed
+2019-02-20 16:13:10.122 [INFO]    Club Member 1058 Executed
+2019-02-20 16:13:10.239 [INFO]    Club member Singed UP
+2019-02-20 16:19:51.692 [INFO]    Admin panel opened
+2019-02-20 16:19:51.816 [INFO]    Club Member User Window Closed
+2019-02-20 17:02:54.412 [INFO]    -------------------------PROGRAM STARTED-------------------
+2019-02-20 17:02:54.963 [INFO]    DB was opened seccefully
+2019-02-20 17:02:54.999 [INFO]    Admin User Switched
+2019-02-20 17:02:55.040 [INFO]    LogIn window opened
+2019-02-20 17:02:57.976 [INFO]    Admin panel opened
+2019-02-20 17:03:01.458 [INFO]    Club Member Window Opened
+2019-02-20 17:03:01.500 [INFO]    panel admin closed
+2019-02-20 17:03:19.500 [INFO]    User clubclub Executed
+2019-02-20 17:03:19.519 [INFO]    Club Member 1059 Executed
+2019-02-20 17:03:19.567 [INFO]    Club member Singed UP
+2019-02-20 17:03:37.335 [INFO]    User moshertheclub Executed
+2019-02-20 17:03:37.357 [INFO]    Club Member 1060 Executed
+2019-02-20 17:03:37.380 [INFO]    Club member Singed UP
+2019-02-20 17:03:40.016 [INFO]    Admin panel opened
+2019-02-20 17:03:40.050 [INFO]    Club Member User Window Closed
+2019-02-20 21:20:33.449 [INFO]    -------------------------PROGRAM STARTED-------------------
+2019-02-20 21:20:33.893 [INFO]    DB was opened seccefully
+2019-02-20 21:20:33.927 [INFO]    Admin User Switched
+2019-02-20 21:20:33.967 [INFO]    LogIn window opened
+2019-02-20 21:20:35.512 [INFO]    Admin panel opened
+2019-02-20 21:23:40.646 [INFO]    -------------------------PROGRAM STARTED-------------------
+2019-02-20 21:23:41.202 [INFO]    DB was opened seccefully
+2019-02-20 21:23:41.277 [INFO]    Admin User Switched
+2019-02-20 21:23:41.384 [INFO]    LogIn window opened
+2019-02-20 21:23:43.633 [INFO]    Admin panel opened
+2019-02-20 21:24:22.710 [INFO]    open Club Member Window opened
+2019-02-20 21:24:37.257 [INFO]    Table Updated
+2019-02-20 21:24:37.271 [INFO]    All Club Members Shown
+2019-02-20 21:25:38.036 [INFO]    -------------------------PROGRAM STARTED-------------------
+2019-02-20 21:25:38.552 [INFO]    DB was opened seccefully
+2019-02-20 21:25:38.593 [INFO]    Admin User Switched
+2019-02-20 21:25:38.625 [INFO]    LogIn window opened
+2019-02-20 21:25:40.319 [INFO]    Admin panel opened
+2019-02-20 21:25:48.565 [INFO]    Table Updated
+2019-02-20 21:25:48.578 [INFO]    All Club Members Shown
+2019-02-20 21:25:48.689 [INFO]    open Club Member Window opened
+2019-02-20 21:26:14.439 [INFO]    Table Updated
+2019-02-20 21:26:14.454 [INFO]    Search Club Member
+2019-02-20 21:26:40.012 [INFO]    Table Updated
+2019-02-20 21:26:40.030 [INFO]    Table Updated
+2019-02-20 21:26:40.122 [INFO]    Delete Club Member From User DB
+2019-02-20 21:26:40.138 [INFO]    Table Updated
+2019-02-20 21:26:40.152 [INFO]    All Club Members Shown
+2019-02-20 21:26:40.166 [INFO]    Club Member 10001 with ID: club deleted
+2019-02-20 21:27:17.010 [INFO]    Table Updated
+2019-02-20 21:27:17.026 [INFO]    Search Club Member
+2019-02-20 21:27:42.713 [INFO]    Table Updated
+2019-02-20 21:27:42.732 [INFO]    Table Updated
+2019-02-20 21:27:42.769 [INFO]    Delete Club Member From User DB
+2019-02-20 21:27:42.783 [INFO]    Table Updated
+2019-02-20 21:27:42.796 [INFO]    All Club Members Shown
+2019-02-20 21:27:42.810 [INFO]    Club Member 10002 with ID: clubclub deleted
+2019-02-20 21:27:50.383 [INFO]    Table Updated
+2019-02-20 21:27:50.398 [INFO]    All Club Members Shown
+2019-02-20 21:29:35.328 [INFO]    -------------------------PROGRAM STARTED-------------------
+2019-02-20 21:29:35.826 [INFO]    DB was opened seccefully
+2019-02-20 21:29:35.867 [INFO]    Admin User Switched
+2019-02-20 21:29:35.909 [INFO]    LogIn window opened
+2019-02-20 21:29:38.138 [INFO]    Admin panel opened
+2019-02-20 21:31:05.074 [INFO]    Table Updated
+2019-02-20 21:31:05.089 [INFO]    All Club Members Shown
+2019-02-20 21:31:05.233 [INFO]    open Club Member Window opened
+2019-02-20 21:31:06.623 [INFO]    Admin panel opened
+2019-02-20 21:31:06.664 [INFO]    Open Admin Paenel Window and Close Delete Club Member Window
+2019-02-20 21:31:18.676 [INFO]    Table Updated
+2019-02-20 21:31:18.694 [INFO]    All Admins Shown
+2019-02-20 21:31:18.770 [INFO]    show all Admin Window opened
+2019-02-20 21:31:20.843 [INFO]    Admin panel opened
+2019-02-20 21:31:20.879 [INFO]    Open Admin Paenel Window and Close show Admins Window
+2019-02-20 21:31:22.010 [INFO]    Table Updated
+2019-02-20 21:31:22.057 [INFO]    show all Products Window opened
+2019-02-20 21:31:23.233 [INFO]    Admin panel opened
+2019-02-20 21:31:23.273 [INFO]    Open Admin Panel Window and Close Show All Product Window

@@ -143,3 +143,7 @@ C:\Users\Liran\Source\Repos\Oracle_.NET2\OracalDBProject\obj\Debug\Admin\ShowAll
 C:\Users\Liran\Source\Repos\Oracle_.NET2\OracalDBProject\obj\Debug\Admin\ShowAllAdminWindow.baml
 C:\Users\Liran\Source\Repos\Oracle_.NET2\OracalDBProject\obj\Debug\Admin\ShowAllProductsWindow.g.cs
 C:\Users\Liran\Source\Repos\Oracle_.NET2\OracalDBProject\obj\Debug\Admin\ShowAllProductsWindow.baml
+C:\Users\Liran\Source\Repos\Oracle_.NET2\OracalDBProject\obj\Debug\Club Member\DeleteClubMemberWindow.g.cs
+C:\Users\Liran\Source\Repos\Oracle_.NET2\OracalDBProject\obj\Debug\Club Member\ShowAllClubMemberWindow.g.cs
+C:\Users\Liran\Source\Repos\Oracle_.NET2\OracalDBProject\obj\Debug\Club Member\DeleteClubMemberWindow.baml
+C:\Users\Liran\Source\Repos\Oracle_.NET2\OracalDBProject\obj\Debug\Club Member\ShowAllClubMemberWindow.baml
