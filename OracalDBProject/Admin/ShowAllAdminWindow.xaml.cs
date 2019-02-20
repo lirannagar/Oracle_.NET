@@ -98,7 +98,7 @@ namespace OracalDBProject.Admin
                 AdminPanel adminPanel = new AdminPanel();
                 adminPanel.Show();
                 this.Close();
-                Logger.Instance.Info("Open Admin Paenel Window and Close show Admins Window");
+                Logger.Instance.Info("Open Admin Panel Window and Close show Admins Window");
             }
             catch (Exception ex)
             {

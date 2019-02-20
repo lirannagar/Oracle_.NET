@@ -328,3 +328,37 @@ PL/SQL: SQL Statement ignored
 2019-02-20 21:31:22.057 [INFO]    show all Products Window opened
 2019-02-20 21:31:23.233 [INFO]    Admin panel opened
 2019-02-20 21:31:23.273 [INFO]    Open Admin Panel Window and Close Show All Product Window
+2019-02-20 21:51:34.732 [INFO]    -------------------------PROGRAM STARTED-------------------
+2019-02-20 21:51:35.263 [INFO]    DB was opened seccefully
+2019-02-20 21:51:35.329 [INFO]    Admin User Switched
+2019-02-20 21:51:35.466 [INFO]    LogIn window opened
+2019-02-20 21:51:36.958 [INFO]    Admin panel opened
+2019-02-20 21:52:58.646 [INFO]    -------------------------PROGRAM STARTED-------------------
+2019-02-20 21:52:59.174 [INFO]    DB was opened seccefully
+2019-02-20 21:52:59.205 [INFO]    Admin User Switched
+2019-02-20 21:52:59.263 [INFO]    LogIn window opened
+2019-02-20 21:53:04.227 [INFO]    Admin panel opened
+2019-02-20 21:53:05.584 [INFO]    Table Updated
+2019-02-20 21:53:05.594 [INFO]    All Club Members Shown
+2019-02-20 21:53:05.693 [INFO]    show all Club Member Window opened
+2019-02-20 21:53:26.459 [INFO]    Admin panel opened
+2019-02-20 21:53:26.497 [INFO]    Open Admin Panel Window and Close show Club Member Window
+2019-02-20 21:54:03.530 [INFO]    -------------------------PROGRAM STARTED-------------------
+2019-02-20 21:54:04.065 [INFO]    DB was opened seccefully
+2019-02-20 21:54:04.096 [INFO]    Admin User Switched
+2019-02-20 21:54:04.158 [INFO]    LogIn window opened
+2019-02-20 21:54:05.563 [INFO]    Admin panel opened
+2019-02-20 21:54:06.931 [INFO]    Table Updated
+2019-02-20 21:54:06.943 [INFO]    All Club Members Shown
+2019-02-20 21:54:07.040 [INFO]    show all Club Member Window opened
+2019-02-20 21:54:12.057 [INFO]    Admin panel opened
+2019-02-20 21:54:12.107 [INFO]    Open Admin Panel Window and Close show Club Member Window
+2019-02-20 21:54:12.972 [INFO]    Table Updated
+2019-02-20 21:54:12.985 [INFO]    All Admins Shown
+2019-02-20 21:54:13.056 [INFO]    show all Admin Window opened
+2019-02-20 21:54:15.851 [INFO]    Admin panel opened
+2019-02-20 21:54:15.885 [INFO]    Open Admin Panel Window and Close show Admins Window
+2019-02-20 21:54:16.874 [INFO]    Table Updated
+2019-02-20 21:54:16.921 [INFO]    show all Products Window opened
+2019-02-20 21:54:18.765 [INFO]    Admin panel opened
+2019-02-20 21:54:18.800 [INFO]    Open Admin Panel Window and Close Show All Product Window

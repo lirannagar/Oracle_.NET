@@ -61,6 +61,20 @@ namespace OracalDBProject
                 Logger.Instance.Error("Exception while trying to open Club Member Window Details:\n" + ex);
             }
         }
+        private void ShowClubMemberButton_Click(object sender, RoutedEventArgs e)
+        {
+            try
+            {
+                ShowAllClubMemberWindow win = new ShowAllClubMemberWindow();
+                win.Show();
+                this.Close();
+                Logger.Instance.Info("show all Club Member Window opened");
+            }
+            catch (Exception ex)
+            {
+                Logger.Instance.Error("Exception while trying to show all Club Member window Details:\n" + ex);
+            }
+        }
         private void ShowProductsButton_Click(object sender, RoutedEventArgs e)
         {
             try
@@ -160,6 +174,7 @@ namespace OracalDBProject
                 Logger.Instance.Error("Error while trying to Open Add New Admin Window and close Panel Window\nDetails:  " + ex);
             }           
         }
+
 
 
 
