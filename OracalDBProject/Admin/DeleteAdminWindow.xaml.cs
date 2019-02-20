@@ -126,5 +126,10 @@ namespace OracalDBProject.Admin
         {
             ShowAllAdmins();
         }
+
+        private void deleteButtonAdmin_Click(object sender, RoutedEventArgs e)
+        {
+            //SELECT ADMINISTRATOR.USER_ID FROM ADMINISTRATOR WHERE ADMIN_ID= 10022;
+        }
     }
 }

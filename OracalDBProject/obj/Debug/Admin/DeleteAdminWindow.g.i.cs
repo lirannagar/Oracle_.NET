@@ -188,6 +188,12 @@ namespace OracalDBProject.Admin {
             return;
             case 9:
             this.deleteButtonAdmin = ((System.Windows.Controls.Button)(target));
+            
+            #line 41 "..\..\..\Admin\DeleteAdminWindow.xaml"
+            this.deleteButtonAdmin.Click += new System.Windows.RoutedEventHandler(this.deleteButtonAdmin_Click);
+            
+            #line default
+            #line hidden
             return;
             case 10:
             this.showAllAdminsButton = ((System.Windows.Controls.Button)(target));

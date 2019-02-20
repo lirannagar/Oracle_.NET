@@ -66,7 +66,7 @@ namespace OracalDBProject.Club_Member
             {
                 Logger.Instance.Error("Exception while trying to sing UP Club member \nDetails " + ex);
             }
-    
+ 
         }
         private void CleanTextBoxes()
         {

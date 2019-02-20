@@ -38,7 +38,7 @@
         <Label x:Name="searchLabelAdmin" Content="Search:" HorizontalAlignment="Left" Margin="133,61,0,0" VerticalAlignment="Top" Width="60"/>
         <Label x:Name="deleteLabel" Content="Enter ID Admin:" HorizontalAlignment="Left" Margin="133,30,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.403,-0.027"/>
         <TextBox x:Name="deleteTextBox" HorizontalAlignment="Left" Height="23" Margin="397,32,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="137"/>
-        <Button x:Name="deleteButtonAdmin" Grid.ColumnSpan="2" Content="Delete" HorizontalAlignment="Left" Margin="539,34,0,0" VerticalAlignment="Top" Width="49"/>
+        <Button x:Name="deleteButtonAdmin" Grid.ColumnSpan="2" Content="Delete" HorizontalAlignment="Left" Margin="539,34,0,0" VerticalAlignment="Top" Width="49" Click="deleteButtonAdmin_Click"/>
         <Button x:Name="showAllAdminsButton" Content="Show All Admins" HorizontalAlignment="Left" Margin="397,8,0,0" VerticalAlignment="Top" Width="190" Grid.ColumnSpan="2" Click="showAllAdminsButton_Click"/>
         <Button x:Name="backButton" Content="Back" HorizontalAlignment="Left" Margin="10,8,0,0" VerticalAlignment="Top" Width="75" Click="backButton_Click"/>
 
