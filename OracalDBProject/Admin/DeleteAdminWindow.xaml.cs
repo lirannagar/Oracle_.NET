@@ -129,10 +129,20 @@ namespace OracalDBProject.Admin
 
         private void deleteButtonAdmin_Click(object sender, RoutedEventArgs e)
         {
-            string adminUser = deleteTextBox.Text;
-            string sensorIDQuery = "SELECT ADMINISTRATOR.USER_ID FROM ADMINISTRATOR WHERE ADMIN_ID= " + Int32.Parse(adminUser) + ";";
-            //var Id = OracleSingletonComment.Instance.ExecuteStream.ExecuteGeneralQueryRetrieveInteger(sensorIDQuery);
-            /////////
+            try
+            {
+                string adminUser = deleteTextBox.Text;
+
+                OracleSingletonComment.Instance.CommandText = "SELECT ADMINISTRATOR.USER_ID FROM ADMINISTRATOR WHERE ADMIN_ID = " + Int32.Parse(adminUser) + "";
+                var userId = OracleSingletonComment.Instance.ExecuteScalar();
+                
+            }
+            catch(OracleException ex)
+            {
+                Logger.Instance.Error("Exception while trying to delete admin user details: " + ex);
+            }
+
+
         }
     }
 }

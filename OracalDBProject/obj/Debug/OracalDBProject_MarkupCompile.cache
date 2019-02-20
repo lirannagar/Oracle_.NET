@@ -4,16 +4,16 @@
 winexe
 C#
 .cs
-C:\Users\Liran\Desktop\OracalDBProject\OracalDBProject\obj\Debug\
+C:\Users\Liran\Source\Repos\Oracle_.NET2\OracalDBProject\obj\Debug\
 OracalDBProject
 none
 false
 DEBUG;TRACE
-C:\Users\Liran\Desktop\OracalDBProject\OracalDBProject\App.xaml
+C:\Users\Liran\Source\Repos\Oracle_.NET2\OracalDBProject\App.xaml
 71730084566
 
 26731384943
-21-408203167
+21738223068
 Admin\AddAdminUserWindow.xaml;Admin\AddProductWindow.xaml;Admin\AdminPanelWindow.xaml;Admin\DeleteAdminWindow.xaml;Admin\DeleteProductWindow.xaml;Club Member\ClubMemberWindow.xaml;MainWindow.xaml;
 
 False
