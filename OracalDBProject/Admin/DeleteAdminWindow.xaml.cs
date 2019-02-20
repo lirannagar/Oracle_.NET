@@ -67,11 +67,12 @@ namespace OracalDBProject.Admin
             {
                 string searchQueryString = "";
                 string select = searchComboBoxDeleteAdmin.SelectedItem.ToString();
+                string name = textBoxSearchDeleteAdmin.Text;
                 if (select.Contains("By ID"))
                 {
                     searchQueryString = "SELECT ADMINISTRATOR.ADMIN_ID,USERS.FIRST_NAME,USERS.LAST_NAME,USERS.PASSWORD_ENCRYPTED,USERS.USER_EMAIL,USERS.USER_PHONE_NUMBER,ADMINISTRATOR.SALARY_NIS "
                                 + " FROM USERS INNER JOIN ADMINISTRATOR ON USERS.USER_ID = ADMINISTRATOR.USER_ID"
-                                + " WHERE ADMINISTRATOR.USER_ID= " + textBoxSearchDeleteAdmin.Text + "";
+                                + " WHERE ADMINISTRATOR.ADMIN_ID = " + Int32.Parse(name) + "";
                 }
                 else
                 {
@@ -103,7 +104,7 @@ namespace OracalDBProject.Admin
             }
             catch (OracleException ex)
             {
-                MessageBox.Show("Wrong Value!", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
+                //MessageBox.Show("Wrong Value!", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
                 Logger.Instance.Error("Exception while trying to update table\nDeatails: " + ex);
             }
         }
@@ -152,22 +153,21 @@ namespace OracalDBProject.Admin
         {
             try
             {
-                string adminUser = deleteTextBox.Text;
-
-                OracleSingletonComment.Instance.CommandText = "SELECT ADMINISTRATOR.USER_ID FROM ADMINISTRATOR WHERE ADMIN_ID = " + Int32.Parse(adminUser) + "";
+                string adminUserId = deleteTextBox.Text;
+                OracleSingletonComment.Instance.CommandText = "SELECT ADMINISTRATOR.USER_ID FROM ADMINISTRATOR WHERE ADMIN_ID = " + Int32.Parse(adminUserId) + "";
                 string userId = Convert.ToString(OracleSingletonComment.Instance.ExecuteScalar());
                 OracleSingletonComment.Instance.CommandText = "SELECT USERS.FIRST_NAME FROM USERS WHERE USER_ID = " + Int32.Parse(userId) + "";
                 string adminUserName = Convert.ToString(OracleSingletonComment.Instance.ExecuteScalar());
                 string deleteQuery = "DELETE FROM ADMINISTRATOR"
-                           + " WHERE ADMINISTRATOR.USER_ID = '" + adminUser + "'";
+                           + " WHERE ADMINISTRATOR.ADMIN_ID = " + adminUserId + "";
                 UpdateTable(deleteQuery);
                 deleteQuery = "DELETE FROM USERS"
-                           + " WHERE USERS.USER_ID = '" + userId + "'";
+                           + " WHERE USERS.USER_ID = " + userId + "";
                 UpdateTable(deleteQuery);
                 DeleteAdminFromUserDB(adminUserName);
                 ShowAllAdmins();
                 ClearTextBoxes();              
-                Logger.Instance.Info("Admin " + adminUser + " with ID: " + adminUserName + " deleted");
+                Logger.Instance.Info("Admin " + adminUserId + " with ID: " + adminUserName + " deleted");
             }
             catch(OracleException ex)
             {

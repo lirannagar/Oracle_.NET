@@ -1,22 +1,166 @@
-﻿2019-02-20 13:11:10.419 [INFO]    -------------------------PROGRAM STARTED-------------------
-2019-02-20 13:11:11.117 [INFO]    DB was opened seccefully
-2019-02-20 13:11:11.193 [INFO]    Admin User Switched
-2019-02-20 13:11:11.353 [INFO]    LogIn window opened
-2019-02-20 13:11:14.608 [INFO]    Admin panel opened
-2019-02-20 13:11:16.435 [INFO]    Table Updated
-2019-02-20 13:11:16.446 [INFO]    All Admins Shown
-2019-02-20 13:11:16.454 [INFO]    Delete Admin Window opened
-2019-02-20 13:11:16.593 [INFO]    Delete Admin Window opened
-2019-02-20 13:11:53.961 [INFO]    Table Updated
-2019-02-20 13:12:02.052 [ERROR]   Exception while trying to update table
-Deatails: Oracle.ManagedDataAccess.Client.OracleException (0x80004005): ORA-02292: integrity constraint (LIRAN_ADMIN.FK_USERS) violated - child record found
+﻿2019-02-20 14:08:28.360 [INFO]    -------------------------PROGRAM STARTED-------------------
+2019-02-20 14:08:28.862 [INFO]    DB was opened seccefully
+2019-02-20 14:08:28.933 [INFO]    Admin User Switched
+2019-02-20 14:08:29.059 [INFO]    LogIn window opened
+2019-02-20 14:08:30.385 [INFO]    Admin panel opened
+2019-02-20 14:08:31.665 [INFO]    Table Updated
+2019-02-20 14:08:31.673 [INFO]    All Admins Shown
+2019-02-20 14:08:31.680 [INFO]    Delete Admin Window opened
+2019-02-20 14:08:31.833 [INFO]    Delete Admin Window opened
+2019-02-20 14:09:05.602 [INFO]    Table Updated
+2019-02-20 14:09:05.617 [INFO]    Table Updated
+2019-02-20 14:09:05.655 [INFO]    Delete Admin From User DB
+2019-02-20 14:09:05.666 [INFO]    Table Updated
+2019-02-20 14:09:05.674 [INFO]    All Admins Shown
+2019-02-20 14:09:05.686 [INFO]    Admin 10024 with ID: KAKA deleted
+2019-02-20 14:13:00.302 [INFO]    -------------------------PROGRAM STARTED-------------------
+2019-02-20 14:13:00.780 [INFO]    DB was opened seccefully
+2019-02-20 14:13:00.812 [INFO]    Admin User Switched
+2019-02-20 14:13:00.893 [INFO]    LogIn window opened
+2019-02-20 14:13:04.452 [INFO]    Admin panel opened
+2019-02-20 14:13:08.480 [INFO]    Add Admin User Window Opened
+2019-02-20 14:13:08.520 [INFO]    Open Add New Admin Window and close Panel Window
+2019-02-20 14:13:32.680 [INFO]    User ADMINONE Executed
+2019-02-20 14:13:32.720 [INFO]    Admin User Executed
+2019-02-20 14:13:32.890 [INFO]    Admin ADMINONE Singed In
+2019-02-20 14:13:54.606 [INFO]    User ADMINTWO Executed
+2019-02-20 14:13:54.619 [INFO]    Admin User Executed
+2019-02-20 14:13:54.645 [INFO]    Admin ADMINTWO Singed In
+2019-02-20 14:14:17.769 [INFO]    User ADMINTHREE Executed
+2019-02-20 14:14:17.783 [INFO]    Admin User Executed
+2019-02-20 14:14:17.807 [INFO]    Admin ADMINTHREE Singed In
+2019-02-20 14:14:19.876 [INFO]    Admin panel opened
+2019-02-20 14:14:19.910 [INFO]    Add Admin User Window Closed
+2019-02-20 14:14:21.494 [ERROR]   Exception while trying to update table
+Deatails: Oracle.ManagedDataAccess.Client.OracleException (0x80004005): ORA-06550: line 1, column 217:
+PL/SQL: ORA-00904: "ADMINISTRATOR"."USER_ID": invalid identifier
+ORA-06550: line 1, column 7:
+PL/SQL: SQL Statement ignored
    at OracleInternal.ServiceObjects.OracleConnectionImpl.VerifyExecution(Int32& cursorId, Boolean bThrowArrayBindRelatedErrors, SqlStatementType sqlStatementType, Int32 arrayBindCount, OracleException& exceptionForArrayBindDML, Boolean& hasMoreRowsInDB, Boolean bFirstIterationDone)
    at OracleInternal.ServiceObjects.OracleCommandImpl.ExecuteNonQuery(String commandText, OracleParameterCollection paramColl, CommandType commandType, OracleConnectionImpl connectionImpl, Int32 longFetchSize, Int64 clientInitialLOBFS, OracleDependencyImpl orclDependencyImpl, Int64[]& scnFromExecution, OracleParameterCollection& bindByPositionParamColl, Boolean& bBindParamPresent, OracleException& exceptionForArrayBindDML, OracleConnection connection, OracleLogicalTransaction& oracleLogicalTransaction, Boolean isFromEF)
    at Oracle.ManagedDataAccess.Client.OracleCommand.ExecuteNonQuery()
    at OracalDBProject.Admin.DeleteAdminWindow.UpdateTable(String query) in C:\Users\Liran\Source\Repos\Oracle_.NET2\OracalDBProject\Admin\DeleteAdminWindow.xaml.cs:line 95
-2019-02-20 13:12:17.272 [INFO]    Delete Admin From User DB
-2019-02-20 13:12:30.741 [INFO]    Table Updated
-2019-02-20 13:12:30.769 [INFO]    All Admins Shown
-2019-02-20 13:12:32.602 [INFO]    Admin 10022 with ID: moshiko deleted
-2019-02-20 13:12:42.365 [INFO]    Table Updated
-2019-02-20 13:12:42.392 [INFO]    All Admins Shown
+2019-02-20 14:14:21.508 [INFO]    All Admins Shown
+2019-02-20 14:14:21.521 [INFO]    Delete Admin Window opened
+2019-02-20 14:14:21.717 [INFO]    Delete Admin Window opened
+2019-02-20 14:14:42.304 [ERROR]   Exception while trying to update table
+Deatails: Oracle.ManagedDataAccess.Client.OracleException (0x80004005): ORA-06550: line 1, column 272:
+PL/SQL: ORA-00933: SQL command not properly ended
+ORA-06550: line 1, column 7:
+PL/SQL: SQL Statement ignored
+   at OracleInternal.ServiceObjects.OracleConnectionImpl.VerifyExecution(Int32& cursorId, Boolean bThrowArrayBindRelatedErrors, SqlStatementType sqlStatementType, Int32 arrayBindCount, OracleException& exceptionForArrayBindDML, Boolean& hasMoreRowsInDB, Boolean bFirstIterationDone)
+   at OracleInternal.ServiceObjects.OracleCommandImpl.ExecuteNonQuery(String commandText, OracleParameterCollection paramColl, CommandType commandType, OracleConnectionImpl connectionImpl, Int32 longFetchSize, Int64 clientInitialLOBFS, OracleDependencyImpl orclDependencyImpl, Int64[]& scnFromExecution, OracleParameterCollection& bindByPositionParamColl, Boolean& bBindParamPresent, OracleException& exceptionForArrayBindDML, OracleConnection connection, OracleLogicalTransaction& oracleLogicalTransaction, Boolean isFromEF)
+   at Oracle.ManagedDataAccess.Client.OracleCommand.ExecuteNonQuery()
+   at OracalDBProject.Admin.DeleteAdminWindow.UpdateTable(String query) in C:\Users\Liran\Source\Repos\Oracle_.NET2\OracalDBProject\Admin\DeleteAdminWindow.xaml.cs:line 95
+2019-02-20 14:15:09.254 [ERROR]   Exception while trying to update table
+Deatails: Oracle.ManagedDataAccess.Client.OracleException (0x80004005): ORA-06550: line 1, column 275:
+PL/SQL: ORA-00933: SQL command not properly ended
+ORA-06550: line 1, column 7:
+PL/SQL: SQL Statement ignored
+   at OracleInternal.ServiceObjects.OracleConnectionImpl.VerifyExecution(Int32& cursorId, Boolean bThrowArrayBindRelatedErrors, SqlStatementType sqlStatementType, Int32 arrayBindCount, OracleException& exceptionForArrayBindDML, Boolean& hasMoreRowsInDB, Boolean bFirstIterationDone)
+   at OracleInternal.ServiceObjects.OracleCommandImpl.ExecuteNonQuery(String commandText, OracleParameterCollection paramColl, CommandType commandType, OracleConnectionImpl connectionImpl, Int32 longFetchSize, Int64 clientInitialLOBFS, OracleDependencyImpl orclDependencyImpl, Int64[]& scnFromExecution, OracleParameterCollection& bindByPositionParamColl, Boolean& bBindParamPresent, OracleException& exceptionForArrayBindDML, OracleConnection connection, OracleLogicalTransaction& oracleLogicalTransaction, Boolean isFromEF)
+   at Oracle.ManagedDataAccess.Client.OracleCommand.ExecuteNonQuery()
+   at OracalDBProject.Admin.DeleteAdminWindow.UpdateTable(String query) in C:\Users\Liran\Source\Repos\Oracle_.NET2\OracalDBProject\Admin\DeleteAdminWindow.xaml.cs:line 95
+2019-02-20 14:15:10.246 [ERROR]   Exception while trying to update table
+Deatails: Oracle.ManagedDataAccess.Client.OracleException (0x80004005): ORA-06550: line 1, column 275:
+PL/SQL: ORA-00933: SQL command not properly ended
+ORA-06550: line 1, column 7:
+PL/SQL: SQL Statement ignored
+   at OracleInternal.ServiceObjects.OracleConnectionImpl.VerifyExecution(Int32& cursorId, Boolean bThrowArrayBindRelatedErrors, SqlStatementType sqlStatementType, Int32 arrayBindCount, OracleException& exceptionForArrayBindDML, Boolean& hasMoreRowsInDB, Boolean bFirstIterationDone)
+   at OracleInternal.ServiceObjects.OracleCommandImpl.ExecuteNonQuery(String commandText, OracleParameterCollection paramColl, CommandType commandType, OracleConnectionImpl connectionImpl, Int32 longFetchSize, Int64 clientInitialLOBFS, OracleDependencyImpl orclDependencyImpl, Int64[]& scnFromExecution, OracleParameterCollection& bindByPositionParamColl, Boolean& bBindParamPresent, OracleException& exceptionForArrayBindDML, OracleConnection connection, OracleLogicalTransaction& oracleLogicalTransaction, Boolean isFromEF)
+   at Oracle.ManagedDataAccess.Client.OracleCommand.ExecuteNonQuery()
+   at OracalDBProject.Admin.DeleteAdminWindow.UpdateTable(String query) in C:\Users\Liran\Source\Repos\Oracle_.NET2\OracalDBProject\Admin\DeleteAdminWindow.xaml.cs:line 95
+2019-02-20 14:15:10.398 [ERROR]   Exception while trying to update table
+Deatails: Oracle.ManagedDataAccess.Client.OracleException (0x80004005): ORA-06550: line 1, column 275:
+PL/SQL: ORA-00933: SQL command not properly ended
+ORA-06550: line 1, column 7:
+PL/SQL: SQL Statement ignored
+   at OracleInternal.ServiceObjects.OracleConnectionImpl.VerifyExecution(Int32& cursorId, Boolean bThrowArrayBindRelatedErrors, SqlStatementType sqlStatementType, Int32 arrayBindCount, OracleException& exceptionForArrayBindDML, Boolean& hasMoreRowsInDB, Boolean bFirstIterationDone)
+   at OracleInternal.ServiceObjects.OracleCommandImpl.ExecuteNonQuery(String commandText, OracleParameterCollection paramColl, CommandType commandType, OracleConnectionImpl connectionImpl, Int32 longFetchSize, Int64 clientInitialLOBFS, OracleDependencyImpl orclDependencyImpl, Int64[]& scnFromExecution, OracleParameterCollection& bindByPositionParamColl, Boolean& bBindParamPresent, OracleException& exceptionForArrayBindDML, OracleConnection connection, OracleLogicalTransaction& oracleLogicalTransaction, Boolean isFromEF)
+   at Oracle.ManagedDataAccess.Client.OracleCommand.ExecuteNonQuery()
+   at OracalDBProject.Admin.DeleteAdminWindow.UpdateTable(String query) in C:\Users\Liran\Source\Repos\Oracle_.NET2\OracalDBProject\Admin\DeleteAdminWindow.xaml.cs:line 95
+2019-02-20 14:15:10.536 [ERROR]   Exception while trying to update table
+Deatails: Oracle.ManagedDataAccess.Client.OracleException (0x80004005): ORA-06550: line 1, column 275:
+PL/SQL: ORA-00933: SQL command not properly ended
+ORA-06550: line 1, column 7:
+PL/SQL: SQL Statement ignored
+   at OracleInternal.ServiceObjects.OracleConnectionImpl.VerifyExecution(Int32& cursorId, Boolean bThrowArrayBindRelatedErrors, SqlStatementType sqlStatementType, Int32 arrayBindCount, OracleException& exceptionForArrayBindDML, Boolean& hasMoreRowsInDB, Boolean bFirstIterationDone)
+   at OracleInternal.ServiceObjects.OracleCommandImpl.ExecuteNonQuery(String commandText, OracleParameterCollection paramColl, CommandType commandType, OracleConnectionImpl connectionImpl, Int32 longFetchSize, Int64 clientInitialLOBFS, OracleDependencyImpl orclDependencyImpl, Int64[]& scnFromExecution, OracleParameterCollection& bindByPositionParamColl, Boolean& bBindParamPresent, OracleException& exceptionForArrayBindDML, OracleConnection connection, OracleLogicalTransaction& oracleLogicalTransaction, Boolean isFromEF)
+   at Oracle.ManagedDataAccess.Client.OracleCommand.ExecuteNonQuery()
+   at OracalDBProject.Admin.DeleteAdminWindow.UpdateTable(String query) in C:\Users\Liran\Source\Repos\Oracle_.NET2\OracalDBProject\Admin\DeleteAdminWindow.xaml.cs:line 95
+2019-02-20 14:15:10.693 [ERROR]   Exception while trying to update table
+Deatails: Oracle.ManagedDataAccess.Client.OracleException (0x80004005): ORA-06550: line 1, column 275:
+PL/SQL: ORA-00933: SQL command not properly ended
+ORA-06550: line 1, column 7:
+PL/SQL: SQL Statement ignored
+   at OracleInternal.ServiceObjects.OracleConnectionImpl.VerifyExecution(Int32& cursorId, Boolean bThrowArrayBindRelatedErrors, SqlStatementType sqlStatementType, Int32 arrayBindCount, OracleException& exceptionForArrayBindDML, Boolean& hasMoreRowsInDB, Boolean bFirstIterationDone)
+   at OracleInternal.ServiceObjects.OracleCommandImpl.ExecuteNonQuery(String commandText, OracleParameterCollection paramColl, CommandType commandType, OracleConnectionImpl connectionImpl, Int32 longFetchSize, Int64 clientInitialLOBFS, OracleDependencyImpl orclDependencyImpl, Int64[]& scnFromExecution, OracleParameterCollection& bindByPositionParamColl, Boolean& bBindParamPresent, OracleException& exceptionForArrayBindDML, OracleConnection connection, OracleLogicalTransaction& oracleLogicalTransaction, Boolean isFromEF)
+   at Oracle.ManagedDataAccess.Client.OracleCommand.ExecuteNonQuery()
+   at OracalDBProject.Admin.DeleteAdminWindow.UpdateTable(String query) in C:\Users\Liran\Source\Repos\Oracle_.NET2\OracalDBProject\Admin\DeleteAdminWindow.xaml.cs:line 95
+2019-02-20 14:15:10.849 [ERROR]   Exception while trying to update table
+Deatails: Oracle.ManagedDataAccess.Client.OracleException (0x80004005): ORA-06550: line 1, column 275:
+PL/SQL: ORA-00933: SQL command not properly ended
+ORA-06550: line 1, column 7:
+PL/SQL: SQL Statement ignored
+   at OracleInternal.ServiceObjects.OracleConnectionImpl.VerifyExecution(Int32& cursorId, Boolean bThrowArrayBindRelatedErrors, SqlStatementType sqlStatementType, Int32 arrayBindCount, OracleException& exceptionForArrayBindDML, Boolean& hasMoreRowsInDB, Boolean bFirstIterationDone)
+   at OracleInternal.ServiceObjects.OracleCommandImpl.ExecuteNonQuery(String commandText, OracleParameterCollection paramColl, CommandType commandType, OracleConnectionImpl connectionImpl, Int32 longFetchSize, Int64 clientInitialLOBFS, OracleDependencyImpl orclDependencyImpl, Int64[]& scnFromExecution, OracleParameterCollection& bindByPositionParamColl, Boolean& bBindParamPresent, OracleException& exceptionForArrayBindDML, OracleConnection connection, OracleLogicalTransaction& oracleLogicalTransaction, Boolean isFromEF)
+   at Oracle.ManagedDataAccess.Client.OracleCommand.ExecuteNonQuery()
+   at OracalDBProject.Admin.DeleteAdminWindow.UpdateTable(String query) in C:\Users\Liran\Source\Repos\Oracle_.NET2\OracalDBProject\Admin\DeleteAdminWindow.xaml.cs:line 95
+2019-02-20 14:15:12.414 [INFO]    Admin panel opened
+2019-02-20 14:15:12.447 [INFO]    Open Admin Paenel Window and Close Delete Admin Window
+2019-02-20 14:15:13.449 [ERROR]   Exception while trying to update table
+Deatails: Oracle.ManagedDataAccess.Client.OracleException (0x80004005): ORA-06550: line 1, column 217:
+PL/SQL: ORA-00904: "ADMINISTRATOR"."USER_ID": invalid identifier
+ORA-06550: line 1, column 7:
+PL/SQL: SQL Statement ignored
+   at OracleInternal.ServiceObjects.OracleConnectionImpl.VerifyExecution(Int32& cursorId, Boolean bThrowArrayBindRelatedErrors, SqlStatementType sqlStatementType, Int32 arrayBindCount, OracleException& exceptionForArrayBindDML, Boolean& hasMoreRowsInDB, Boolean bFirstIterationDone)
+   at OracleInternal.ServiceObjects.OracleCommandImpl.ExecuteNonQuery(String commandText, OracleParameterCollection paramColl, CommandType commandType, OracleConnectionImpl connectionImpl, Int32 longFetchSize, Int64 clientInitialLOBFS, OracleDependencyImpl orclDependencyImpl, Int64[]& scnFromExecution, OracleParameterCollection& bindByPositionParamColl, Boolean& bBindParamPresent, OracleException& exceptionForArrayBindDML, OracleConnection connection, OracleLogicalTransaction& oracleLogicalTransaction, Boolean isFromEF)
+   at Oracle.ManagedDataAccess.Client.OracleCommand.ExecuteNonQuery()
+   at OracalDBProject.Admin.DeleteAdminWindow.UpdateTable(String query) in C:\Users\Liran\Source\Repos\Oracle_.NET2\OracalDBProject\Admin\DeleteAdminWindow.xaml.cs:line 95
+2019-02-20 14:15:13.464 [INFO]    All Admins Shown
+2019-02-20 14:15:13.478 [INFO]    Delete Admin Window opened
+2019-02-20 14:15:13.563 [INFO]    Delete Admin Window opened
+2019-02-20 14:15:24.814 [INFO]    -------------------------PROGRAM STARTED-------------------
+2019-02-20 14:15:25.329 [INFO]    DB was opened seccefully
+2019-02-20 14:15:25.393 [INFO]    Admin User Switched
+2019-02-20 14:15:25.446 [INFO]    LogIn window opened
+2019-02-20 14:15:26.838 [INFO]    Admin panel opened
+2019-02-20 14:15:27.851 [INFO]    Table Updated
+2019-02-20 14:15:27.864 [INFO]    All Admins Shown
+2019-02-20 14:15:27.878 [INFO]    Delete Admin Window opened
+2019-02-20 14:15:27.990 [INFO]    Delete Admin Window opened
+2019-02-20 14:15:34.174 [INFO]    Table Updated
+2019-02-20 14:15:42.813 [INFO]    Table Updated
+2019-02-20 14:15:42.826 [INFO]    All Admins Shown
+2019-02-20 14:15:54.329 [INFO]    Table Updated
+2019-02-20 14:15:58.764 [INFO]    Table Updated
+2019-02-20 14:15:58.778 [INFO]    All Admins Shown
+2019-02-20 14:16:05.788 [INFO]    Table Updated
+2019-02-20 14:17:14.619 [INFO]    -------------------------PROGRAM STARTED-------------------
+2019-02-20 14:17:15.138 [INFO]    DB was opened seccefully
+2019-02-20 14:17:15.200 [INFO]    Admin User Switched
+2019-02-20 14:17:15.311 [INFO]    LogIn window opened
+2019-02-20 14:17:16.373 [INFO]    Admin panel opened
+2019-02-20 14:17:17.317 [INFO]    Table Updated
+2019-02-20 14:17:17.331 [INFO]    All Admins Shown
+2019-02-20 14:17:17.345 [INFO]    Delete Admin Window opened
+2019-02-20 14:17:17.455 [INFO]    Delete Admin Window opened
+2019-02-20 14:17:28.684 [INFO]    Table Updated
+2019-02-20 14:17:57.913 [INFO]    -------------------------PROGRAM STARTED-------------------
+2019-02-20 14:17:58.558 [INFO]    DB was opened seccefully
+2019-02-20 14:17:58.619 [INFO]    Admin User Switched
+2019-02-20 14:17:58.839 [INFO]    LogIn window opened
+2019-02-20 14:18:00.921 [INFO]    Admin panel opened
+2019-02-20 14:18:02.313 [INFO]    Table Updated
+2019-02-20 14:18:02.322 [INFO]    All Admins Shown
+2019-02-20 14:18:02.340 [INFO]    Delete Admin Window opened
+2019-02-20 14:18:02.506 [INFO]    Delete Admin Window opened
+2019-02-20 14:21:45.008 [INFO]    Table Updated
+2019-02-20 14:22:01.837 [INFO]    Table Updated
+2019-02-20 14:22:01.870 [INFO]    All Admins Shown
+2019-02-20 14:24:41.494 [INFO]    Table Updated
+2019-02-20 14:24:59.034 [INFO]    -------------------------PROGRAM STARTED-------------------
+2019-02-20 14:24:59.602 [INFO]    DB was opened seccefully
+2019-02-20 14:24:59.638 [INFO]    Admin User Switched
+2019-02-20 14:24:59.715 [INFO]    LogIn window opened
+2019-02-20 14:25:02.029 [INFO]    Admin panel opened
