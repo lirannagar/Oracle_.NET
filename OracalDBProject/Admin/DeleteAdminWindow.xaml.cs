@@ -98,6 +98,7 @@ namespace OracalDBProject.Admin
                 DataTable dt = new DataTable("USERS");
                 da.Fill(dt);
                 dataGrid.ItemsSource = dt.DefaultView;
+                OracleSingletonComment.Instance.Cancel();
                 Logger.Instance.Info("Table Updated");
             }
             catch (OracleException ex)
@@ -126,6 +127,26 @@ namespace OracalDBProject.Admin
         {
             ShowAllAdmins();
         }
+        private void ClearTextBoxes()
+        {
+            textBoxSearchDeleteAdmin.Clear();
+            deleteTextBox.Clear();
+        }
+
+        private void DeleteAdminFromUserDB(string name)
+        {
+            try
+            {
+                OracleSingletonComment.Instance.CommandText = "DROP USER " +name+ "";
+                OracleSingletonComment.Instance.ExecuteNonQuery();
+                Logger.Instance.Info("Delete Admin From User DB");
+            }
+            catch (OracleException ex)
+            {
+                Logger.Instance.Error("Exception while trying to Delete Admin From User DB details: " + ex);
+            }
+
+        }
 
         private void deleteButtonAdmin_Click(object sender, RoutedEventArgs e)
         {
@@ -134,8 +155,19 @@ namespace OracalDBProject.Admin
                 string adminUser = deleteTextBox.Text;
 
                 OracleSingletonComment.Instance.CommandText = "SELECT ADMINISTRATOR.USER_ID FROM ADMINISTRATOR WHERE ADMIN_ID = " + Int32.Parse(adminUser) + "";
-                var userId = OracleSingletonComment.Instance.ExecuteScalar();
-                
+                string userId = Convert.ToString(OracleSingletonComment.Instance.ExecuteScalar());
+                OracleSingletonComment.Instance.CommandText = "SELECT USERS.FIRST_NAME FROM USERS WHERE USER_ID = " + Int32.Parse(userId) + "";
+                string adminUserName = Convert.ToString(OracleSingletonComment.Instance.ExecuteScalar());
+                string deleteQuery = "DELETE FROM ADMINISTRATOR"
+                           + " WHERE ADMINISTRATOR.USER_ID = '" + adminUser + "'";
+                UpdateTable(deleteQuery);
+                deleteQuery = "DELETE FROM USERS"
+                           + " WHERE USERS.USER_ID = '" + userId + "'";
+                UpdateTable(deleteQuery);
+                DeleteAdminFromUserDB(adminUserName);
+                ShowAllAdmins();
+                ClearTextBoxes();              
+                Logger.Instance.Info("Admin " + adminUser + " with ID: " + adminUserName + " deleted");
             }
             catch(OracleException ex)
             {

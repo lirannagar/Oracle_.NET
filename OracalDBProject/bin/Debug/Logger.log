@@ -1,62 +1,22 @@
-﻿2019-02-20 12:05:51.828 [INFO]    -------------------------PROGRAM STARTED-------------------
-2019-02-20 12:05:52.395 [INFO]    DB was opened seccefully
-2019-02-20 12:05:52.435 [INFO]    Admin User Switched
-2019-02-20 12:05:52.484 [INFO]    LogIn window opened
-2019-02-20 12:08:04.191 [INFO]    -------------------------PROGRAM STARTED-------------------
-2019-02-20 12:08:04.750 [INFO]    DB was opened seccefully
-2019-02-20 12:08:04.800 [INFO]    Admin User Switched
-2019-02-20 12:08:04.872 [INFO]    LogIn window opened
-2019-02-20 12:08:06.712 [INFO]    Admin panel opened
-2019-02-20 12:08:09.253 [INFO]    Table Updated
-2019-02-20 12:08:09.263 [INFO]    All Admins Shown
-2019-02-20 12:08:09.270 [INFO]    Delete Admin Window opened
-2019-02-20 12:08:09.404 [INFO]    Delete Admin Window opened
-2019-02-20 12:12:28.390 [INFO]    -------------------------PROGRAM STARTED-------------------
-2019-02-20 12:12:29.131 [INFO]    DB was opened seccefully
-2019-02-20 12:12:29.195 [INFO]    Admin User Switched
-2019-02-20 12:12:29.292 [INFO]    LogIn window opened
-2019-02-20 12:12:30.743 [INFO]    Admin panel opened
-2019-02-20 12:12:32.339 [INFO]    Table Updated
-2019-02-20 12:12:32.346 [INFO]    All Admins Shown
-2019-02-20 12:12:32.355 [INFO]    Delete Admin Window opened
-2019-02-20 12:12:32.533 [INFO]    Delete Admin Window opened
-2019-02-20 12:12:51.719 [ERROR]   Exception while trying to delete admin user details: Oracle.ManagedDataAccess.Client.OracleException (0x80004005): ORA-00911: invalid character
+﻿2019-02-20 13:11:10.419 [INFO]    -------------------------PROGRAM STARTED-------------------
+2019-02-20 13:11:11.117 [INFO]    DB was opened seccefully
+2019-02-20 13:11:11.193 [INFO]    Admin User Switched
+2019-02-20 13:11:11.353 [INFO]    LogIn window opened
+2019-02-20 13:11:14.608 [INFO]    Admin panel opened
+2019-02-20 13:11:16.435 [INFO]    Table Updated
+2019-02-20 13:11:16.446 [INFO]    All Admins Shown
+2019-02-20 13:11:16.454 [INFO]    Delete Admin Window opened
+2019-02-20 13:11:16.593 [INFO]    Delete Admin Window opened
+2019-02-20 13:11:53.961 [INFO]    Table Updated
+2019-02-20 13:12:02.052 [ERROR]   Exception while trying to update table
+Deatails: Oracle.ManagedDataAccess.Client.OracleException (0x80004005): ORA-02292: integrity constraint (LIRAN_ADMIN.FK_USERS) violated - child record found
    at OracleInternal.ServiceObjects.OracleConnectionImpl.VerifyExecution(Int32& cursorId, Boolean bThrowArrayBindRelatedErrors, SqlStatementType sqlStatementType, Int32 arrayBindCount, OracleException& exceptionForArrayBindDML, Boolean& hasMoreRowsInDB, Boolean bFirstIterationDone)
-   at OracleInternal.ServiceObjects.OracleCommandImpl.ExecuteReader(String commandText, OracleParameterCollection paramColl, CommandType commandType, OracleConnectionImpl connectionImpl, OracleDataReaderImpl& rdrImpl, Int32 longFetchSize, Int64 clientInitialLOBFS, OracleDependencyImpl orclDependencyImpl, Int64[] scnForExecution, Int64[]& scnFromExecution, OracleParameterCollection& bindByPositionParamColl, Boolean& bBindParamPresent, Int64& internalInitialLOBFS, OracleException& exceptionForArrayBindDML, OracleConnection connection, OracleLogicalTransaction& oracleLogicalTransaction, IEnumerable`1 adrianParsedStmt, Boolean isDescribeOnly, Boolean isFromEF)
-   at Oracle.ManagedDataAccess.Client.OracleCommand.ExecuteReader(Boolean requery, Boolean fillRequest, CommandBehavior behavior)
-   at Oracle.ManagedDataAccess.Client.OracleCommand.ExecuteReader()
-   at OracalDBProject.Admin.DeleteAdminWindow.deleteButtonAdmin_Click(Object sender, RoutedEventArgs e) in C:\Users\Liran\Source\Repos\Oracle_.NET2\OracalDBProject\Admin\DeleteAdminWindow.xaml.cs:line 138
-2019-02-20 12:16:04.458 [INFO]    -------------------------PROGRAM STARTED-------------------
-2019-02-20 12:16:05.187 [INFO]    DB was opened seccefully
-2019-02-20 12:16:05.234 [INFO]    Admin User Switched
-2019-02-20 12:16:05.308 [INFO]    LogIn window opened
-2019-02-20 12:16:06.919 [INFO]    Admin panel opened
-2019-02-20 12:16:08.398 [INFO]    Table Updated
-2019-02-20 12:16:08.410 [INFO]    All Admins Shown
-2019-02-20 12:16:08.420 [INFO]    Delete Admin Window opened
-2019-02-20 12:16:08.563 [INFO]    Delete Admin Window opened
-2019-02-20 12:16:29.231 [ERROR]   Exception while trying to delete admin user details: Oracle.ManagedDataAccess.Client.OracleException (0x80004005): ORA-00911: invalid character
-   at OracleInternal.ServiceObjects.OracleConnectionImpl.VerifyExecution(Int32& cursorId, Boolean bThrowArrayBindRelatedErrors, SqlStatementType sqlStatementType, Int32 arrayBindCount, OracleException& exceptionForArrayBindDML, Boolean& hasMoreRowsInDB, Boolean bFirstIterationDone)
-   at OracleInternal.ServiceObjects.OracleCommandImpl.ExecuteReader(String commandText, OracleParameterCollection paramColl, CommandType commandType, OracleConnectionImpl connectionImpl, OracleDataReaderImpl& rdrImpl, Int32 longFetchSize, Int64 clientInitialLOBFS, OracleDependencyImpl orclDependencyImpl, Int64[] scnForExecution, Int64[]& scnFromExecution, OracleParameterCollection& bindByPositionParamColl, Boolean& bBindParamPresent, Int64& internalInitialLOBFS, OracleException& exceptionForArrayBindDML, OracleConnection connection, OracleLogicalTransaction& oracleLogicalTransaction, IEnumerable`1 adrianParsedStmt, Boolean isDescribeOnly, Boolean isFromEF)
-   at Oracle.ManagedDataAccess.Client.OracleCommand.ExecuteReader(Boolean requery, Boolean fillRequest, CommandBehavior behavior)
-   at Oracle.ManagedDataAccess.Client.OracleCommand.ExecuteReader()
-   at Oracle.ManagedDataAccess.Client.OracleCommand.ExecuteScalar()
-   at OracalDBProject.Admin.DeleteAdminWindow.deleteButtonAdmin_Click(Object sender, RoutedEventArgs e) in C:\Users\Liran\Source\Repos\Oracle_.NET2\OracalDBProject\Admin\DeleteAdminWindow.xaml.cs:line 138
-2019-02-20 12:17:58.373 [INFO]    -------------------------PROGRAM STARTED-------------------
-2019-02-20 12:17:59.054 [INFO]    DB was opened seccefully
-2019-02-20 12:17:59.089 [INFO]    Admin User Switched
-2019-02-20 12:17:59.143 [INFO]    LogIn window opened
-2019-02-20 12:18:00.690 [INFO]    Admin panel opened
-2019-02-20 12:18:03.963 [INFO]    Table Updated
-2019-02-20 12:18:03.975 [INFO]    All Admins Shown
-2019-02-20 12:18:03.986 [INFO]    Delete Admin Window opened
-2019-02-20 12:18:04.124 [INFO]    Delete Admin Window opened
-2019-02-20 12:19:24.867 [INFO]    -------------------------PROGRAM STARTED-------------------
-2019-02-20 12:19:25.750 [INFO]    DB was opened seccefully
-2019-02-20 12:19:25.806 [INFO]    Admin User Switched
-2019-02-20 12:19:25.895 [INFO]    LogIn window opened
-2019-02-20 12:19:27.506 [INFO]    Admin panel opened
-2019-02-20 12:19:28.812 [INFO]    Table Updated
-2019-02-20 12:19:28.825 [INFO]    All Admins Shown
-2019-02-20 12:19:28.836 [INFO]    Delete Admin Window opened
-2019-02-20 12:19:29.017 [INFO]    Delete Admin Window opened
+   at OracleInternal.ServiceObjects.OracleCommandImpl.ExecuteNonQuery(String commandText, OracleParameterCollection paramColl, CommandType commandType, OracleConnectionImpl connectionImpl, Int32 longFetchSize, Int64 clientInitialLOBFS, OracleDependencyImpl orclDependencyImpl, Int64[]& scnFromExecution, OracleParameterCollection& bindByPositionParamColl, Boolean& bBindParamPresent, OracleException& exceptionForArrayBindDML, OracleConnection connection, OracleLogicalTransaction& oracleLogicalTransaction, Boolean isFromEF)
+   at Oracle.ManagedDataAccess.Client.OracleCommand.ExecuteNonQuery()
+   at OracalDBProject.Admin.DeleteAdminWindow.UpdateTable(String query) in C:\Users\Liran\Source\Repos\Oracle_.NET2\OracalDBProject\Admin\DeleteAdminWindow.xaml.cs:line 95
+2019-02-20 13:12:17.272 [INFO]    Delete Admin From User DB
+2019-02-20 13:12:30.741 [INFO]    Table Updated
+2019-02-20 13:12:30.769 [INFO]    All Admins Shown
+2019-02-20 13:12:32.602 [INFO]    Admin 10022 with ID: moshiko deleted
+2019-02-20 13:12:42.365 [INFO]    Table Updated
+2019-02-20 13:12:42.392 [INFO]    All Admins Shown
