@@ -19,7 +19,10 @@
         <TextBox x:Name="TextUserName" Grid.ColumnSpan="2" HorizontalAlignment="Left" Height="23" Margin="3,121,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="120" Grid.Column="3"/>
         <TextBox x:Name="passwordBox" HorizontalAlignment="Left" Margin="3,157,0,0" VerticalAlignment="Top" Width="120" Grid.ColumnSpan="2" Height="25" Grid.Column="3"/>
         <Label x:Name="PasswordLabel" Content="Password:" HorizontalAlignment="Left" Margin="48,149,0,0" VerticalAlignment="Top" Width="120" FontSize="18" Grid.Column="1"/>
-        <ComboBox x:Name="comboBox" HorizontalAlignment="Left" Margin="3,201,0,0" VerticalAlignment="Top" Width="120" Grid.ColumnSpan="2" Grid.Column="3"/>
+        <ComboBox x:Name="comboBox" HorizontalAlignment="Left" Margin="3,201,0,0" VerticalAlignment="Top" Width="120" Grid.ColumnSpan="2" Grid.Column="3" >
+            <ComboBoxItem Content="Administrator"/>
+            <ComboBoxItem IsSelected="True" Content="Club Member"/>
+        </ComboBox>
         <Button x:Name="LogInButton" Content="Log In" HorizontalAlignment="Left" Margin="114,258,0,0" VerticalAlignment="Top" Width="119" RenderTransformOrigin="0.173,-0.4" Grid.ColumnSpan="3" Height="27" Click="LogInButton_Click" Grid.Column="1"/>
         <Label x:Name="RoleLabel" Content="Role: " HorizontalAlignment="Left" Margin="47,190,0,0" VerticalAlignment="Top" Width="120" FontSize="18" Grid.Column="1"/>
         <Label x:Name="TitleMsgLabel" Content="WELCOME TO &quot;SHAUL MARKET&quot;" HorizontalAlignment="Left" Margin="31,19,0,0" VerticalAlignment="Top" Width="285" FontSize="18" Grid.Column="1" Grid.ColumnSpan="4"/>

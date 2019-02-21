@@ -19,6 +19,7 @@ using Oracle.ManagedDataAccess.Types;
 using Logger;
 using OracalDBProject.Admin;
 using static OracalDBProject.Admin.Enums;
+using OracalDBProject.Club_Member;
 
 namespace OracalDBProject
 {
@@ -33,6 +34,8 @@ namespace OracalDBProject
         const string ADMIN_PASSWORD_FIRST = "123123";
         const string ADMIN_USER_NAME_SECOND = "LIRAN_ADMIN";
         const string ADMIN_PASSWORD_SECOND = "123123";
+        const string ADMIN_ROLE_NAME = "Administrator";
+        const string CLUB_MEMBER_ROLE_NAME = "Club Memeber";
         #endregion Control Mapping
 
         #region Members
@@ -48,7 +51,7 @@ namespace OracalDBProject
         {
             Logger.Instance.Info("-------------------------PROGRAM STARTED-------------------");
             OpenConnection();
-           // CreateAdminUsers();
+            //CreateAdminUsers();
             SwitchAdminUser();       
             //CreateTables();
             //CreateSequences();
@@ -365,27 +368,36 @@ namespace OracalDBProject
                 Logger.Instance.Error("Exption while trying to chenge admin user\n Details:\n" + ex);
             }
         }
+        private void UserConnectionSwitch(string loginName, string password)
+        {
+            OracleSingletonConnection.Instance.Close();
+            OracleSingletonConnection.Instance.ConnectionString = "DATA SOURCE = localhost:1521/xe;USER ID = " + loginName + "; PASSWORD=" + password + "";
+            OracleSingletonConnection.Instance.Open();
+            Logger.Instance.Info("User Switched to " + loginName);
+        }
         private void LogInButton_Click(object sender, RoutedEventArgs e)
         {
             string loginName = TextUserName.Text;
             string password = passwordBox.Text;
+           
+            string select = comboBox.SelectedItem.ToString();
             try
             {
-                if (loginName.Equals(ADMIN_USER_NAME_FIRST) && password.Equals(ADMIN_PASSWORD_FIRST))
+                if (select.Contains(ADMIN_ROLE_NAME))
                 {
-                    AdminPanel adminWin = new AdminPanel();
-                    adminWin.Show();
+                    UserConnectionSwitch(loginName, password);
+                    AdminPanel win = new AdminPanel();
+                    win.Show();
+                    this.Close();            
+                }
+                else if (select.Contains(CLUB_MEMBER_ROLE_NAME))
+                {
+                    UserConnectionSwitch(loginName, password);
+                    ClubMemberOperationWindow win = new ClubMemberOperationWindow();
+                    win.Show();
                     this.Close();
                 }
-                else if (loginName.Equals(ADMIN_USER_NAME_SECOND) && password.Equals(ADMIN_PASSWORD_SECOND))
-                {
-                    AdminPanel adminWin = new AdminPanel();
-                    adminWin.Show();
-                    this.Close();
-
-                }
-                else
-                {
+                else{
                     string messageBoxText = "the user name/password is not exist...please try again";
                     string caption = "ERROR";
                     MessageBoxButton button = MessageBoxButton.OK;
