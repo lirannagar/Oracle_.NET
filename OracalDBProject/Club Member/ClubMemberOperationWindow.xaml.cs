@@ -23,5 +23,37 @@ namespace OracalDBProject.Club_Member
         {
             InitializeComponent();
         }
+
+        private void StartBuying_Click(object sender, RoutedEventArgs e)
+        {
+            try
+            {
+                ClubMemberStartBuying win = new ClubMemberStartBuying();
+                win.Show();
+                this.Close();
+                Logger.Instance.Info("Club Member Start Buying Window opened");
+            }
+            catch (Exception ex)
+            {
+                Logger.Instance.Error("Exception while trying to show Club Member Start Buying window Details:\n" + ex);
+            }
+        }
+
+        private void Exit_Click(object sender, RoutedEventArgs e)
+        {
+            try
+            {
+                MainWindow mainWindowPanel = new MainWindow();
+                mainWindowPanel.Show();
+                this.Close();
+                Logger.Instance.Info("Open main Window and Close Club member operation window  Window");
+            }
+
+
+            catch (Exception ex)
+            {
+                Logger.Instance.Error("Exception while trying to open main window and Close club member operation  Window \nDetails: " + ex);
+            }
+        }
     }
 }

@@ -60,6 +60,8 @@ namespace OracalDBProject.Club_Member
                 cmd.ExecuteNonQuery();
                 cmd.CommandText = String.Format("GRANT SELECT, insert, update, delete ON PRODUCTS TO {0}", firstName);
                 cmd.ExecuteNonQuery();
+                cmd.CommandText = String.Format("GRANT create session TO {0}", firstName);
+                cmd.ExecuteNonQuery();
                 CleanTextBoxes();
                 Logger.Instance.Info("Club member Singed UP");
             }catch(Exception ex)

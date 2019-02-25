@@ -35,7 +35,7 @@ namespace OracalDBProject
         const string ADMIN_USER_NAME_SECOND = "LIRAN_ADMIN";
         const string ADMIN_PASSWORD_SECOND = "123123";
         const string ADMIN_ROLE_NAME = "Administrator";
-        const string CLUB_MEMBER_ROLE_NAME = "Club Memeber";
+        const string CLUB_MEMBER_ROLE_NAME = "Club Member";
         #endregion Control Mapping
 
         #region Members
