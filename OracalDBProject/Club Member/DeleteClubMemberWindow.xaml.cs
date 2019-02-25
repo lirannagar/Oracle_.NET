@@ -65,8 +65,7 @@ namespace OracalDBProject.Club_Member
         {
             try
             {
-                string searchQueryString = "SELECT CLUB_MEMBER.MEMBER_ID,USERS.FIRST_NAME,USERS.LAST_NAME,USERS.PASSWORD_ENCRYPTED,USERS.USER_EMAIL,USERS.USER_PHONE_NUMBER,CLUB_MEMBER.JOIN_DATE "
-                                                + " FROM USERS INNER JOIN CLUB_MEMBER ON USERS.USER_ID = CLUB_MEMBER.USER_ID";
+                string searchQueryString = "SELECT * FROM vw_club_member";
                 UpdateTable(searchQueryString);
                 Logger.Instance.Info("All Club Members Shown");
             }
@@ -96,7 +95,15 @@ namespace OracalDBProject.Club_Member
                 Logger.Instance.Error("Exception while trying to update table\nDeatails: " + ex);
             }
         }
-
+        private string GetClubMemberUserId(string clubMemberUserId)
+        {
+            OracleSingletonComment.Instance.CommandText = "pkg_club_member.get_club_member_user_id";
+            OracleSingletonComment.Instance.CommandType = CommandType.StoredProcedure;
+            OracleSingletonComment.Instance.Parameters.Add("number", OracleDbType.Int32, ParameterDirection.ReturnValue);
+            OracleSingletonComment.Instance.Parameters.Add("number", OracleDbType.Int32, ParameterDirection.Input).Value = Int32.Parse(clubMemberUserId);
+            OracleSingletonComment.Instance.ExecuteNonQuery();
+            return OracleSingletonComment.Instance.Parameters["number"].Value.ToString(); 
+        }
 
 
         private void DeleteButton_Click(object sender, RoutedEventArgs e)
@@ -104,8 +111,8 @@ namespace OracalDBProject.Club_Member
             try
             {
                 string clubMemberUserId = textBoxDelete.Text;
-                OracleSingletonComment.Instance.CommandText = "SELECT CLUB_MEMBER.USER_ID FROM CLUB_MEMBER WHERE MEMBER_ID = " + Int32.Parse(clubMemberUserId) + "";
-                string userId = Convert.ToString(OracleSingletonComment.Instance.ExecuteScalar());
+
+                string userId = GetClubMemberUserId(clubMemberUserId);
                 OracleSingletonComment.Instance.CommandText = "SELECT USERS.FIRST_NAME FROM USERS WHERE USER_ID = " + Int32.Parse(userId) + "";
                 string clubMemberUserName = Convert.ToString(OracleSingletonComment.Instance.ExecuteScalar());
                 string deleteQuery = "DELETE FROM CLUB_MEMBER"

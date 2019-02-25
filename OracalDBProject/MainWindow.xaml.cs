@@ -52,13 +52,15 @@ namespace OracalDBProject
             Logger.Instance.Info("-------------------------PROGRAM STARTED-------------------");
             OpenConnection();
             //CreateAdminUsers();
-            SwitchAdminUser();       
+            SwitchAdminUser();
             //CreateTables();
             //CreateSequences();
-            //CreatePackages();
+            CreatePackages();
+            //CreateViews();
+
             //InitializeRoles();
             //DropTables();
-            //CreateClubMemberUsers();
+            
             try
             {          
                 InitializeComponent();
@@ -80,6 +82,62 @@ namespace OracalDBProject
         #endregion Constructor
 
         #region Private Methods
+        private void CreateProductsView()
+        {
+            try
+            {
+                string createViewString = "CREATE VIEW vw_products AS "
+                                            + " SELECT PRODUCTS.PRODUCT_ID, PRODUCTS.PRODUCT_NAME, PRODUCTS.PRODUCT_AMOUNT"
+                                            + " FROM PRODUCTS";
+                OracleSingletonComment.Instance.CommandText = createViewString;
+                dr = OracleSingletonComment.Instance.ExecuteReader();
+                Logger.Instance.Info("Products View Created");
+            }catch(OracleException ex)
+            {
+                Logger.Instance.Error("Exception while trying to create Products View Details:" + ex);
+            }
+  
+
+        }
+        private void CreateAdminView()
+        {
+            try
+            {
+                string createViewString = "CREATE VIEW vw_admins AS "
+                                            + " SELECT ADMINISTRATOR.ADMIN_ID,USERS.FIRST_NAME,USERS.LAST_NAME,USERS.PASSWORD_ENCRYPTED,USERS.USER_EMAIL,USERS.USER_PHONE_NUMBER,ADMINISTRATOR.SALARY_NIS "
+                                            + " FROM USERS INNER JOIN ADMINISTRATOR ON USERS.USER_ID = ADMINISTRATOR.USER_ID";
+                OracleSingletonComment.Instance.CommandText = createViewString;
+                dr = OracleSingletonComment.Instance.ExecuteReader();
+                Logger.Instance.Info("Admin View Created");
+            }
+            catch (OracleException ex)
+            {
+                Logger.Instance.Error("Exception while trying to create Admin View Details:" + ex);
+            }
+        }
+        private void CreateClubMemberView()
+        {
+            try
+            {
+                string createViewString = "CREATE VIEW vw_club_member AS "
+                                            + " SELECT CLUB_MEMBER.MEMBER_ID,USERS.FIRST_NAME,USERS.LAST_NAME,USERS.PASSWORD_ENCRYPTED,USERS.USER_EMAIL,USERS.USER_PHONE_NUMBER,CLUB_MEMBER.JOIN_DATE "
+                                            + " FROM USERS INNER JOIN CLUB_MEMBER ON USERS.USER_ID = CLUB_MEMBER.USER_ID";
+                OracleSingletonComment.Instance.CommandText = createViewString;
+                dr = OracleSingletonComment.Instance.ExecuteReader();
+                Logger.Instance.Info("Club Member View Created");
+            }
+            catch (OracleException ex)
+            {
+                Logger.Instance.Error("Exception while trying to create Club Member View Details:" + ex);
+            }
+        }
+        private void CreateViews()
+        {
+            CreateProductsView();        
+            CreateAdminView();
+            CreateClubMemberView();
+           
+        }
         private void InitializeRoles()
         {
             try
@@ -191,8 +249,13 @@ namespace OracalDBProject
             {
                 string declareAdminPackageStirng = "create or replace package pkg_admin is"
                                      + " PROCEDURE insertAdmin(admin_id number,user_id number,salary_nis number);"
+                                     + " FUNCTION get_admin_user_id(iduser IN number) RETURN number;"
                                      + " end pkg_admin;";
                 string bodyAdminPackageStirng = "create or replace package body pkg_admin is"
+                  + " FUNCTION get_admin_user_id(iduser IN number) RETURN NUMBER IS res_value NUMBER(11,2);"
+                  + " BEGIN"
+                  + "   SELECT ADMINISTRATOR.USER_ID INTO res_value FROM ADMINISTRATOR WHERE ADMIN_ID = iduser;  RETURN(res_value);"
+                  + " END; " 
                   + " PROCEDURE insertAdmin("
                   + " admin_id number,"
                   + " user_id number,"
@@ -255,8 +318,10 @@ namespace OracalDBProject
             {
                 string declareProductsPackageStirng = "create or replace package pkg_product is"
                                                      + " PROCEDURE insertProducts(product_id number,product_name varchar2,product_amount number);"
+                                                     
                                                      + " end pkg_product;";
                 string bodyProductsPackageStirng = "create or replace package body pkg_product is"
+                                                 
                                                   + " PROCEDURE insertProducts("
                                                   + " product_id number,"
                                                   + " product_name varchar2,"
@@ -314,8 +379,13 @@ namespace OracalDBProject
             {
                 string declareClubMemberPackageStirng = "create or replace package pkg_club_member is"
                                                      + " PROCEDURE insertClubMember(member_id number,user_id number,join_date varchar2);"
+                                                     + " FUNCTION get_club_member_user_id(iduser IN number) RETURN number;"
                                                      + " end pkg_club_member;";
                 string bodyClubMemberPackageStirng = "create or replace package body pkg_club_member is"
+                                                   + " FUNCTION get_club_member_user_id(iduser IN number) RETURN NUMBER IS res_value NUMBER(11,2);"
+                                                  + " BEGIN"
+                                                  + "   SELECT CLUB_MEMBER.USER_ID INTO res_value FROM CLUB_MEMBER WHERE MEMBER_ID = iduser;  RETURN(res_value);"
+                                                  + " END; "
                                                   + " PROCEDURE insertClubMember("
                                                   + " member_id number,"
                                                   + " user_id number,"

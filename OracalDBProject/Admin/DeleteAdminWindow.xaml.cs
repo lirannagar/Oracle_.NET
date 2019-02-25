@@ -52,8 +52,7 @@ namespace OracalDBProject.Admin
         {
             try
             {
-                string searchQueryString = "SELECT ADMINISTRATOR.ADMIN_ID,USERS.FIRST_NAME,USERS.LAST_NAME,USERS.PASSWORD_ENCRYPTED,USERS.USER_EMAIL,USERS.USER_PHONE_NUMBER,ADMINISTRATOR.SALARY_NIS "
-                                                + " FROM USERS INNER JOIN ADMINISTRATOR ON USERS.USER_ID = ADMINISTRATOR.USER_ID";
+                string searchQueryString = "SELECT * FROM vw_admins";
                 UpdateTable(searchQueryString);
                 Logger.Instance.Info("All Admins Shown");
             }
@@ -163,14 +162,23 @@ namespace OracalDBProject.Admin
             }
 
         }
+        private string GetAdminUserId(string adminUserId)
+        {
+            OracleSingletonComment.Instance.CommandText = "pkg_admin.get_admin_user_id";
+            OracleSingletonComment.Instance.CommandType = CommandType.StoredProcedure;
+            OracleSingletonComment.Instance.Parameters.Add("number", OracleDbType.Int32, ParameterDirection.ReturnValue);
+            OracleSingletonComment.Instance.Parameters.Add("number", OracleDbType.Int32, ParameterDirection.Input).Value = Int32.Parse(adminUserId);
+            OracleSingletonComment.Instance.ExecuteNonQuery();
+            return OracleSingletonComment.Instance.Parameters["number"].Value.ToString();
+        }
 
         private void deleteButtonAdmin_Click(object sender, RoutedEventArgs e)
         {
             try
             {
                 string adminUserId = deleteTextBox.Text;
-                OracleSingletonComment.Instance.CommandText = "SELECT ADMINISTRATOR.USER_ID FROM ADMINISTRATOR WHERE ADMIN_ID = " + Int32.Parse(adminUserId) + "";
-                string userId = Convert.ToString(OracleSingletonComment.Instance.ExecuteScalar());
+
+                string userId = GetAdminUserId(adminUserId);
                 OracleSingletonComment.Instance.CommandText = "SELECT USERS.FIRST_NAME FROM USERS WHERE USER_ID = " + Int32.Parse(userId) + "";
                 string adminUserName = Convert.ToString(OracleSingletonComment.Instance.ExecuteScalar());
                 string deleteQuery = "DELETE FROM ADMINISTRATOR"

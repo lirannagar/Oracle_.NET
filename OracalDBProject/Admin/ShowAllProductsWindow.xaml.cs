@@ -37,8 +37,7 @@ namespace OracalDBProject.Admin
         public ShowAllProductsWindow()
         {
             InitializeComponent();
-            string showAllTableQuery = "SELECT *"
-                                + " FROM PRODUCTS";
+            string showAllTableQuery = "SELECT * FROM VW_PRODUCTS";
             UpdateTable(showAllTableQuery);
         }
 

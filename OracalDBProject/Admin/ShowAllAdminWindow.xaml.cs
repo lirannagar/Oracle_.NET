@@ -59,8 +59,7 @@ namespace OracalDBProject.Admin
         {
             try
             {
-                string searchQueryString = "SELECT ADMINISTRATOR.ADMIN_ID,USERS.FIRST_NAME,USERS.LAST_NAME,USERS.PASSWORD_ENCRYPTED,USERS.USER_EMAIL,USERS.USER_PHONE_NUMBER,ADMINISTRATOR.SALARY_NIS "
-                                                + " FROM USERS INNER JOIN ADMINISTRATOR ON USERS.USER_ID = ADMINISTRATOR.USER_ID";
+                string searchQueryString = "SELECT * FROM vw_admins";
                 UpdateTable(searchQueryString);
                 Logger.Instance.Info("All Admins Shown");
             }

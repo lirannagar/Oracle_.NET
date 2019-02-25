@@ -45,8 +45,7 @@ namespace OracalDBProject.Club_Member
         {
             try
             {
-                string searchQueryString = "SELECT CLUB_MEMBER.MEMBER_ID,USERS.FIRST_NAME,USERS.LAST_NAME,USERS.PASSWORD_ENCRYPTED,USERS.USER_EMAIL,USERS.USER_PHONE_NUMBER,CLUB_MEMBER.JOIN_DATE "
-                                                + " FROM USERS INNER JOIN CLUB_MEMBER ON USERS.USER_ID = CLUB_MEMBER.USER_ID";
+                string searchQueryString = "SELECT * FROM vw_club_member"; 
                 UpdateTable(searchQueryString);
                 Logger.Instance.Info("All Club Members Shown");
             }

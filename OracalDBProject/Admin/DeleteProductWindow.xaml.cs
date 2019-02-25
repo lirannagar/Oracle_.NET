@@ -24,6 +24,7 @@ namespace OracalDBProject.Admin
     public partial class DeleteProductWindow : Window
     {
         #region Control Mapping
+        const string TABLE_NAME = "PRODUCTS";
         #endregion Control Mapping
 
         #region Members
@@ -88,8 +89,7 @@ namespace OracalDBProject.Admin
 
         private void ShowAllProductButton_Click(object sender, RoutedEventArgs e)
         {
-            string showAllTableQuery = "SELECT *"
-                                + " FROM PRODUCTS";
+            string showAllTableQuery = "SELECT * FROM VW_PRODUCTS";
             UpdateTable(showAllTableQuery);
         }
 
@@ -101,7 +101,7 @@ namespace OracalDBProject.Admin
                 OracleSingletonComment.Instance.ExecuteNonQuery();
                 OracleDataAdapter da = new OracleDataAdapter(OracleSingletonComment.Instance);
                 da.SelectCommand = OracleSingletonComment.Instance;
-                DataTable dt = new DataTable("PRODUCTS");
+                DataTable dt = new DataTable(TABLE_NAME);
                 da.Fill(dt);
                 GridProductTable.ItemsSource = dt.DefaultView;
                 Logger.Instance.Info("Table Updated");
