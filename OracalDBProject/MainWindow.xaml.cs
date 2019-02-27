@@ -20,6 +20,7 @@ using Logger;
 using OracalDBProject.Admin;
 using static OracalDBProject.Admin.Enums;
 using OracalDBProject.Club_Member;
+using System.ComponentModel;
 
 namespace OracalDBProject
 {
@@ -36,6 +37,7 @@ namespace OracalDBProject
         const string ADMIN_PASSWORD_SECOND = "123123";
         const string ADMIN_ROLE_NAME = "Administrator";
         const string CLUB_MEMBER_ROLE_NAME = "Club Member";
+
         #endregion Control Mapping
 
         #region Members
@@ -47,20 +49,20 @@ namespace OracalDBProject
         #endregion Members
 
         #region Constructor
+        /// <summary>
+        /// 
+        /// </summary>
         public MainWindow()
         {
             Logger.Instance.Info("-------------------------PROGRAM STARTED-------------------");
             OpenConnection();
-            //CreateAdminUsers();
-            SwitchAdminUser();
-            //CreateTables();
-            //CreateSequences();
+            CreateAdminUsers();              
+            UserConnectionSwitch(ADMIN_USER_NAME_SECOND, ADMIN_PASSWORD_SECOND);
             CreatePackages();
-            //CreateViews();
-
-            //InitializeRoles();
-            //DropTables();
-            
+            CreateTables();
+            CreateSequences();
+            CreateViews();
+            InitializeRoles();
             try
             {          
                 InitializeComponent();
@@ -71,13 +73,7 @@ namespace OracalDBProject
                 Logger.Instance.Error("Exception while trying to open main window\nDetails:\n" + ex);
             }
             TextUserName.Text = "LIRAN_ADMIN";
-            passwordBox.Text = "123123";
-
-           
-
-
-
-            // OracleSingletonConnection.Instance.Close();
+            passwordBox.Text = "123123";                      
         }
         #endregion Constructor
 
@@ -92,9 +88,9 @@ namespace OracalDBProject
                 OracleSingletonComment.Instance.CommandText = createViewString;
                 dr = OracleSingletonComment.Instance.ExecuteReader();
                 Logger.Instance.Info("Products View Created");
-            }catch(OracleException ex)
+            }catch
             {
-                Logger.Instance.Error("Exception while trying to create Products View Details:" + ex);
+                Logger.Instance.Info("Products View already exist");
             }
   
 
@@ -110,9 +106,9 @@ namespace OracalDBProject
                 dr = OracleSingletonComment.Instance.ExecuteReader();
                 Logger.Instance.Info("Admin View Created");
             }
-            catch (OracleException ex)
+            catch 
             {
-                Logger.Instance.Error("Exception while trying to create Admin View Details:" + ex);
+                Logger.Instance.Info("Admin View already exist");
             }
         }
         private void CreateClubMemberView()
@@ -126,16 +122,24 @@ namespace OracalDBProject
                 dr = OracleSingletonComment.Instance.ExecuteReader();
                 Logger.Instance.Info("Club Member View Created");
             }
-            catch (OracleException ex)
+            catch 
             {
-                Logger.Instance.Error("Exception while trying to create Club Member View Details:" + ex);
+                Logger.Instance.Info("Club Member View already exist");
             }
         }
         private void CreateViews()
         {
-            CreateProductsView();        
-            CreateAdminView();
-            CreateClubMemberView();
+            try
+            {
+                CreateProductsView();
+                CreateAdminView();
+                CreateClubMemberView();
+            }catch
+            {
+                Logger.Instance.Info("Trying to create views but thay are already exist");
+
+            }
+          
            
         }
         private void InitializeRoles()
@@ -151,9 +155,36 @@ namespace OracalDBProject
                 Role clubMemberRole = new Role(clubMemberId, clubMemberName);
                 clubMemberRole.ExecuteToDatabase();
                 Logger.Instance.Info("Initialized Roles");
-            }catch(Exception ex)
+            }catch
             {
-                Logger.Instance.Error("Exception while trying to Initialize Roles Details: " + ex );
+                Logger.Instance.Info("Roles already exist");
+            }
+        }
+        public void DropSequences()
+        {
+            try
+            {          
+                string productsStringDropSequence = "drop  SEQUENCE LIRAN_ADMIN.PRODUCT_SEQ";               
+                string clubMemberStringDropSequence = "drop SEQUENCE  LIRAN_ADMIN.club_member_seq";
+                string administratorStringDropSequence = "DROP SEQUENCE LIRAN_ADMIN.ADMIN_SEQ";
+                string userStringDropSequence = "drop SEQUENCE LIRAN_ADMIN.user_seq";
+             
+                OracleSingletonComment.Instance.CommandText = productsStringDropSequence;
+                OracleSingletonComment.Instance.ExecuteNonQuery();
+                Logger.Instance.Info("SEQUENCE product_seq DROPED");
+                OracleSingletonComment.Instance.CommandText = clubMemberStringDropSequence;
+                dr = OracleSingletonComment.Instance.ExecuteReader();
+                Logger.Instance.Info("SEQUENCE club_member_seq DROPED");
+                OracleSingletonComment.Instance.CommandText = administratorStringDropSequence;
+                dr = OracleSingletonComment.Instance.ExecuteReader();
+                Logger.Instance.Info("SEQUENCE admin_seq DROPED");
+                OracleSingletonComment.Instance.CommandText = userStringDropSequence;
+                dr = OracleSingletonComment.Instance.ExecuteReader();
+                Logger.Instance.Info("SEQUENCE user_seq DROPED");
+            }
+            catch
+            {
+                Logger.Instance.Info("Some of the Sequences are not exist");
             }
         }
         private void CreateAdminUserSequence()
@@ -169,9 +200,9 @@ namespace OracalDBProject
                 dr = OracleSingletonComment.Instance.ExecuteReader();
                 Logger.Instance.Info("Admin Sequence Created");
             }
-            catch (OracleException ex)
+            catch 
             {
-                Logger.Instance.Error("Exception while trying to Create Admin Sequence\nDetails: " + ex);
+                Logger.Instance.Info("Admin User Sequence already exist");
             }
         }
         private void CreateClubMemberSequence()
@@ -187,24 +218,24 @@ namespace OracalDBProject
                 dr = OracleSingletonComment.Instance.ExecuteReader();
                 Logger.Instance.Info("Club Member Sequence Created");
             }
-            catch (OracleException ex)
+            catch 
             {
-                Logger.Instance.Error("Exception while trying to Create Club Member Sequence\nDetails: " + ex);
+                Logger.Instance.Info("Club Member Sequence already exist");
             }
         }
         private void CreateSequences()
         {
             try
             {
-                //CreateProductSequence();
-                //CreateUserSequence();
-                //CreateAdminUserSequence();
+                CreateProductSequence();
+                CreateUserSequence();
+                CreateAdminUserSequence();
                 CreateClubMemberSequence();
                 Logger.Instance.Info("All Sequences Created");
             }
-            catch (OracleException ex)
+            catch 
             {
-                Logger.Instance.Error("Exception while trying to add Sequence \nDetails: " +ex);
+                Logger.Instance.Info("Trying to create Sequences but the Sequences already exist");
             }
         }
         private void CreateUserSequence()
@@ -220,9 +251,9 @@ namespace OracalDBProject
                 dr = OracleSingletonComment.Instance.ExecuteReader();
                 Logger.Instance.Info("User Sequence Created");
             }
-            catch(OracleException ex)
+            catch
             {
-                Logger.Instance.Error("Exception while trying to Create User Sequence\nDetails: " + ex);
+                Logger.Instance.Info("User Sequence already exist");
             }
         }
         private void  CreateProductSequence()
@@ -238,9 +269,9 @@ namespace OracalDBProject
                 dr = OracleSingletonComment.Instance.ExecuteReader();
                 Logger.Instance.Info("Product Sequence Created");
             }
-            catch(OracleException ex)
+            catch
             {
-                Logger.Instance.Error("Exception while trying to Create Product Sequence \nDetails: " + ex);            
+                Logger.Instance.Info("Product Sequence already exist");            
             }
         }
         private void CreateAdminPackage()
@@ -341,7 +372,7 @@ namespace OracalDBProject
             }
             catch(OracleException ex)
             {
-                throw new Exception("Exception during create Products Package" ,ex);
+                throw new Exception("Exception during create Products Package"  ,ex);
             }
         }
         private void CreateRolePackage()
@@ -412,15 +443,15 @@ namespace OracalDBProject
         {
             try
             {
-                //CreateProductsPackage();
-                //CreateUserPackage();
-                //CreateAdminPackage();
-                //CreateRolePackage();
+                CreateProductsPackage();
+                CreateUserPackage();
+                CreateAdminPackage();
+                CreateRolePackage();
                 CreateClubMemberPackage();
             }
-            catch(OracleException ex)
+            catch
             {
-                Logger.Instance.Error("Exception while trying to create packeges\nDetails:" + ex);
+                Logger.Instance.Info("Trying to create packages but the packages exist");
             }
 
         }
@@ -480,60 +511,63 @@ namespace OracalDBProject
             {
                 Logger.Instance.Error("Exption while trying to open the right admin/customer \n Details:\n" + ex);
             }
-            //Write queries here to check if the role is true            
+                      
 
         }
-        private void CreateClubMemberUsers()
+        private void DropAllUsers()
         {
             try
             {
-                OracleCommand cmd = new OracleCommand();                
-                cmd.Connection = con;
-               // cmd.CommandText = String.Format("CREATE USER {0} IDENTIFIED BY \"{1}\"", ADMIN_USER_NAME_FIRST, ADMIN_PASSWORD_FIRST);
-                cmd.CommandText = String.Format("CREATE USER {0} IDENTIFIED BY \"{1}\"", ADMIN_USER_NAME_SECOND, ADMIN_PASSWORD_SECOND);
-                dr = cmd.ExecuteReader();
-               // cmd.CommandText = String.Format("grant create session to {0}", ADMIN_USER_NAME_FIRST);
-                cmd.CommandText = String.Format("grant create session to {0}", ADMIN_USER_NAME_SECOND);
-                dr = cmd.ExecuteReader();
-                Logger.Instance.Info("Admin User created seccefully");
-            }
-            catch (OracleException ex)
+            
+               //// string adminUserOne = "drop user " + ADMIN_USER_NAME_FIRST + " CASCADE";
+               // string adminUserTwo = "drop user " + ADMIN_USER_NAME_SECOND + " CASCADE";
+
+
+               // //OracleSingletonComment.Instance.CommandText = adminUserOne;
+               // //dr = OracleSingletonComment.Instance.ExecuteReader();
+               // //Logger.Instance.Info("User " + ADMIN_USER_NAME_FIRST + " DROPED");
+               // cmd.CommandText = adminUserTwo;
+               // cmd.ExecuteNonQuery();
+               // Logger.Instance.Info("User " + ADMIN_USER_NAME_SECOND + " DROPED");
+            }catch
             {
-                Logger.Instance.Error("Exeption while trying to create Admin User DB\nDetails:\n" + ex);
+                Logger.Instance.Info("Some users are exist in the Database");
             }
+
         }
+ 
+
         private void CreateAdminUsers()
         {
             try
             {
-                OracleCommand cmd = new OracleCommand();             
-                cmd.Connection = con;
-                cmd.CommandText = String.Format("CREATE USER {0} IDENTIFIED BY \"{1}\"", ADMIN_USER_NAME_FIRST, ADMIN_PASSWORD_FIRST);
-                dr = cmd.ExecuteReader();
-                cmd.CommandText = String.Format("CREATE USER {0} IDENTIFIED BY \"{1}\"", ADMIN_USER_NAME_SECOND, ADMIN_PASSWORD_SECOND);
-                dr = cmd.ExecuteReader();
-                cmd.CommandText = String.Format("grant dba to {0}", ADMIN_USER_NAME_FIRST);
-                dr = cmd.ExecuteReader();              
-                cmd.CommandText = String.Format("GRANT dba to {0}", ADMIN_USER_NAME_SECOND);
-                dr = cmd.ExecuteReader();
+        
+                OracleSingletonComment.Instance.CommandText = String.Format("CREATE USER {0} IDENTIFIED BY \"{1}\"", ADMIN_USER_NAME_FIRST, ADMIN_PASSWORD_FIRST);
+                OracleSingletonComment.Instance.ExecuteNonQuery();
+                OracleSingletonComment.Instance.CommandText = String.Format("CREATE USER {0} IDENTIFIED BY \"{1}\"", ADMIN_USER_NAME_SECOND, ADMIN_PASSWORD_SECOND);
+                OracleSingletonComment.Instance.ExecuteNonQuery();
+                OracleSingletonComment.Instance.CommandText = String.Format("grant dba to {0}", ADMIN_USER_NAME_FIRST);
+                OracleSingletonComment.Instance.ExecuteNonQuery();
+                OracleSingletonComment.Instance.CommandText = String.Format("GRANT dba to {0}", ADMIN_USER_NAME_SECOND);
+                OracleSingletonComment.Instance.ExecuteNonQuery();
                 Logger.Instance.Info("Admin User created seccefully");
-            }catch(OracleException ex)
+            }catch
             {
-                Logger.Instance.Error("Exeption while trying to create Admin User DB\nDetails:\n" + ex);
+                Logger.Instance.Info("Trying to create admin user but already exist" );
             }
         }
         public void DropTables()
         {
             try
             {
-                string paymentStringDropTable = "drop table Payment";
-                string transactionDetailsStringDropTable ="drop table transaction_details";
-                string productsStringDropTable = "drop table products";
-                string transactionStringDropTable = "drop table TRANSACTION";
-                string clubMemberStringDropTable = "drop table club_member";
-                string administratorStringDropTable = "drop table administrator";
-                string userStringDropTable = "drop table users";
-                string rolesStringDropTable = "drop table roles";
+                string paymentStringDropTable = "drop table LIRAN_ADMIN.Payment";
+                string transactionDetailsStringDropTable = "drop table LIRAN_ADMIN.transaction_details";
+                string productsStringDropTable = "drop table LIRAN_ADMIN.products";
+                string transactionStringDropTable = "drop table LIRAN_ADMIN.TRANSACTION";
+                string clubMemberStringDropTable = "drop table LIRAN_ADMIN.club_member";
+                string administratorStringDropTable = "drop table LIRAN_ADMIN.administrator";
+                string userStringDropTable = "drop table LIRAN_ADMIN.users";
+                string rolesStringDropTable = "drop table LIRAN_ADMIN.roles";
 
                 OracleSingletonComment.Instance.CommandText = paymentStringDropTable;
                 dr = OracleSingletonComment.Instance.ExecuteReader();
@@ -560,9 +594,44 @@ namespace OracalDBProject
                 dr = OracleSingletonComment.Instance.ExecuteReader();
                 Logger.Instance.Info("Table roles DROPED");
             }
-            catch(OracleException ex)
+            catch
             {
-                Logger.Instance.Error("Exeption while trying to drop tables\nDetails:\n" + ex);
+                Logger.Instance.Info("Some of the table are not exist");
+            }
+        }
+        public void DropPackages()
+        {
+            try
+            {
+               
+                string productsStringDropPACKAGE = "drop PACKAGE LIRAN_ADMIN.products";
+              
+                string clubMemberStringDropPACKAGE = "drop PACKAGE LIRAN_ADMIN.club_member";
+                string administratorStringDropPACKAGE = "drop PACKAGE LIRAN_ADMIN.administrator";
+                string userStringDropPACKAGE = "drop PACKAGE LIRAN_ADMIN.users";
+                string rolesStringDropPACKAGE = "drop PACKAGE LIRAN_ADMIN.roles";
+
+
+                Logger.Instance.Info("PACKAGE transaction_details DROPED");
+                OracleSingletonComment.Instance.CommandText = productsStringDropPACKAGE;
+                dr = OracleSingletonComment.Instance.ExecuteReader();
+                Logger.Instance.Info("PACKAGE products DROPED"); 
+                OracleSingletonComment.Instance.CommandText = clubMemberStringDropPACKAGE;
+                dr = OracleSingletonComment.Instance.ExecuteReader();
+                Logger.Instance.Info("PACKAGE club_member DROPED");
+                OracleSingletonComment.Instance.CommandText = administratorStringDropPACKAGE;
+                dr = OracleSingletonComment.Instance.ExecuteReader();
+                Logger.Instance.Info("PACKAGE administrator DROPED");
+                OracleSingletonComment.Instance.CommandText = userStringDropPACKAGE;
+                dr = OracleSingletonComment.Instance.ExecuteReader();
+                Logger.Instance.Info("PACKAGE users DROPED");
+                OracleSingletonComment.Instance.CommandText = rolesStringDropPACKAGE;
+                dr = OracleSingletonComment.Instance.ExecuteReader();
+                Logger.Instance.Info("PACKAGE roles DROPED");
+            }
+            catch
+            {
+                Logger.Instance.Info("Some of the PACKAGEs are not exist");
             }
         }
         private void CreateTables()
@@ -676,9 +745,9 @@ namespace OracalDBProject
                 dr = OracleSingletonComment.Instance.ExecuteReader();
                 Logger.Instance.Info("TABLE Payment was CREATED");
             }
-            catch (OracleException ex)
+            catch 
             {
-                Logger.Instance.Error("Exeption while trying to CREATE TABLE\n Details:\n" + ex);
+                Logger.Instance.Info("Trying to create Tables but the tables exist");
             }
         }
         private void OpenConnection()

@@ -432,6 +432,68 @@
             </Mappings>
             <Sources />
           </TableAdapter>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="VW_ADMINSTableAdapter" GeneratorDataComponentClassName="VW_ADMINSTableAdapter" Name="VW_ADMINS" UserDataComponentName="VW_ADMINSTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="ConnectionProductsString (Settings)" DbObjectName="LIRAN_ADMIN.VW_ADMINS" DbObjectType="View" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>SELECT ADMIN_ID, FIRST_NAME, LAST_NAME, PASSWORD_ENCRYPTED, USER_EMAIL, USER_PHONE_NUMBER, SALARY_NIS FROM LIRAN_ADMIN.VW_ADMINS</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="ADMIN_ID" DataSetColumn="ADMIN_ID" />
+              <Mapping SourceColumn="FIRST_NAME" DataSetColumn="FIRST_NAME" />
+              <Mapping SourceColumn="LAST_NAME" DataSetColumn="LAST_NAME" />
+              <Mapping SourceColumn="PASSWORD_ENCRYPTED" DataSetColumn="PASSWORD_ENCRYPTED" />
+              <Mapping SourceColumn="USER_EMAIL" DataSetColumn="USER_EMAIL" />
+              <Mapping SourceColumn="USER_PHONE_NUMBER" DataSetColumn="USER_PHONE_NUMBER" />
+              <Mapping SourceColumn="SALARY_NIS" DataSetColumn="SALARY_NIS" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="VW_CLUB_MEMBERTableAdapter" GeneratorDataComponentClassName="VW_CLUB_MEMBERTableAdapter" Name="VW_CLUB_MEMBER" UserDataComponentName="VW_CLUB_MEMBERTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="ConnectionProductsString (Settings)" DbObjectName="LIRAN_ADMIN.VW_CLUB_MEMBER" DbObjectType="View" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>SELECT MEMBER_ID, FIRST_NAME, LAST_NAME, PASSWORD_ENCRYPTED, USER_EMAIL, USER_PHONE_NUMBER, JOIN_DATE FROM LIRAN_ADMIN.VW_CLUB_MEMBER</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="MEMBER_ID" DataSetColumn="MEMBER_ID" />
+              <Mapping SourceColumn="FIRST_NAME" DataSetColumn="FIRST_NAME" />
+              <Mapping SourceColumn="LAST_NAME" DataSetColumn="LAST_NAME" />
+              <Mapping SourceColumn="PASSWORD_ENCRYPTED" DataSetColumn="PASSWORD_ENCRYPTED" />
+              <Mapping SourceColumn="USER_EMAIL" DataSetColumn="USER_EMAIL" />
+              <Mapping SourceColumn="USER_PHONE_NUMBER" DataSetColumn="USER_PHONE_NUMBER" />
+              <Mapping SourceColumn="JOIN_DATE" DataSetColumn="JOIN_DATE" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="VW_PRODUCTSTableAdapter" GeneratorDataComponentClassName="VW_PRODUCTSTableAdapter" Name="VW_PRODUCTS" UserDataComponentName="VW_PRODUCTSTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="ConnectionProductsString (Settings)" DbObjectName="LIRAN_ADMIN.VW_PRODUCTS" DbObjectType="View" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>SELECT PRODUCT_ID, PRODUCT_NAME, PRODUCT_AMOUNT FROM LIRAN_ADMIN.VW_PRODUCTS</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="PRODUCT_ID" DataSetColumn="PRODUCT_ID" />
+              <Mapping SourceColumn="PRODUCT_NAME" DataSetColumn="PRODUCT_NAME" />
+              <Mapping SourceColumn="PRODUCT_AMOUNT" DataSetColumn="PRODUCT_AMOUNT" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
         </Tables>
         <Sources>
           <DbSource ConnectionRef="ConnectionProductsString (Settings)" DbObjectName="LIRAN_ADMIN.PKG_PRODUCT.INSERTPRODUCTS" DbObjectType="StoredProcedure" GenerateShortCommands="true" GeneratorSourceName="PKG_PRODUCT_INSERTPRODUCTS" MethodsParameterType="CLR" Modifier="Public" Name="PKG_PRODUCT_INSERTPRODUCTS" QueryType="NoData" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy" UserSourceName="PKG_PRODUCT_INSERTPRODUCTS">
@@ -446,6 +508,28 @@
               </DbCommand>
             </SelectCommand>
           </DbSource>
+          <DbSource ConnectionRef="ConnectionProductsString (Settings)" DbObjectName="LIRAN_ADMIN.PKG_ADMIN.GET_ADMIN_USER_ID" DbObjectType="Function" GenerateShortCommands="true" GeneratorSourceName="PKG_ADMIN_GET_ADMIN_USER_ID" MethodsParameterType="CLR" Modifier="Public" Name="PKG_ADMIN_GET_ADMIN_USER_ID" QueryType="NoData" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy1" UserSourceName="PKG_ADMIN_GET_ADMIN_USER_ID">
+            <SelectCommand>
+              <DbCommand CommandType="StoredProcedure" ModifiedByUser="false">
+                <CommandText>LIRAN_ADMIN.PKG_ADMIN.GET_ADMIN_USER_ID</CommandText>
+                <Parameters>
+                  <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DataTypeServer="NUMBER" DbType="Decimal" Direction="ReturnValue" ParameterName="&quot;ReturnValue&quot;" Precision="0" ProviderType="Decimal" Scale="0" Size="22" SourceColumnNullMapping="false" SourceVersion="Current" />
+                  <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DataTypeServer="NUMBER" DbType="Decimal" Direction="Input" ParameterName="IDUSER" Precision="0" ProviderType="Decimal" Scale="0" Size="22" SourceColumnNullMapping="false" SourceVersion="Current" />
+                </Parameters>
+              </DbCommand>
+            </SelectCommand>
+          </DbSource>
+          <DbSource ConnectionRef="ConnectionProductsString (Settings)" DbObjectName="LIRAN_ADMIN.PKG_CLUB_MEMBER.GET_CLUB_MEMBER_USER_ID" DbObjectType="Function" GenerateShortCommands="true" GeneratorSourceName="PKG_CLUB_MEMBER_GET_CLUB_MEMBER_USER_ID" MethodsParameterType="CLR" Modifier="Public" Name="PKG_CLUB_MEMBER_GET_CLUB_MEMBER_USER_ID" QueryType="NoData" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy2" UserSourceName="PKG_CLUB_MEMBER_GET_CLUB_MEMBER_USER_ID">
+            <SelectCommand>
+              <DbCommand CommandType="StoredProcedure" ModifiedByUser="false">
+                <CommandText>LIRAN_ADMIN.PKG_CLUB_MEMBER.GET_CLUB_MEMBER_USER_ID</CommandText>
+                <Parameters>
+                  <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DataTypeServer="NUMBER" DbType="Decimal" Direction="ReturnValue" ParameterName="&quot;ReturnValue&quot;" Precision="0" ProviderType="Decimal" Scale="0" Size="22" SourceColumnNullMapping="false" SourceVersion="Current" />
+                  <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DataTypeServer="NUMBER" DbType="Decimal" Direction="Input" ParameterName="IDUSER" Precision="0" ProviderType="Decimal" Scale="0" Size="22" SourceColumnNullMapping="false" SourceVersion="Current" />
+                </Parameters>
+              </DbCommand>
+            </SelectCommand>
+          </DbSource>
         </Sources>
       </DataSource>
     </xs:appinfo>
@@ -453,7 +537,7 @@
   <xs:element name="MarketsDBSource" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="True" msprop:Generator_DataSetName="MarketsDBSource" msprop:Generator_UserDSName="MarketsDBSource">
     <xs:complexType>
       <xs:choice minOccurs="0" maxOccurs="unbounded">
-        <xs:element name="ADMINISTRATOR" msprop:Generator_TableClassName="ADMINISTRATORDataTable" msprop:Generator_TableVarName="tableADMINISTRATOR" msprop:Generator_TablePropName="ADMINISTRATOR" msprop:Generator_RowDeletingName="ADMINISTRATORRowDeleting" msprop:Generator_RowChangingName="ADMINISTRATORRowChanging" msprop:Generator_RowEvHandlerName="ADMINISTRATORRowChangeEventHandler" msprop:Generator_RowDeletedName="ADMINISTRATORRowDeleted" msprop:Generator_UserTableName="ADMINISTRATOR" msprop:Generator_RowChangedName="ADMINISTRATORRowChanged" msprop:Generator_RowEvArgName="ADMINISTRATORRowChangeEvent" msprop:Generator_RowClassName="ADMINISTRATORRow">
+        <xs:element name="ADMINISTRATOR" msprop:Generator_TableClassName="ADMINISTRATORDataTable" msprop:Generator_TableVarName="tableADMINISTRATOR" msprop:Generator_RowChangedName="ADMINISTRATORRowChanged" msprop:Generator_TablePropName="ADMINISTRATOR" msprop:Generator_RowDeletingName="ADMINISTRATORRowDeleting" msprop:Generator_RowChangingName="ADMINISTRATORRowChanging" msprop:Generator_RowEvHandlerName="ADMINISTRATORRowChangeEventHandler" msprop:Generator_RowDeletedName="ADMINISTRATORRowDeleted" msprop:Generator_RowClassName="ADMINISTRATORRow" msprop:Generator_UserTableName="ADMINISTRATOR" msprop:Generator_RowEvArgName="ADMINISTRATORRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="ADMIN_ID" msprop:Generator_ColumnVarNameInTable="columnADMIN_ID" msprop:Generator_ColumnPropNameInRow="ADMIN_ID" msprop:Generator_ColumnPropNameInTable="ADMIN_IDColumn" msprop:Generator_UserColumnName="ADMIN_ID" type="xs:decimal" />
@@ -462,7 +546,7 @@
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="CLUB_MEMBER" msprop:Generator_TableClassName="CLUB_MEMBERDataTable" msprop:Generator_TableVarName="tableCLUB_MEMBER" msprop:Generator_TablePropName="CLUB_MEMBER" msprop:Generator_RowDeletingName="CLUB_MEMBERRowDeleting" msprop:Generator_RowChangingName="CLUB_MEMBERRowChanging" msprop:Generator_RowEvHandlerName="CLUB_MEMBERRowChangeEventHandler" msprop:Generator_RowDeletedName="CLUB_MEMBERRowDeleted" msprop:Generator_UserTableName="CLUB_MEMBER" msprop:Generator_RowChangedName="CLUB_MEMBERRowChanged" msprop:Generator_RowEvArgName="CLUB_MEMBERRowChangeEvent" msprop:Generator_RowClassName="CLUB_MEMBERRow">
+        <xs:element name="CLUB_MEMBER" msprop:Generator_TableClassName="CLUB_MEMBERDataTable" msprop:Generator_TableVarName="tableCLUB_MEMBER" msprop:Generator_RowChangedName="CLUB_MEMBERRowChanged" msprop:Generator_TablePropName="CLUB_MEMBER" msprop:Generator_RowDeletingName="CLUB_MEMBERRowDeleting" msprop:Generator_RowChangingName="CLUB_MEMBERRowChanging" msprop:Generator_RowEvHandlerName="CLUB_MEMBERRowChangeEventHandler" msprop:Generator_RowDeletedName="CLUB_MEMBERRowDeleted" msprop:Generator_RowClassName="CLUB_MEMBERRow" msprop:Generator_UserTableName="CLUB_MEMBER" msprop:Generator_RowEvArgName="CLUB_MEMBERRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="MEMBER_ID" msprop:Generator_ColumnVarNameInTable="columnMEMBER_ID" msprop:Generator_ColumnPropNameInRow="MEMBER_ID" msprop:Generator_ColumnPropNameInTable="MEMBER_IDColumn" msprop:Generator_UserColumnName="MEMBER_ID" type="xs:decimal" />
@@ -477,7 +561,7 @@
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="PAYMENT" msprop:Generator_TableClassName="PAYMENTDataTable" msprop:Generator_TableVarName="tablePAYMENT" msprop:Generator_TablePropName="PAYMENT" msprop:Generator_RowDeletingName="PAYMENTRowDeleting" msprop:Generator_RowChangingName="PAYMENTRowChanging" msprop:Generator_RowEvHandlerName="PAYMENTRowChangeEventHandler" msprop:Generator_RowDeletedName="PAYMENTRowDeleted" msprop:Generator_UserTableName="PAYMENT" msprop:Generator_RowChangedName="PAYMENTRowChanged" msprop:Generator_RowEvArgName="PAYMENTRowChangeEvent" msprop:Generator_RowClassName="PAYMENTRow">
+        <xs:element name="PAYMENT" msprop:Generator_TableClassName="PAYMENTDataTable" msprop:Generator_TableVarName="tablePAYMENT" msprop:Generator_RowChangedName="PAYMENTRowChanged" msprop:Generator_TablePropName="PAYMENT" msprop:Generator_RowDeletingName="PAYMENTRowDeleting" msprop:Generator_RowChangingName="PAYMENTRowChanging" msprop:Generator_RowEvHandlerName="PAYMENTRowChangeEventHandler" msprop:Generator_RowDeletedName="PAYMENTRowDeleted" msprop:Generator_RowClassName="PAYMENTRow" msprop:Generator_UserTableName="PAYMENT" msprop:Generator_RowEvArgName="PAYMENTRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="PAYMENT_ID" msprop:Generator_ColumnVarNameInTable="columnPAYMENT_ID" msprop:Generator_ColumnPropNameInRow="PAYMENT_ID" msprop:Generator_ColumnPropNameInTable="PAYMENT_IDColumn" msprop:Generator_UserColumnName="PAYMENT_ID" type="xs:decimal" />
@@ -500,7 +584,7 @@
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="PRODUCTS" msprop:Generator_TableClassName="PRODUCTSDataTable" msprop:Generator_TableVarName="tablePRODUCTS" msprop:Generator_TablePropName="PRODUCTS" msprop:Generator_RowDeletingName="PRODUCTSRowDeleting" msprop:Generator_RowChangingName="PRODUCTSRowChanging" msprop:Generator_RowEvHandlerName="PRODUCTSRowChangeEventHandler" msprop:Generator_RowDeletedName="PRODUCTSRowDeleted" msprop:Generator_UserTableName="PRODUCTS" msprop:Generator_RowChangedName="PRODUCTSRowChanged" msprop:Generator_RowEvArgName="PRODUCTSRowChangeEvent" msprop:Generator_RowClassName="PRODUCTSRow">
+        <xs:element name="PRODUCTS" msprop:Generator_TableClassName="PRODUCTSDataTable" msprop:Generator_TableVarName="tablePRODUCTS" msprop:Generator_RowChangedName="PRODUCTSRowChanged" msprop:Generator_TablePropName="PRODUCTS" msprop:Generator_RowDeletingName="PRODUCTSRowDeleting" msprop:Generator_RowChangingName="PRODUCTSRowChanging" msprop:Generator_RowEvHandlerName="PRODUCTSRowChangeEventHandler" msprop:Generator_RowDeletedName="PRODUCTSRowDeleted" msprop:Generator_RowClassName="PRODUCTSRow" msprop:Generator_UserTableName="PRODUCTS" msprop:Generator_RowEvArgName="PRODUCTSRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="PRODUCT_ID" msprop:Generator_ColumnVarNameInTable="columnPRODUCT_ID" msprop:Generator_ColumnPropNameInRow="PRODUCT_ID" msprop:Generator_ColumnPropNameInTable="PRODUCT_IDColumn" msprop:Generator_UserColumnName="PRODUCT_ID" type="xs:decimal" />
@@ -515,7 +599,7 @@
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="ROLES" msprop:Generator_TableClassName="ROLESDataTable" msprop:Generator_TableVarName="tableROLES" msprop:Generator_TablePropName="ROLES" msprop:Generator_RowDeletingName="ROLESRowDeleting" msprop:Generator_RowChangingName="ROLESRowChanging" msprop:Generator_RowEvHandlerName="ROLESRowChangeEventHandler" msprop:Generator_RowDeletedName="ROLESRowDeleted" msprop:Generator_UserTableName="ROLES" msprop:Generator_RowChangedName="ROLESRowChanged" msprop:Generator_RowEvArgName="ROLESRowChangeEvent" msprop:Generator_RowClassName="ROLESRow">
+        <xs:element name="ROLES" msprop:Generator_TableClassName="ROLESDataTable" msprop:Generator_TableVarName="tableROLES" msprop:Generator_RowChangedName="ROLESRowChanged" msprop:Generator_TablePropName="ROLES" msprop:Generator_RowDeletingName="ROLESRowDeleting" msprop:Generator_RowChangingName="ROLESRowChanging" msprop:Generator_RowEvHandlerName="ROLESRowChangeEventHandler" msprop:Generator_RowDeletedName="ROLESRowDeleted" msprop:Generator_RowClassName="ROLESRow" msprop:Generator_UserTableName="ROLES" msprop:Generator_RowEvArgName="ROLESRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="ROLE_ID" msprop:Generator_ColumnVarNameInTable="columnROLE_ID" msprop:Generator_ColumnPropNameInRow="ROLE_ID" msprop:Generator_ColumnPropNameInTable="ROLE_IDColumn" msprop:Generator_UserColumnName="ROLE_ID">
@@ -535,7 +619,7 @@
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="TRANSACTION" msprop:Generator_TableClassName="TRANSACTIONDataTable" msprop:Generator_TableVarName="tableTRANSACTION" msprop:Generator_TablePropName="TRANSACTION" msprop:Generator_RowDeletingName="TRANSACTIONRowDeleting" msprop:Generator_RowChangingName="TRANSACTIONRowChanging" msprop:Generator_RowEvHandlerName="TRANSACTIONRowChangeEventHandler" msprop:Generator_RowDeletedName="TRANSACTIONRowDeleted" msprop:Generator_UserTableName="TRANSACTION" msprop:Generator_RowChangedName="TRANSACTIONRowChanged" msprop:Generator_RowEvArgName="TRANSACTIONRowChangeEvent" msprop:Generator_RowClassName="TRANSACTIONRow">
+        <xs:element name="TRANSACTION" msprop:Generator_TableClassName="TRANSACTIONDataTable" msprop:Generator_TableVarName="tableTRANSACTION" msprop:Generator_RowChangedName="TRANSACTIONRowChanged" msprop:Generator_TablePropName="TRANSACTION" msprop:Generator_RowDeletingName="TRANSACTIONRowDeleting" msprop:Generator_RowChangingName="TRANSACTIONRowChanging" msprop:Generator_RowEvHandlerName="TRANSACTIONRowChangeEventHandler" msprop:Generator_RowDeletedName="TRANSACTIONRowDeleted" msprop:Generator_RowClassName="TRANSACTIONRow" msprop:Generator_UserTableName="TRANSACTION" msprop:Generator_RowEvArgName="TRANSACTIONRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="TRANSACTION_ID" msprop:Generator_ColumnVarNameInTable="columnTRANSACTION_ID" msprop:Generator_ColumnPropNameInRow="TRANSACTION_ID" msprop:Generator_ColumnPropNameInTable="TRANSACTION_IDColumn" msprop:Generator_UserColumnName="TRANSACTION_ID" type="xs:decimal" />
@@ -550,7 +634,7 @@
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="TRANSACTION_DETAILS" msprop:Generator_TableClassName="TRANSACTION_DETAILSDataTable" msprop:Generator_TableVarName="tableTRANSACTION_DETAILS" msprop:Generator_TablePropName="TRANSACTION_DETAILS" msprop:Generator_RowDeletingName="TRANSACTION_DETAILSRowDeleting" msprop:Generator_RowChangingName="TRANSACTION_DETAILSRowChanging" msprop:Generator_RowEvHandlerName="TRANSACTION_DETAILSRowChangeEventHandler" msprop:Generator_RowDeletedName="TRANSACTION_DETAILSRowDeleted" msprop:Generator_UserTableName="TRANSACTION_DETAILS" msprop:Generator_RowChangedName="TRANSACTION_DETAILSRowChanged" msprop:Generator_RowEvArgName="TRANSACTION_DETAILSRowChangeEvent" msprop:Generator_RowClassName="TRANSACTION_DETAILSRow">
+        <xs:element name="TRANSACTION_DETAILS" msprop:Generator_TableClassName="TRANSACTION_DETAILSDataTable" msprop:Generator_TableVarName="tableTRANSACTION_DETAILS" msprop:Generator_RowChangedName="TRANSACTION_DETAILSRowChanged" msprop:Generator_TablePropName="TRANSACTION_DETAILS" msprop:Generator_RowDeletingName="TRANSACTION_DETAILSRowDeleting" msprop:Generator_RowChangingName="TRANSACTION_DETAILSRowChanging" msprop:Generator_RowEvHandlerName="TRANSACTION_DETAILSRowChangeEventHandler" msprop:Generator_RowDeletedName="TRANSACTION_DETAILSRowDeleted" msprop:Generator_RowClassName="TRANSACTION_DETAILSRow" msprop:Generator_UserTableName="TRANSACTION_DETAILS" msprop:Generator_RowEvArgName="TRANSACTION_DETAILSRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="TRANSACTION_ID" msprop:Generator_ColumnVarNameInTable="columnTRANSACTION_ID" msprop:Generator_ColumnPropNameInRow="TRANSACTION_ID" msprop:Generator_ColumnPropNameInTable="TRANSACTION_IDColumn" msprop:Generator_UserColumnName="TRANSACTION_ID" type="xs:decimal" minOccurs="0" />
@@ -558,7 +642,7 @@
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="USERS" msprop:Generator_TableClassName="USERSDataTable" msprop:Generator_TableVarName="tableUSERS" msprop:Generator_TablePropName="USERS" msprop:Generator_RowDeletingName="USERSRowDeleting" msprop:Generator_RowChangingName="USERSRowChanging" msprop:Generator_RowEvHandlerName="USERSRowChangeEventHandler" msprop:Generator_RowDeletedName="USERSRowDeleted" msprop:Generator_UserTableName="USERS" msprop:Generator_RowChangedName="USERSRowChanged" msprop:Generator_RowEvArgName="USERSRowChangeEvent" msprop:Generator_RowClassName="USERSRow">
+        <xs:element name="USERS" msprop:Generator_TableClassName="USERSDataTable" msprop:Generator_TableVarName="tableUSERS" msprop:Generator_RowChangedName="USERSRowChanged" msprop:Generator_TablePropName="USERS" msprop:Generator_RowDeletingName="USERSRowDeleting" msprop:Generator_RowChangingName="USERSRowChanging" msprop:Generator_RowEvHandlerName="USERSRowChangeEventHandler" msprop:Generator_RowDeletedName="USERSRowDeleted" msprop:Generator_RowClassName="USERSRow" msprop:Generator_UserTableName="USERS" msprop:Generator_RowEvArgName="USERSRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="USER_ID" msprop:Generator_ColumnVarNameInTable="columnUSER_ID" msprop:Generator_ColumnPropNameInRow="USER_ID" msprop:Generator_ColumnPropNameInTable="USER_IDColumn" msprop:Generator_UserColumnName="USER_ID" type="xs:decimal" />
@@ -614,6 +698,113 @@
             </xs:sequence>
           </xs:complexType>
         </xs:element>
+        <xs:element name="VW_ADMINS" msprop:Generator_TableClassName="VW_ADMINSDataTable" msprop:Generator_TableVarName="tableVW_ADMINS" msprop:Generator_TablePropName="VW_ADMINS" msprop:Generator_RowDeletingName="VW_ADMINSRowDeleting" msprop:Generator_RowChangingName="VW_ADMINSRowChanging" msprop:Generator_RowEvHandlerName="VW_ADMINSRowChangeEventHandler" msprop:Generator_RowDeletedName="VW_ADMINSRowDeleted" msprop:Generator_UserTableName="VW_ADMINS" msprop:Generator_RowChangedName="VW_ADMINSRowChanged" msprop:Generator_RowEvArgName="VW_ADMINSRowChangeEvent" msprop:Generator_RowClassName="VW_ADMINSRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="ADMIN_ID" msprop:Generator_ColumnVarNameInTable="columnADMIN_ID" msprop:Generator_ColumnPropNameInRow="ADMIN_ID" msprop:Generator_ColumnPropNameInTable="ADMIN_IDColumn" msprop:Generator_UserColumnName="ADMIN_ID" type="xs:decimal" />
+              <xs:element name="FIRST_NAME" msprop:Generator_ColumnVarNameInTable="columnFIRST_NAME" msprop:Generator_ColumnPropNameInRow="FIRST_NAME" msprop:Generator_ColumnPropNameInTable="FIRST_NAMEColumn" msprop:Generator_UserColumnName="FIRST_NAME">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="20" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="LAST_NAME" msprop:Generator_ColumnVarNameInTable="columnLAST_NAME" msprop:Generator_ColumnPropNameInRow="LAST_NAME" msprop:Generator_ColumnPropNameInTable="LAST_NAMEColumn" msprop:Generator_UserColumnName="LAST_NAME">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="20" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="PASSWORD_ENCRYPTED" msprop:Generator_ColumnVarNameInTable="columnPASSWORD_ENCRYPTED" msprop:Generator_ColumnPropNameInRow="PASSWORD_ENCRYPTED" msprop:Generator_ColumnPropNameInTable="PASSWORD_ENCRYPTEDColumn" msprop:Generator_UserColumnName="PASSWORD_ENCRYPTED">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="40" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="USER_EMAIL" msprop:Generator_ColumnVarNameInTable="columnUSER_EMAIL" msprop:Generator_ColumnPropNameInRow="USER_EMAIL" msprop:Generator_ColumnPropNameInTable="USER_EMAILColumn" msprop:Generator_UserColumnName="USER_EMAIL">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="20" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="USER_PHONE_NUMBER" msprop:Generator_ColumnVarNameInTable="columnUSER_PHONE_NUMBER" msprop:Generator_ColumnPropNameInRow="USER_PHONE_NUMBER" msprop:Generator_ColumnPropNameInTable="USER_PHONE_NUMBERColumn" msprop:Generator_UserColumnName="USER_PHONE_NUMBER">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="20" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="SALARY_NIS" msprop:Generator_ColumnVarNameInTable="columnSALARY_NIS" msprop:Generator_ColumnPropNameInRow="SALARY_NIS" msprop:Generator_ColumnPropNameInTable="SALARY_NISColumn" msprop:Generator_UserColumnName="SALARY_NIS" type="xs:decimal" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="VW_CLUB_MEMBER" msprop:Generator_TableClassName="VW_CLUB_MEMBERDataTable" msprop:Generator_TableVarName="tableVW_CLUB_MEMBER" msprop:Generator_TablePropName="VW_CLUB_MEMBER" msprop:Generator_RowDeletingName="VW_CLUB_MEMBERRowDeleting" msprop:Generator_RowChangingName="VW_CLUB_MEMBERRowChanging" msprop:Generator_RowEvHandlerName="VW_CLUB_MEMBERRowChangeEventHandler" msprop:Generator_RowDeletedName="VW_CLUB_MEMBERRowDeleted" msprop:Generator_UserTableName="VW_CLUB_MEMBER" msprop:Generator_RowChangedName="VW_CLUB_MEMBERRowChanged" msprop:Generator_RowEvArgName="VW_CLUB_MEMBERRowChangeEvent" msprop:Generator_RowClassName="VW_CLUB_MEMBERRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="MEMBER_ID" msprop:Generator_ColumnVarNameInTable="columnMEMBER_ID" msprop:Generator_ColumnPropNameInRow="MEMBER_ID" msprop:Generator_ColumnPropNameInTable="MEMBER_IDColumn" msprop:Generator_UserColumnName="MEMBER_ID" type="xs:decimal" />
+              <xs:element name="FIRST_NAME" msprop:Generator_ColumnVarNameInTable="columnFIRST_NAME" msprop:Generator_ColumnPropNameInRow="FIRST_NAME" msprop:Generator_ColumnPropNameInTable="FIRST_NAMEColumn" msprop:Generator_UserColumnName="FIRST_NAME">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="20" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="LAST_NAME" msprop:Generator_ColumnVarNameInTable="columnLAST_NAME" msprop:Generator_ColumnPropNameInRow="LAST_NAME" msprop:Generator_ColumnPropNameInTable="LAST_NAMEColumn" msprop:Generator_UserColumnName="LAST_NAME">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="20" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="PASSWORD_ENCRYPTED" msprop:Generator_ColumnVarNameInTable="columnPASSWORD_ENCRYPTED" msprop:Generator_ColumnPropNameInRow="PASSWORD_ENCRYPTED" msprop:Generator_ColumnPropNameInTable="PASSWORD_ENCRYPTEDColumn" msprop:Generator_UserColumnName="PASSWORD_ENCRYPTED">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="40" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="USER_EMAIL" msprop:Generator_ColumnVarNameInTable="columnUSER_EMAIL" msprop:Generator_ColumnPropNameInRow="USER_EMAIL" msprop:Generator_ColumnPropNameInTable="USER_EMAILColumn" msprop:Generator_UserColumnName="USER_EMAIL">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="20" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="USER_PHONE_NUMBER" msprop:Generator_ColumnVarNameInTable="columnUSER_PHONE_NUMBER" msprop:Generator_ColumnPropNameInRow="USER_PHONE_NUMBER" msprop:Generator_ColumnPropNameInTable="USER_PHONE_NUMBERColumn" msprop:Generator_UserColumnName="USER_PHONE_NUMBER">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="20" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="JOIN_DATE" msprop:Generator_ColumnVarNameInTable="columnJOIN_DATE" msprop:Generator_ColumnPropNameInRow="JOIN_DATE" msprop:Generator_ColumnPropNameInTable="JOIN_DATEColumn" msprop:Generator_UserColumnName="JOIN_DATE">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="20" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="VW_PRODUCTS" msprop:Generator_TableClassName="VW_PRODUCTSDataTable" msprop:Generator_TableVarName="tableVW_PRODUCTS" msprop:Generator_TablePropName="VW_PRODUCTS" msprop:Generator_RowDeletingName="VW_PRODUCTSRowDeleting" msprop:Generator_RowChangingName="VW_PRODUCTSRowChanging" msprop:Generator_RowEvHandlerName="VW_PRODUCTSRowChangeEventHandler" msprop:Generator_RowDeletedName="VW_PRODUCTSRowDeleted" msprop:Generator_UserTableName="VW_PRODUCTS" msprop:Generator_RowChangedName="VW_PRODUCTSRowChanged" msprop:Generator_RowEvArgName="VW_PRODUCTSRowChangeEvent" msprop:Generator_RowClassName="VW_PRODUCTSRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="PRODUCT_ID" msprop:Generator_ColumnVarNameInTable="columnPRODUCT_ID" msprop:Generator_ColumnPropNameInRow="PRODUCT_ID" msprop:Generator_ColumnPropNameInTable="PRODUCT_IDColumn" msprop:Generator_UserColumnName="PRODUCT_ID" type="xs:decimal" />
+              <xs:element name="PRODUCT_NAME" msprop:Generator_ColumnVarNameInTable="columnPRODUCT_NAME" msprop:Generator_ColumnPropNameInRow="PRODUCT_NAME" msprop:Generator_ColumnPropNameInTable="PRODUCT_NAMEColumn" msprop:Generator_UserColumnName="PRODUCT_NAME">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="20" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="PRODUCT_AMOUNT" msprop:Generator_ColumnVarNameInTable="columnPRODUCT_AMOUNT" msprop:Generator_ColumnPropNameInRow="PRODUCT_AMOUNT" msprop:Generator_ColumnPropNameInTable="PRODUCT_AMOUNTColumn" msprop:Generator_UserColumnName="PRODUCT_AMOUNT" type="xs:decimal" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
       </xs:choice>
     </xs:complexType>
     <xs:unique name="Constraint1" msdata:PrimaryKey="true">
@@ -647,13 +838,13 @@
   </xs:element>
   <xs:annotation>
     <xs:appinfo>
-      <msdata:Relationship name="FK_USERS" msdata:parent="USERS" msdata:child="ADMINISTRATOR" msdata:parentkey="USER_ID" msdata:childkey="USER_ID" msprop:Generator_UserChildTable="ADMINISTRATOR" msprop:Generator_ChildPropName="GetADMINISTRATORRows" msprop:Generator_UserRelationName="FK_USERS" msprop:Generator_RelationVarName="relationFK_USERS" msprop:Generator_UserParentTable="USERS" msprop:Generator_ParentPropName="USERSRow" />
-      <msdata:Relationship name="FK_USERSS" msdata:parent="USERS" msdata:child="CLUB_MEMBER" msdata:parentkey="USER_ID" msdata:childkey="USER_ID" msprop:Generator_UserChildTable="CLUB_MEMBER" msprop:Generator_ChildPropName="GetCLUB_MEMBERRows" msprop:Generator_UserRelationName="FK_USERSS" msprop:Generator_RelationVarName="relationFK_USERSS" msprop:Generator_UserParentTable="USERS" msprop:Generator_ParentPropName="USERSRow" />
-      <msdata:Relationship name="FK_TRANSACTIONN" msdata:parent="TRANSACTION" msdata:child="PAYMENT" msdata:parentkey="TRANSACTION_ID" msdata:childkey="TRANSACTION_ID" msprop:Generator_UserChildTable="PAYMENT" msprop:Generator_ChildPropName="GetPAYMENTRows" msprop:Generator_UserRelationName="FK_TRANSACTIONN" msprop:Generator_RelationVarName="relationFK_TRANSACTIONN" msprop:Generator_UserParentTable="TRANSACTION" msprop:Generator_ParentPropName="TRANSACTIONRow" />
-      <msdata:Relationship name="FK_CLUB_MEMBER" msdata:parent="CLUB_MEMBER" msdata:child="TRANSACTION" msdata:parentkey="MEMBER_ID" msdata:childkey="MEMBER_ID" msprop:Generator_UserChildTable="TRANSACTION" msprop:Generator_ChildPropName="GetTRANSACTIONRows" msprop:Generator_UserRelationName="FK_CLUB_MEMBER" msprop:Generator_ParentPropName="CLUB_MEMBERRow" msprop:Generator_RelationVarName="relationFK_CLUB_MEMBER" msprop:Generator_UserParentTable="CLUB_MEMBER" />
-      <msdata:Relationship name="FK_PRODUCTS" msdata:parent="PRODUCTS" msdata:child="TRANSACTION_DETAILS" msdata:parentkey="PRODUCT_ID" msdata:childkey="PRODUCT_ID" msprop:Generator_UserChildTable="TRANSACTION_DETAILS" msprop:Generator_ChildPropName="GetTRANSACTION_DETAILSRows" msprop:Generator_UserRelationName="FK_PRODUCTS" msprop:Generator_ParentPropName="PRODUCTSRow" msprop:Generator_RelationVarName="relationFK_PRODUCTS" msprop:Generator_UserParentTable="PRODUCTS" />
-      <msdata:Relationship name="FK_TRANSACTION" msdata:parent="TRANSACTION" msdata:child="TRANSACTION_DETAILS" msdata:parentkey="TRANSACTION_ID" msdata:childkey="TRANSACTION_ID" msprop:Generator_UserChildTable="TRANSACTION_DETAILS" msprop:Generator_ChildPropName="GetTRANSACTION_DETAILSRows" msprop:Generator_UserRelationName="FK_TRANSACTION" msprop:Generator_ParentPropName="TRANSACTIONRow" msprop:Generator_RelationVarName="relationFK_TRANSACTION" msprop:Generator_UserParentTable="TRANSACTION" />
-      <msdata:Relationship name="FK_ROLES" msdata:parent="ROLES" msdata:child="USERS" msdata:parentkey="ROLE_ID" msdata:childkey="ROLE_ID" msprop:Generator_UserChildTable="USERS" msprop:Generator_ChildPropName="GetUSERSRows" msprop:Generator_UserRelationName="FK_ROLES" msprop:Generator_ParentPropName="ROLESRow" msprop:Generator_RelationVarName="relationFK_ROLES" msprop:Generator_UserParentTable="ROLES" />
+      <msdata:Relationship name="FK_USERS" msdata:parent="USERS" msdata:child="ADMINISTRATOR" msdata:parentkey="USER_ID" msdata:childkey="USER_ID" msprop:Generator_UserChildTable="ADMINISTRATOR" msprop:Generator_ChildPropName="GetADMINISTRATORRows" msprop:Generator_UserRelationName="FK_USERS" msprop:Generator_ParentPropName="USERSRow" msprop:Generator_RelationVarName="relationFK_USERS" msprop:Generator_UserParentTable="USERS" />
+      <msdata:Relationship name="FK_USERSS" msdata:parent="USERS" msdata:child="CLUB_MEMBER" msdata:parentkey="USER_ID" msdata:childkey="USER_ID" msprop:Generator_UserChildTable="CLUB_MEMBER" msprop:Generator_ChildPropName="GetCLUB_MEMBERRows" msprop:Generator_UserRelationName="FK_USERSS" msprop:Generator_ParentPropName="USERSRow" msprop:Generator_RelationVarName="relationFK_USERSS" msprop:Generator_UserParentTable="USERS" />
+      <msdata:Relationship name="FK_TRANSACTIONN" msdata:parent="TRANSACTION" msdata:child="PAYMENT" msdata:parentkey="TRANSACTION_ID" msdata:childkey="TRANSACTION_ID" msprop:Generator_UserChildTable="PAYMENT" msprop:Generator_ChildPropName="GetPAYMENTRows" msprop:Generator_UserRelationName="FK_TRANSACTIONN" msprop:Generator_ParentPropName="TRANSACTIONRow" msprop:Generator_RelationVarName="relationFK_TRANSACTIONN" msprop:Generator_UserParentTable="TRANSACTION" />
+      <msdata:Relationship name="FK_CLUB_MEMBER" msdata:parent="CLUB_MEMBER" msdata:child="TRANSACTION" msdata:parentkey="MEMBER_ID" msdata:childkey="MEMBER_ID" msprop:Generator_UserChildTable="TRANSACTION" msprop:Generator_ChildPropName="GetTRANSACTIONRows" msprop:Generator_UserRelationName="FK_CLUB_MEMBER" msprop:Generator_RelationVarName="relationFK_CLUB_MEMBER" msprop:Generator_UserParentTable="CLUB_MEMBER" msprop:Generator_ParentPropName="CLUB_MEMBERRow" />
+      <msdata:Relationship name="FK_PRODUCTS" msdata:parent="PRODUCTS" msdata:child="TRANSACTION_DETAILS" msdata:parentkey="PRODUCT_ID" msdata:childkey="PRODUCT_ID" msprop:Generator_UserChildTable="TRANSACTION_DETAILS" msprop:Generator_ChildPropName="GetTRANSACTION_DETAILSRows" msprop:Generator_UserRelationName="FK_PRODUCTS" msprop:Generator_RelationVarName="relationFK_PRODUCTS" msprop:Generator_UserParentTable="PRODUCTS" msprop:Generator_ParentPropName="PRODUCTSRow" />
+      <msdata:Relationship name="FK_TRANSACTION" msdata:parent="TRANSACTION" msdata:child="TRANSACTION_DETAILS" msdata:parentkey="TRANSACTION_ID" msdata:childkey="TRANSACTION_ID" msprop:Generator_UserChildTable="TRANSACTION_DETAILS" msprop:Generator_ChildPropName="GetTRANSACTION_DETAILSRows" msprop:Generator_UserRelationName="FK_TRANSACTION" msprop:Generator_RelationVarName="relationFK_TRANSACTION" msprop:Generator_UserParentTable="TRANSACTION" msprop:Generator_ParentPropName="TRANSACTIONRow" />
+      <msdata:Relationship name="FK_ROLES" msdata:parent="ROLES" msdata:child="USERS" msdata:parentkey="ROLE_ID" msdata:childkey="ROLE_ID" msprop:Generator_UserChildTable="USERS" msprop:Generator_ChildPropName="GetUSERSRows" msprop:Generator_UserRelationName="FK_ROLES" msprop:Generator_RelationVarName="relationFK_ROLES" msprop:Generator_UserParentTable="ROLES" msprop:Generator_ParentPropName="ROLESRow" />
     </xs:appinfo>
   </xs:annotation>
 </xs:schema>

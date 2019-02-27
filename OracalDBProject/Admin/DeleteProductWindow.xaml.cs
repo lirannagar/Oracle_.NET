@@ -107,8 +107,7 @@ namespace OracalDBProject.Admin
                 Logger.Instance.Info("Table Updated");
             }
             catch (OracleException ex)
-            {
-                MessageBox.Show("Wrong Value!", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
+            {               
                 Logger.Instance.Error("Exception while trying to update table\nDeatails: " + ex);
             }
         }

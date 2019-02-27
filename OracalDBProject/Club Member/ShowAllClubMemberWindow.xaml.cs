@@ -71,8 +71,7 @@ namespace OracalDBProject.Club_Member
                 Logger.Instance.Info("Table Updated");
             }
             catch (OracleException ex)
-            {
-                MessageBox.Show("Wrong Value!", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
+            {               
                 Logger.Instance.Error("Exception while trying to update table\nDeatails: " + ex);
             }
         }
@@ -102,6 +101,7 @@ namespace OracalDBProject.Club_Member
             }
         }
         #endregion Private Methods
+
 
         #region Public Methods
         #endregion Public Methods
