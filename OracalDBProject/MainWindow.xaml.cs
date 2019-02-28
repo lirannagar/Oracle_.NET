@@ -21,6 +21,7 @@ using OracalDBProject.Admin;
 using static OracalDBProject.Admin.Enums;
 using OracalDBProject.Club_Member;
 using System.ComponentModel;
+using System.Data;
 
 namespace OracalDBProject
 {
@@ -31,10 +32,9 @@ namespace OracalDBProject
     {
         #region Control Mapping
         const string CONNECTION_STRING = "DATA SOURCE = localhost:1521/xe;USER ID = SYSTEM; PASSWORD=chenliran123";
-        const string ADMIN_USER_NAME_FIRST = "CHEN_ADMIN";
-        const string ADMIN_PASSWORD_FIRST = "123123";
-        const string ADMIN_USER_NAME_SECOND = "LIRAN_ADMIN";
-        const string ADMIN_PASSWORD_SECOND = "123123";
+
+        const string ADMIN_USER_NAME_FIRST = "LIRAN_ADMIN";
+        const string ADMIN_PASSWORD_FIRST  = "123123";
         const string ADMIN_ROLE_NAME = "Administrator";
         const string CLUB_MEMBER_ROLE_NAME = "Club Member";
 
@@ -56,15 +56,18 @@ namespace OracalDBProject
         {
             Logger.Instance.Info("-------------------------PROGRAM STARTED-------------------");
             OpenConnection();
-            CreateAdminUsers();              
-            UserConnectionSwitch(ADMIN_USER_NAME_SECOND, ADMIN_PASSWORD_SECOND);
-            CreatePackages();
-            CreateTables();
-            CreateSequences();
-            CreateViews();
-            InitializeRoles();
+             CreateAdminUsers();              
+            UserConnectionSwitch(ADMIN_USER_NAME_FIRST, ADMIN_PASSWORD_FIRST);
+            //CreateFunctions();
+
+            //CreatePackages();
+            //CreateTables();
+            //CreateSequences();
+            //CreateViews();
+            //InitializeRoles();
+
             try
-            {          
+            {
                 InitializeComponent();
                 Logger.Instance.Info("LogIn window opened");
             }
@@ -72,8 +75,8 @@ namespace OracalDBProject
             {
                 Logger.Instance.Error("Exception while trying to open main window\nDetails:\n" + ex);
             }
-            TextUserName.Text = "LIRAN_ADMIN";
-            passwordBox.Text = "123123";                      
+            TextUserName.Text = "ASDA";
+            passwordBox.Text = "123123";
         }
         #endregion Constructor
 
@@ -88,11 +91,12 @@ namespace OracalDBProject
                 OracleSingletonComment.Instance.CommandText = createViewString;
                 dr = OracleSingletonComment.Instance.ExecuteReader();
                 Logger.Instance.Info("Products View Created");
-            }catch
+            }
+            catch
             {
                 Logger.Instance.Info("Products View already exist");
             }
-  
+
 
         }
         private void CreateAdminView()
@@ -106,7 +110,7 @@ namespace OracalDBProject
                 dr = OracleSingletonComment.Instance.ExecuteReader();
                 Logger.Instance.Info("Admin View Created");
             }
-            catch 
+            catch
             {
                 Logger.Instance.Info("Admin View already exist");
             }
@@ -122,7 +126,7 @@ namespace OracalDBProject
                 dr = OracleSingletonComment.Instance.ExecuteReader();
                 Logger.Instance.Info("Club Member View Created");
             }
-            catch 
+            catch
             {
                 Logger.Instance.Info("Club Member View already exist");
             }
@@ -134,13 +138,14 @@ namespace OracalDBProject
                 CreateProductsView();
                 CreateAdminView();
                 CreateClubMemberView();
-            }catch
+            }
+            catch
             {
                 Logger.Instance.Info("Trying to create views but thay are already exist");
 
             }
-          
-           
+
+
         }
         private void InitializeRoles()
         {
@@ -148,14 +153,15 @@ namespace OracalDBProject
             {
                 string adminId = Enums.GetDescription(ERole.ADMIN_ROLE);
                 string adminName = "Administrator";
-                Role adminRole = new Role(adminId,adminName);
+                Role adminRole = new Role(adminId, adminName);
                 adminRole.ExecuteToDatabase();
                 string clubMemberId = Enums.GetDescription(ERole.CLUB_MEMBER_ROLE);
                 string clubMemberName = "Club_Member";
                 Role clubMemberRole = new Role(clubMemberId, clubMemberName);
                 clubMemberRole.ExecuteToDatabase();
                 Logger.Instance.Info("Initialized Roles");
-            }catch
+            }
+            catch
             {
                 Logger.Instance.Info("Roles already exist");
             }
@@ -163,12 +169,12 @@ namespace OracalDBProject
         public void DropSequences()
         {
             try
-            {          
-                string productsStringDropSequence = "drop  SEQUENCE LIRAN_ADMIN.PRODUCT_SEQ";               
+            {
+                string productsStringDropSequence = "drop  SEQUENCE LIRAN_ADMIN.PRODUCT_SEQ";
                 string clubMemberStringDropSequence = "drop SEQUENCE  LIRAN_ADMIN.club_member_seq";
                 string administratorStringDropSequence = "DROP SEQUENCE LIRAN_ADMIN.ADMIN_SEQ";
                 string userStringDropSequence = "drop SEQUENCE LIRAN_ADMIN.user_seq";
-             
+
                 OracleSingletonComment.Instance.CommandText = productsStringDropSequence;
                 OracleSingletonComment.Instance.ExecuteNonQuery();
                 Logger.Instance.Info("SEQUENCE product_seq DROPED");
@@ -200,7 +206,7 @@ namespace OracalDBProject
                 dr = OracleSingletonComment.Instance.ExecuteReader();
                 Logger.Instance.Info("Admin Sequence Created");
             }
-            catch 
+            catch
             {
                 Logger.Instance.Info("Admin User Sequence already exist");
             }
@@ -218,7 +224,7 @@ namespace OracalDBProject
                 dr = OracleSingletonComment.Instance.ExecuteReader();
                 Logger.Instance.Info("Club Member Sequence Created");
             }
-            catch 
+            catch
             {
                 Logger.Instance.Info("Club Member Sequence already exist");
             }
@@ -233,7 +239,7 @@ namespace OracalDBProject
                 CreateClubMemberSequence();
                 Logger.Instance.Info("All Sequences Created");
             }
-            catch 
+            catch
             {
                 Logger.Instance.Info("Trying to create Sequences but the Sequences already exist");
             }
@@ -256,22 +262,22 @@ namespace OracalDBProject
                 Logger.Instance.Info("User Sequence already exist");
             }
         }
-        private void  CreateProductSequence()
+        private void CreateProductSequence()
         {
             try
             {
                 string productSequenceString = "CREATE SEQUENCE product_seq"
-                                                +" START WITH     100"
-                                                +" INCREMENT BY   1"
-                                                +" NOCACHE"
-                                                +" NOCYCLE";
+                                                + " START WITH     100"
+                                                + " INCREMENT BY   1"
+                                                + " NOCACHE"
+                                                + " NOCYCLE";
                 OracleSingletonComment.Instance.CommandText = productSequenceString;
                 dr = OracleSingletonComment.Instance.ExecuteReader();
                 Logger.Instance.Info("Product Sequence Created");
             }
             catch
             {
-                Logger.Instance.Info("Product Sequence already exist");            
+                Logger.Instance.Info("Product Sequence already exist");
             }
         }
         private void CreateAdminPackage()
@@ -286,7 +292,7 @@ namespace OracalDBProject
                   + " FUNCTION get_admin_user_id(iduser IN number) RETURN NUMBER IS res_value NUMBER(11,2);"
                   + " BEGIN"
                   + "   SELECT ADMINISTRATOR.USER_ID INTO res_value FROM ADMINISTRATOR WHERE ADMIN_ID = iduser;  RETURN(res_value);"
-                  + " END; " 
+                  + " END; "
                   + " PROCEDURE insertAdmin("
                   + " admin_id number,"
                   + " user_id number,"
@@ -337,7 +343,7 @@ namespace OracalDBProject
                 dr = OracleSingletonComment.Instance.ExecuteReader();
                 Logger.Instance.Info("User Package Created");
             }
-            catch(OracleException ex)
+            catch (OracleException ex)
             {
                 throw new Exception("Exception during create Products Package", ex);
             }
@@ -349,10 +355,10 @@ namespace OracalDBProject
             {
                 string declareProductsPackageStirng = "create or replace package pkg_product is"
                                                      + " PROCEDURE insertProducts(product_id number,product_name varchar2,product_amount number);"
-                                                     
+
                                                      + " end pkg_product;";
                 string bodyProductsPackageStirng = "create or replace package body pkg_product is"
-                                                 
+
                                                   + " PROCEDURE insertProducts("
                                                   + " product_id number,"
                                                   + " product_name varchar2,"
@@ -370,9 +376,9 @@ namespace OracalDBProject
                 Logger.Instance.Info("Products Package Created");
 
             }
-            catch(OracleException ex)
+            catch (OracleException ex)
             {
-                throw new Exception("Exception during create Products Package"  ,ex);
+                throw new Exception("Exception during create Products Package", ex);
             }
         }
         private void CreateRolePackage()
@@ -384,7 +390,7 @@ namespace OracalDBProject
                                                      + " end pkg_role;";
                 string bodyRolesPackageStirng = "create or replace package body pkg_role is"
                                                   + " PROCEDURE insertRole("
-                                                  + " role_id varchar2,"                                                
+                                                  + " role_id varchar2,"
                                                   + " role_name varchar2)"
                                                   + " IS"
                                                   + " BEGIN"
@@ -401,7 +407,7 @@ namespace OracalDBProject
             }
             catch (OracleException ex)
             {
-                throw new Exception("Exception during create Role Package" ,  ex);
+                throw new Exception("Exception during create Role Package", ex);
             }
         }
         private void CreateClubMemberPackage()
@@ -458,13 +464,13 @@ namespace OracalDBProject
         private void SwitchAdminUser()
         {
             try
-            {             
+            {
                 OracleSingletonConnection.Instance.Close();
                 OracleSingletonConnection.Instance.ConnectionString = "DATA SOURCE = localhost:1521/xe;USER ID = LIRAN_ADMIN; PASSWORD=123123";
                 OracleSingletonConnection.Instance.Open();
                 Logger.Instance.Info("Admin User Switched");
             }
-            catch(OracleException ex)
+            catch (OracleException ex)
             {
                 Logger.Instance.Error("Exption while trying to chenge admin user\n Details:\n" + ex);
             }
@@ -476,29 +482,92 @@ namespace OracalDBProject
             OracleSingletonConnection.Instance.Open();
             Logger.Instance.Info("User Switched to " + loginName);
         }
+        private void CreateFunctions()
+        {
+            try
+            {
+                string roleFunctionDeclare =
+                                        "create or replace FUNCTION get_role_user(iduser IN VARCHAR2) RETURN VARCHAR2 IS res_value VARCHAR2(4000);"
+                                      + " BEGIN"
+                                      + "   SELECT USERS.role_id INTO res_value FROM USERS WHERE FIRST_NAME = iduser;  RETURN(res_value);"
+                                      + " END; ";
+                OracleSingletonComment.Instance.CommandText = roleFunctionDeclare;
+                OracleSingletonComment.Instance.ExecuteNonQuery();
+                Logger.Instance.Info("get_role_user Function created");
+                string userFunctionDeclare =
+                                     "create or replace FUNCTION get_user_id(iduser IN VARCHAR2) RETURN NUMBER IS res_value NUMBER(20);"
+                                     + " BEGIN"
+                                     + "   SELECT USERS.USER_ID INTO res_value FROM USERS WHERE FIRST_NAME = iduser;  RETURN(res_value);"
+                                     + " END; ";
+                OracleSingletonComment.Instance.CommandText = userFunctionDeclare;
+                OracleSingletonComment.Instance.ExecuteNonQuery();
+                Logger.Instance.Info("get_role_user Function created");
+            }
+            catch
+            {
+                Logger.Instance.Info("Functions already exist");
+            }
+
+        }
+        private string GetRoleUser(string userFirstName)
+        {
+            try
+            {
+                OracleSingletonComment.Instance.CommandText = "get_role_user";
+                OracleSingletonComment.Instance.CommandType = CommandType.StoredProcedure;
+                OracleSingletonComment.Instance.Parameters.Add("res_value", OracleDbType.Varchar2, 3000).Direction = ParameterDirection.ReturnValue;
+                OracleSingletonComment.Instance.Parameters.Add("iduser", OracleDbType.Varchar2).Value = userFirstName;
+                OracleSingletonComment.Instance.ExecuteNonQuery();
+            }
+            catch (OracleException ex)
+            {
+                Logger.Instance.Error("Exception while trying to Get Role User" + ex);
+            }
+            return OracleSingletonComment.Instance.Parameters["res_value"].Value.ToString();
+        }
+        private string GetUserId(string userFirstName)
+        {
+            string nameID = "";
+            try
+            {                
+                OracleCommand cmd = new OracleCommand();
+                cmd.Connection = OracleSingletonConnection.Instance;
+                string user = "select LIRAN_ADMIN.USERS.USER_ID " 
+                              + " FROM LIRAN_ADMIN.USERS "
+                              + " WHERE LIRAN_ADMIN.USERS.FIRST_NAME like '"+ userFirstName + "' ";
+                cmd.CommandText = user;
+                nameID = Convert.ToString(cmd.ExecuteScalar());
+            }
+            catch (OracleException ex)
+            {
+                Logger.Instance.Error("Exception while trying to Get User ID" + ex);
+            }
+            return nameID;
+        }
         private void LogInButton_Click(object sender, RoutedEventArgs e)
         {
             string loginName = TextUserName.Text;
             string password = passwordBox.Text;
-           
+            string roleUserName = GetRoleUser(loginName);
+            string userId = GetUserId(loginName);
             string select = comboBox.SelectedItem.ToString();
             try
             {
-                if (select.Contains(ADMIN_ROLE_NAME))
+                if (select.Contains(ADMIN_ROLE_NAME) && select.Contains(ADMIN_USER_NAME_FIRST) && roleUserName.Equals(Enums.GetDescription(ERole.ADMIN_ROLE)) && !string.IsNullOrEmpty(userId))
                 {
                     UserConnectionSwitch(loginName, password);
                     AdminPanel win = new AdminPanel();
                     win.Show();
-                    this.Close();            
+                    this.Close();
                 }
-                else if (select.Contains(CLUB_MEMBER_ROLE_NAME))
+                else if (select.Contains(CLUB_MEMBER_ROLE_NAME) && roleUserName.Equals(Enums.GetDescription(ERole.CLUB_MEMBER_ROLE)) && !string.IsNullOrEmpty(userId))
                 {
                     UserConnectionSwitch(loginName, password);
                     ClubMemberOperationWindow win = new ClubMemberOperationWindow();
                     win.Show();
                     this.Close();
                 }
-                else{
+                else {
                     string messageBoxText = "the user name/password is not exist...please try again";
                     string caption = "ERROR";
                     MessageBoxButton button = MessageBoxButton.OK;
@@ -511,49 +580,49 @@ namespace OracalDBProject
             {
                 Logger.Instance.Error("Exption while trying to open the right admin/customer \n Details:\n" + ex);
             }
-                      
+
 
         }
         private void DropAllUsers()
         {
             try
             {
-            
-               //// string adminUserOne = "drop user " + ADMIN_USER_NAME_FIRST + " CASCADE";
-               // string adminUserTwo = "drop user " + ADMIN_USER_NAME_SECOND + " CASCADE";
+
+                //// string adminUserOne = "drop user " + ADMIN_USER_NAME_FIRST + " CASCADE";
+                // string adminUserTwo = "drop user " + ADMIN_USER_NAME_SECOND + " CASCADE";
 
 
-               // //OracleSingletonComment.Instance.CommandText = adminUserOne;
-               // //dr = OracleSingletonComment.Instance.ExecuteReader();
-               // //Logger.Instance.Info("User " + ADMIN_USER_NAME_FIRST + " DROPED");
-               // cmd.CommandText = adminUserTwo;
-               // cmd.ExecuteNonQuery();
-               // Logger.Instance.Info("User " + ADMIN_USER_NAME_SECOND + " DROPED");
-            }catch
+                // //OracleSingletonComment.Instance.CommandText = adminUserOne;
+                // //dr = OracleSingletonComment.Instance.ExecuteReader();
+                // //Logger.Instance.Info("User " + ADMIN_USER_NAME_FIRST + " DROPED");
+                // cmd.CommandText = adminUserTwo;
+                // cmd.ExecuteNonQuery();
+                // Logger.Instance.Info("User " + ADMIN_USER_NAME_SECOND + " DROPED");
+            }
+            catch
             {
                 Logger.Instance.Info("Some users are exist in the Database");
             }
 
         }
- 
+
 
         private void CreateAdminUsers()
         {
             try
             {
-        
+
+
                 OracleSingletonComment.Instance.CommandText = String.Format("CREATE USER {0} IDENTIFIED BY \"{1}\"", ADMIN_USER_NAME_FIRST, ADMIN_PASSWORD_FIRST);
                 OracleSingletonComment.Instance.ExecuteNonQuery();
-                OracleSingletonComment.Instance.CommandText = String.Format("CREATE USER {0} IDENTIFIED BY \"{1}\"", ADMIN_USER_NAME_SECOND, ADMIN_PASSWORD_SECOND);
-                OracleSingletonComment.Instance.ExecuteNonQuery();
-                OracleSingletonComment.Instance.CommandText = String.Format("grant dba to {0}", ADMIN_USER_NAME_FIRST);
-                OracleSingletonComment.Instance.ExecuteNonQuery();
-                OracleSingletonComment.Instance.CommandText = String.Format("GRANT dba to {0}", ADMIN_USER_NAME_SECOND);
+               
+                OracleSingletonComment.Instance.CommandText = String.Format("GRANT dba to {0}", ADMIN_PASSWORD_FIRST);
                 OracleSingletonComment.Instance.ExecuteNonQuery();
                 Logger.Instance.Info("Admin User created seccefully");
-            }catch
+            }
+            catch
             {
-                Logger.Instance.Info("Trying to create admin user but already exist" );
+                Logger.Instance.Info("Trying to create admin user but already exist");
             }
         }
         public void DropTables()
@@ -603,9 +672,9 @@ namespace OracalDBProject
         {
             try
             {
-               
+
                 string productsStringDropPACKAGE = "drop PACKAGE LIRAN_ADMIN.products";
-              
+
                 string clubMemberStringDropPACKAGE = "drop PACKAGE LIRAN_ADMIN.club_member";
                 string administratorStringDropPACKAGE = "drop PACKAGE LIRAN_ADMIN.administrator";
                 string userStringDropPACKAGE = "drop PACKAGE LIRAN_ADMIN.users";
@@ -615,7 +684,7 @@ namespace OracalDBProject
                 Logger.Instance.Info("PACKAGE transaction_details DROPED");
                 OracleSingletonComment.Instance.CommandText = productsStringDropPACKAGE;
                 dr = OracleSingletonComment.Instance.ExecuteReader();
-                Logger.Instance.Info("PACKAGE products DROPED"); 
+                Logger.Instance.Info("PACKAGE products DROPED");
                 OracleSingletonComment.Instance.CommandText = clubMemberStringDropPACKAGE;
                 dr = OracleSingletonComment.Instance.ExecuteReader();
                 Logger.Instance.Info("PACKAGE club_member DROPED");
@@ -638,12 +707,12 @@ namespace OracalDBProject
         {
             try
             {
-                string rolesStringTable = "create table Roles"+
+                string rolesStringTable = "create table Roles" +
                     "("
                     + "role_ID VARCHAR2(20) not null,"
                     + "role_Name VARCHAR2(20) not null,"
-                    + "CONSTRAINT Roles_pk PRIMARY KEY (role_ID)" 
-                    +")";
+                    + "CONSTRAINT Roles_pk PRIMARY KEY (role_ID)"
+                    + ")";
                 string userStringTable = "create table Users" +
                     "("
                     + "User_id number(20) not null,"
@@ -698,7 +767,7 @@ namespace OracalDBProject
                     + ")";
                 string transactionDetailsStringTable = "create table Transaction_Details" +
                     "("
-                  
+
                     + "Transaction_id number(20),"
                     + "Product_id number(20),"
                     + "CONSTRAINT fk_Transaction"
@@ -720,13 +789,13 @@ namespace OracalDBProject
                       + " FOREIGN KEY (transaction_id)"
                       + " REFERENCES Transaction (transaction_id)"
                     + ")";
-                OracleSingletonComment.Instance.CommandText = rolesStringTable;            
+                OracleSingletonComment.Instance.CommandText = rolesStringTable;
                 dr = OracleSingletonComment.Instance.ExecuteReader();
                 Logger.Instance.Info("TABLE Roles was CREATED");
-                OracleSingletonComment.Instance.CommandText = userStringTable;              
+                OracleSingletonComment.Instance.CommandText = userStringTable;
                 dr = OracleSingletonComment.Instance.ExecuteReader();
                 Logger.Instance.Info("TABLE Users was CREATED");
-                OracleSingletonComment.Instance.CommandText = administratorStringTable;              
+                OracleSingletonComment.Instance.CommandText = administratorStringTable;
                 dr = OracleSingletonComment.Instance.ExecuteReader();
                 Logger.Instance.Info("TABLE Administrator was CREATED");
                 OracleSingletonComment.Instance.CommandText = clubMemberStringTable;
@@ -745,7 +814,7 @@ namespace OracalDBProject
                 dr = OracleSingletonComment.Instance.ExecuteReader();
                 Logger.Instance.Info("TABLE Payment was CREATED");
             }
-            catch 
+            catch
             {
                 Logger.Instance.Info("Trying to create Tables but the tables exist");
             }
@@ -753,10 +822,10 @@ namespace OracalDBProject
         private void OpenConnection()
         {
             try
-            {                           
+            {
                 cmd = new OracleCommand();
                 OracleSingletonConnection.Instance.Open();
-                Logger.Instance.Info("DB was opened seccefully");                         
+                Logger.Instance.Info("DB was opened seccefully");
             }
             catch (OracleException ex)
             {

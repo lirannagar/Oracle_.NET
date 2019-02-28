@@ -23,10 +23,17 @@ namespace OracalDBProject.Club_Member
     /// </summary>
     public partial class ClubMemberStartBuying : Window
     {
+        const string COMBOBOX_NAME_SEARCH = "By ID";
+        const string TABLE_NAME_UPDATE = "LIRAN_ADMIN.PRODUCTS";
+
+        private OracleCommand cmd;
+
         public ClubMemberStartBuying()
         {
             try
             {
+                cmd = new OracleCommand();
+                cmd.Connection = OracleSingletonConnection.Instance;
                 InitializeComponent();
                 Logger.Instance.Info("Club member start buying window opened");
             }
@@ -64,24 +71,21 @@ namespace OracalDBProject.Club_Member
 
         private void ShowAllProductButton_Click(object sender, RoutedEventArgs e)
         {
-            string showAllTableQuery = "CREATE OR REPLACE PROCEDURE AVAILBLE_PRODUCTS"
-                          + "IS "
-                        + " PROD_ID PRODUCT.PRODUCT_ID%type;"
-                        + " PROD_NAME PRODUCT.PRODUCT_NAME%type;"
-                        + " PROD_AMOUNT PRODUCT.PRODUCT_AMOUNT%type;"
-                        + " CURSOR new_prod IS SELECT PRODUCT_ID,PRODUCT_NAME, PRODUCT_AMOUNT"
-                        + "FROM PRODUCT WHERE PRODUCT_AMOUNT > 0 ;"
-                       + "BEGIN"
-                       + "OPEN new_prod;"
-                       + "FETCH new_prod INTO PROD_ID, PROD_NAME, PROD_AMOUNT;"
-                       + "WHILE new_prod%FOUND LOOP"
-                       + "DBMS_OUTPUT.PUT_LINE('ID: ' || PROD_ID ||"
-                       + " ', Name: ' || PROD_NAME ||"
-                       + "', Amount: ' || PRODUCT_AMOUNT);"
-                        + "FETCH new_prod INTO PROD_ID, PROD_NAME, PRODUCT_AMOUNT;"
-                        + "END LOOP;"
-                        + "CLOSE new_prod;"
-                        + "END;";
+            string showAllTableQuery = "CREATE OR REPLACE PROCEDURE AVAILBLE_PRODUCTS "
+            + " IS"
+            + " PROD_ID LIRAN_ADMIN.PRODUCTS.PRODUCT_ID % type;"
+            + " PROD_NAME LIRAN_ADMIN.PRODUCTS.PRODUCT_NAME % type;"
+            + " PROD_AMOUNT LIRAN_ADMIN.PRODUCTS.PRODUCT_AMOUNT % type;"
+            + " CURSOR new_prod IS SELECT LIRAN_ADMIN.PRODUCTS.PRODUCT_ID, LIRAN_ADMIN.PRODUCTS.PRODUCT_NAME, LIRAN_ADMIN.PRODUCTS.PRODUCT_AMOUNT"
+            + " FROM LIRAN_ADMIN.PRODUCTS WHERE LIRAN_ADMIN.PRODUCTS.PRODUCT_AMOUNT > 0;"
+            + " BEGIN"
+            + " OPEN new_prod;"
+            + " FETCH new_prod INTO PROD_ID, PROD_NAME, PROD_AMOUNT;"
+            + " WHILE new_prod% FOUND LOOP"
+            + " FETCH new_prod INTO PROD_ID, PROD_NAME, PROD_AMOUNT;"
+            + " END LOOP;"
+            + " CLOSE new_prod;"
+            + " END;";
             UpdateTable(showAllTableQuery);
         }
 
@@ -91,19 +95,21 @@ namespace OracalDBProject.Club_Member
             {
                 string searchQueryString = "";
                 string select = searchComboBoxProduct.SelectedItem.ToString();
-                if (select.Contains("By ID"))
+                if (select.Contains(COMBOBOX_NAME_SEARCH))
                 {
-                    searchQueryString = "SELECT PRODUCT_ID ,"
-                                + " SUM(PRODUCT_AMOUNT) OVER(ORDER BY PRODUCT_ID) AS  PRODUCT_AMOUNT"
-                                 + " FROM PRODUCT"
-                                 + " ORDER BY PRODUCT_ID" + textBoxSearchProduct.Text + "'";
+                    searchQueryString = "SELECT LIRAN_ADMIN.PRODUCTS.PRODUCT_ID ,"
+                                 + " SUM(PRODUCT_AMOUNT) OVER(ORDER BY LIRAN_ADMIN.PRODUCTS.PRODUCT_ID) AS  PRODUCT_AMOUNT"
+                                 + " FROM LIRAN_ADMIN.PRODUCTS"
+                                 + " WHERE LIRAN_ADMIN.PRODUCTS.PRODUCT_ID = '" + textBoxSearchProduct.Text + "'"
+                                 + " ORDER BY LIRAN_ADMIN.PRODUCTS.PRODUCT_ID";
                 }
                 else
                 {
-                    searchQueryString = "SELECT PRODUCT_NAME , "
-                         + " SUM(PRODUCT_AMOUNT) OVER(ORDER BY PRODUCT_NAME) AS  PRODUCT_AMOUNT"
-                                 + " FROM PRODUCT"
-                                 + " ORDER BY PRODUCT_NAME" + textBoxSearchProduct.Text + "'";
+                    searchQueryString = "SELECT LIRAN_ADMIN.PRODUCTS.PRODUCT_NAME , "
+                                + " SUM(PRODUCT_AMOUNT) OVER(ORDER BY LIRAN_ADMIN.PRODUCTS.PRODUCT_NAME) AS  PRODUCT_AMOUNT"
+                                + " FROM LIRAN_ADMIN.PRODUCTS"
+                                + " WHERE LIRAN_ADMIN.PRODUCTS.PRODUCT_NAME = '" + textBoxSearchProduct.Text + "'"
+                                + " ORDER BY LIRAN_ADMIN.PRODUCTS.PRODUCT_NAME";
                 }
                 UpdateTable(searchQueryString);
                 Logger.Instance.Info("Search Product");
@@ -116,11 +122,11 @@ namespace OracalDBProject.Club_Member
 
         private void ChooseButton_Click(object sender, RoutedEventArgs e)
         {
-            string deleteQuery = "DELETE FROM PRODUCTS"
-                      + " WHERE PRODUCTS.PRODUCT_ID = '" + textBoxProduct.Text + "'";
-            UpdateTable(deleteQuery);
-            string showAllTableQuery = "SELECT *"
-                                 + " FROM PRODUCTS";
+            string chooseQuery = "UPDATE LIRAN_ADMIN.PRODUCTS"
+                                + " SET PRODUCT_AMOUNT = PRODUCT_AMOUNT - 1"
+                                + " WHERE (LIRAN_ADMIN.PRODUCTS.PRODUCT_AMOUNT > 0) AND  OR LIRAN_ADMIN.PRODUCTS.PRODUCT_ID = " + textBoxProduct.Text + "";
+            UpdateTable(chooseQuery);
+            string showAllTableQuery = "SELECT * FROM LIRAN_ADMIN.PRODUCTS";
             UpdateTable(showAllTableQuery);
         }
 
@@ -128,18 +134,17 @@ namespace OracalDBProject.Club_Member
         {
             try
             {
-                OracleSingletonComment.Instance.CommandText = query;
-                OracleSingletonComment.Instance.ExecuteNonQuery();
-                OracleDataAdapter da = new OracleDataAdapter(OracleSingletonComment.Instance);
-                da.SelectCommand = OracleSingletonComment.Instance;
-                DataTable dt = new DataTable("PRODUCTS");
+                cmd.CommandText = query;
+                cmd.ExecuteNonQuery();
+                OracleDataAdapter da = new OracleDataAdapter(cmd);
+                da.SelectCommand = cmd;
+                DataTable dt = new DataTable(TABLE_NAME_UPDATE); 
                 da.Fill(dt);
                 GridProductTable.ItemsSource = dt.DefaultView;
                 Logger.Instance.Info("Table Updated");
             }
             catch (OracleException ex)
-            {
-                MessageBox.Show("Wrong Value!", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
+            {               
                 Logger.Instance.Error("Exception while trying to update table\nDeatails: " + ex);
             }
         }
